@@ -52,3 +52,13 @@ En esta sesión se realizó un **análisis integral 360°** de la presencia digi
 1. **Aprobación de Propuesta:** Presentar [PLAN_ESTRATEGICO_PROPUESTA_30_60_90.md](file:///Users/cesarandresjimenezarci/Documents/Clientes/ventanaleshn/PLAN_ESTRATEGICO_PROPUESTA_30_60_90.md) a la directiva de VentanalesHN.
 2. **Acceso a Plataformas:** Solicitar accesos a Google Search Console, Google Analytics y cPanel / FTP del servidor.
 3. **Despliegue Mes 1:** Subir `robots.txt`, publicar `sitemap.xml` y enviar archivo `disavow.txt` a Search Console.
+
+---
+
+## 📌 Sesión 6 de Octubre, 2026 (tarde) — Rediseño en Claude Design
+
+* **Rediseño visual** en Claude Design (lienzo "Rediseño Ventanales HN", 6 páginas): Home, Landing Cortinas y Persianas, Proyectos, Blog, Entrada de blog y Contacto/Cotización. Marca: rojo #A00017, Jost + Instrument Sans, logo actual.
+* **Ajustes SEO/IA en el diseño:** bloque "En resumen" en landing y artículos (lo que mejor ha funcionado para IA), FAQ en Home y Landing, ruta de navegación, autor + fecha de actualización, extractos en el blog.
+* **Entregables nuevos:** `Implementacion-SEO-IA/SEO_IA_ESPECIFICACION.md` (title, meta, H1 y Schema JSON-LD por página), `robots.txt`, `llms.txt`.
+* **Pendiente:** fotos reales (el diseño usa espacios marcados), y los datos que se listan en la sección 5 de la especificación.
+* **Proyectos:** se agregó la plantilla de proyecto individual (ficha, reto/solución/resultado, galería, antes/después, relacionados). Hallazgo: hoy los ~85 proyectos solo enlazan a ~5 URLs `/producto/<ID>` con contenido mínimo. Propuesta: una URL por proyecto en `/proyectos/<sector>/<slug>/` + redirecciones 301 (ver sección 2.3.1 de la especificación).

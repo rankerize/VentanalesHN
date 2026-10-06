@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorías de Productos & Soluciones Arquitectónicas | Design Solutions By Ventanales</title>
+  <meta name="description" content="Explora el catálogo completo de categorías de Ventanales HN: Ventanas de PVC y Aluminio, Fachadas de Vidrio, Cortinas Motorizadas, Pérgolas y Soluciones Hospitalarias.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0f2b5c; --primary-light: #2151f2; --accent: #d4af37; --bg-light: #f8fafc;
+      --surface: #ffffff; --text-dark: #0f172a; --text-muted: #64748b; --border-color: #e2e8f0;
+      --radius-lg: 16px; --font-display: 'Baloo 2', cursive, sans-serif; --font-body: 'Poppins', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.3rem; }
+    .logo-text-title { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--primary); line-height: 1.1; }
+    .logo-text-sub { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; }
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
+    nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; }
+    nav a.active { color: var(--primary-light); font-weight: 600; }
+    .btn-header { background: linear-gradient(135deg, var(--primary-light), var(--primary)); color: #ffffff; padding: 12px 24px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+    .page-hero { background: linear-gradient(135deg, #07173e 0%, #030f2b 100%); color: #ffffff; padding: 60px 0 80px; text-align: center; }
+    .page-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 800; margin-bottom: 12px; }
+    .breadcrumb { font-size: 0.88rem; color: rgba(244, 243, 239, 0.7); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+
+    section { padding: 80px 0; }
+    .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 30px; }
+    .category-card { background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--border-color); overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform 0.3s, box-shadow 0.3s; }
+    .category-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(15, 43, 92, 0.1); }
+    .category-img { height: 220px; background: linear-gradient(135deg, #07173e, #0f2b5c); display: flex; align-items: center; justify-content: center; color: #ffffff; }
+    .category-img i { font-size: 4rem; color: rgba(255, 255, 255, 0.3); }
+    .category-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+    .category-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+    .category-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; flex: 1; }
+    .btn-view-cat { font-size: 0.9rem; font-weight: 700; color: var(--primary-light); display: inline-flex; align-items: center; gap: 8px; }
+
+    footer { background: var(--primary); color: #ffffff; padding: 60px 0 30px; margin-top: 60px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: var(--accent); }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { color: rgba(244, 243, 239, 0.8); text-decoration: none; font-size: 0.88rem; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; font-size: 0.85rem; color: rgba(244, 243, 239, 0.6); display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-border-all"></i></div>
+        <div>
+          <div class="logo-text-title">Design Solutions</div>
+          <div class="logo-text-sub">BY VENTANALES · HONDURAS</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="index.html" class="active">Categorías</a></li>
+          <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="../blog/index.html">Blog & Guías</a></li>
+          <li><a href="../cotizar.html">Cotizador Online</a></li>
+        </ul>
+      </nav>
+
+      <a href="../cotizar.html" class="btn-header">
+        <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Inicio</a> / Categorías de Productos</div>
+      <h1 class="page-title">Catálogo Completo de Categorías</h1>
+      <p style="max-width:650px; margin:0 auto; font-size:1.05rem; color:rgba(244,243,239,0.85);">
+        Conoce nuestras 5 grandes líneas de soluciones de arquitectura en vidrio, ventanas termoacústicas, sombreado inteligente y equipamiento especial.
+      </p>
+    </div>
+  </div>
+
+  <!-- Categories Section -->
+  <section>
+    <div class="container">
+      <div class="categories-grid">
+
+        <!-- 1. Ventanas PVC & Aluminio -->
+        <a href="ventanas-pvc-aluminio.html" class="category-card">
+          <div class="category-img"><i class="fa-solid fa-window-maximize"></i></div>
+          <div class="category-body">
+            <h2 class="category-title">01 · Ventanas de PVC & Aluminio Termoacústico</h2>
+            <p class="category-desc">Sistemas alemanes Kömmerling de doble cristal hermético y perfilería de aluminio Eurovent con reducción de ruido y ahorro energético.</p>
+            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 2. Fachadas & Templados -->
+        <a href="fachadas-vidrio-templado.html" class="category-card">
+          <div class="category-img"><i class="fa-solid fa-building"></i></div>
+          <div class="category-body">
+            <h2 class="category-title">02 · Fachadas de Vidrio & Templados</h2>
+            <p class="category-desc">Ingeniería en muros cortina, fachadas flotantes, spider glass y divisiones de baño en vidrio templado de alta seguridad.</p>
+            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 3. Cortinas & Motorización -->
+        <a href="cortinas-motorizadas.html" class="category-card">
+          <div class="category-img"><i class="fa-solid fa-sliders"></i></div>
+          <div class="category-body">
+            <h2 class="category-title">03 · Cortinas, Persianas & Motorización Smart</h2>
+            <p class="category-desc">Sistemas Rollers, Blackout y Sheer Elegance integrados con motores Somfy y automatización por voz/app.</p>
+            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 4. Pérgolas & Exteriores -->
+        <a href="pergolas-exteriores.html" class="category-card">
+          <div class="category-img"><i class="fa-solid fa-umbrella"></i></div>
+          <div class="category-body">
+            <h2 class="category-title">04 · Pérgolas Bioclimáticas & Exteriores</h2>
+            <p class="category-desc">Estructuras de aluminio de alta resistencia con lamas orientables y techos de policarbonato para terrazas residenciales y comerciales.</p>
+            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 5. Hospitalario & Corporativo -->
+        <a href="soluciones-hospitalarias-corporativas.html" class="category-card">
+          <div class="category-img"><i class="fa-solid fa-hospital"></i></div>
+          <div class="category-body">
+            <h2 class="category-title">05 · Soluciones Hospitalarias & Corporativas</h2>
+            <p class="category-desc">Cortinas sanitarias antibacterianas, rieles médicos, panelería especial y muebles arquitectónicos a la medida.</p>
+            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Design Solutions By Ventanales</h4>
+          <p style="font-size:0.88rem; color:rgba(244,243,239,0.75);">Soluciones integrales de ventanas, fachadas y cortinas en Tegucigalpa, San Pedro Sula y todo Honduras.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Categorías principales</h4>
+          <ul class="footer-links">
+            <li><a href="ventanas-pvc-aluminio.html">Ventanas PVC & Aluminio</a></li>
+            <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio</a></li>
+            <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas</a></li>
+            <li><a href="pergolas-exteriores.html">Pérgolas Bioclimáticas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p style="font-size:0.88rem; color:rgba(244,243,239,0.75);">ventas@ventanaleshn.com<br>+504 9999-9999</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Design Solutions By Ventanales.</div>
+        <div>Desarrollado por <b>grovi studio</b></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

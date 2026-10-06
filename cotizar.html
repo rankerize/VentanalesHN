@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador & Contacto | Design Solutions By Ventanales Honduras</title>
+  <meta name="description" content="Solicita una cotización rápida para tus ventanas de PVC, aluminio, fachadas de vidrio y cortinas en Tegucigalpa, San Pedro Sula y Roatán.">
+  
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #383b3d;       /* Gris Antracita */
+      --primary-dark: #2a2a2a;  /* Negro Mate */
+      --dark-bg: #212529;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-dark: #2a2a2a;
+      --text-muted: #777777;
+      --border-color: #e2e8f0;
+      --border-radius: 4px;
+      --border-radius-lg: 8px;
+      --whatsapp: #25d366;
+      --font-display: 'Overpass', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 85px; }
+    .logo-brand img { height: 48px; width: auto; object-fit: contain; }
+
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    nav a.active { color: var(--primary); font-weight: 700; }
+    .btn-header { background: var(--primary); color: #ffffff; padding: 12px 24px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.88rem; text-transform: uppercase; }
+
+    .page-hero { background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%); color: #ffffff; padding: 60px 0 80px; text-align: center; }
+    .page-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 800; margin-bottom: 12px; }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: underline; }
+
+    section { padding: 80px 0; }
+
+    .form-wrapper {
+      background: var(--surface);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      padding: 48px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 14px 16px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .btn-submit {
+      background: var(--whatsapp);
+      color: #ffffff;
+      border: none;
+      padding: 18px 36px;
+      border-radius: var(--border-radius);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-submit:hover { transform: translateY(-2px); }
+
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; margin-top: 60px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: 0.88rem; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo-brand">
+        <img src="assets/img/logo.png" alt="Design Solutions By Ventanales">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="categorias/index.html">Categorías</a></li>
+          <li><a href="proyectos/index.html">Proyectos</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="cotizar.html" class="active">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="cotizar.html" class="btn-header">
+        <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Inicio</a> / Solicitud de Cotización</div>
+      <h1 class="page-title">Formulario de Cotización Directa</h1>
+      <p style="max-width:650px; margin:0 auto; font-size:1.05rem; color:rgba(255,255,255,0.85);">
+        Completa el formulario a continuación y un asesor técnico en Honduras se comunicará contigo con un presupuesto detallado.
+      </p>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <section>
+    <div class="container">
+      <div class="form-wrapper">
+        <form onsubmit="sendFormWhatsApp(event)">
+          <div class="form-grid">
+            
+            <div class="form-group">
+              <label>Nombre Completo / Empresa *</label>
+              <input type="text" id="contactName" placeholder="Ej: Arq. Carlos Mendoza" required>
+            </div>
+
+            <div class="form-group">
+              <label>Teléfono / WhatsApp *</label>
+              <input type="tel" id="contactPhone" placeholder="+504 9999-9999" required>
+            </div>
+
+            <div class="form-group">
+              <label>Correo Electrónico *</label>
+              <input type="email" id="contactEmail" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="form-group">
+              <label>Ubicación del Proyecto en Honduras *</label>
+              <select id="contactCity" required>
+                <option value="Tegucigalpa / Francisco Morazán">Tegucigalpa / Francisco Morazán</option>
+                <option value="San Pedro Sula / Cortés">San Pedro Sula / Cortés</option>
+                <option value="Roatán / Islas de la Bahía">Roatán / Islas de la Bahía</option>
+                <option value="La Ceiba / Atlántida">La Ceiba / Atlántida</option>
+                <option value="Comayagua">Comayagua</option>
+                <option value="Otra Ciudad de Honduras">Otra Ciudad de Honduras</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Categoría de Producto Requerida *</label>
+              <select id="contactCategory" required>
+                <option value="Ventanas de PVC Termoacústico Kömmerling">Ventanas de PVC Termoacústico Kömmerling</option>
+                <option value="Ventanas de Aluminio Eurovent">Ventanas de Aluminio Eurovent</option>
+                <option value="Fachada de Vidrio Flotante / Muro Cortina">Fachada de Vidrio Flotante / Muro Cortina</option>
+                <option value="Cortinas & Persianas Motorizadas Somfy">Cortinas & Persianas Motorizadas Somfy</option>
+                <option value="Pérgolas Bioclimáticas / Terrazas">Pérgolas Bioclimáticas / Terrazas</option>
+                <option value="Divisiones de Baño en Vidrio Templado">Divisiones de Baño en Vidrio Templado</option>
+                <option value="Soluciones Hospitalarias / Rieles Sanitarios">Soluciones Hospitalarias / Rieles Sanitarios</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Etapa del Proyecto *</label>
+              <select id="contactStage" required>
+                <option value="En Planos / Diseño Architect">En Planos / Diseño Architect</option>
+                <option value="En Construcción Obra Gris">En Construcción Obra Gris</option>
+                <option value="En Etapa de Acabados">En Etapa de Acabados</option>
+                <option value="Remodelación Inmediata">Remodelación Inmediata</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label>Detalles del Proyecto / Medidas Aproximadas</label>
+              <textarea id="contactNotes" rows="5" placeholder="Describe brevemente la cantidad de ventanas, medidas estimadas o especificaciones particulares..."></textarea>
+            </div>
+
+          </div>
+
+          <div style="margin-top:32px;">
+            <button type="submit" class="btn-submit">
+              <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i> Enviar Cotización por WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-brand" style="margin-bottom:16px;">
+            <img src="assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#fff; padding:4px 8px; border-radius:4px;">
+          </div>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Honduras.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="categorias/index.html">Categorías</a></li>
+            <li><a href="proyectos/index.html">Proyectos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto Directo</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">ventas@ventanaleshn.com<br>+504 9999-9999</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Design Solutions By Ventanales.</div>
+        <div>Desarrollado por <b>grovi studio</b></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function sendFormWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value;
+      const phone = document.getElementById('contactPhone').value;
+      const email = document.getElementById('contactEmail').value;
+      const city = document.getElementById('contactCity').value;
+      const category = document.getElementById('contactCategory').value;
+      const stage = document.getElementById('contactStage').value;
+      const notes = document.getElementById('contactNotes').value;
+
+      const message = `Hola Design Solutions By Ventanales! 👋%0A` +
+                      `Deseo solicitar una cotización formal:%0A` +
+                      `• *Nombre:* ${name}%0A` +
+                      `• *Teléfono:* ${phone}%0A` +
+                      `• *Email:* ${email}%0A` +
+                      `• *Ubicación:* ${city}%0A` +
+                      `• *Categoría:* ${category}%0A` +
+                      `• *Etapa:* ${stage}%0A` +
+                      `• *Notas:* ${notes}`;
+
+      window.open(`https://wa.me/50499999999?text=${message}`, '_blank');
+    }
+  </script>
+</body>
+</html>

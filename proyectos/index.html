@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Proyectos & Obras Ejecutadas | Design Solutions By Ventanales Honduras</title>
+  <meta name="description" content="Explora nuestro portafolio de proyectos de arquitectura en vidrio, ventanales de PVC y fachadas comerciales en Tegucigalpa, San Pedro Sula y Roatán.">
+  
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #383b3d; --primary-dark: #2a2a2a; --dark-bg: #212529; --bg-light: #f8fafc;
+      --surface: #ffffff; --text-dark: #2a2a2a; --text-muted: #777777; --border-color: #e2e8f0;
+      --border-radius: 4px; --border-radius-lg: 8px; --font-display: 'Overpass', sans-serif; --font-body: 'Poppins', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 85px; }
+    .logo-brand img { height: 48px; width: auto; object-fit: contain; }
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.92rem; text-transform: uppercase; }
+    nav a.active { color: var(--primary); font-weight: 700; }
+    .btn-header { background: var(--primary); color: #ffffff; padding: 12px 24px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.88rem; text-transform: uppercase; }
+
+    .page-hero { background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%); color: #ffffff; padding: 60px 0 80px; text-align: center; }
+    .page-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 800; margin-bottom: 12px; }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: underline; }
+
+    section { padding: 80px 0; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 30px; }
+    .project-card {
+      position: relative; border-radius: var(--border-radius-lg); overflow: hidden; height: 380px;
+      background: var(--dark-bg); text-decoration: none; color: #ffffff; display: block;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12); transition: transform 0.3s;
+    }
+    .project-card:hover { transform: translateY(-6px); }
+    .project-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(33, 37, 41, 0.95) 0%, rgba(33, 37, 41, 0.25) 70%);
+      padding: 28px; display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .project-tag { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+    .project-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+    .project-desc { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 16px; }
+    .btn-view-project { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #ffffff; display: inline-flex; align-items: center; gap: 8px; }
+
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; margin-top: 60px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: 0.88rem; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-brand">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../categorias/index.html">Categorías</a></li>
+          <li><a href="index.html" class="active">Proyectos</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../cotizar.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="../cotizar.html" class="btn-header">
+        <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Inicio</a> / Portafolio de Proyectos</div>
+      <h1 class="page-title">Proyectos con Nombre Propio</h1>
+      <p style="max-width:650px; margin:0 auto; font-size:1.05rem; color:rgba(255,255,255,0.85);">
+        Conoce los casos de éxito residenciales y corporativos donde hemos instalado ventanales, fachadas de vidrio y cortinas motorizadas en Honduras.
+      </p>
+    </div>
+  </div>
+
+  <!-- Projects Listing -->
+  <section>
+    <div class="container">
+      <div class="projects-grid">
+
+        <!-- Proyecto 1 -->
+        <a href="residencia-villa-solana-hatillo.html" class="project-card">
+          <div class="project-overlay">
+            <div class="project-tag">Residencial de Lujo · Tegucigalpa</div>
+            <h2 class="project-title">Residencia Villa Solana (El Hatillo)</h2>
+            <p class="project-desc">Sistema integral de ventanales termoacústicos en PVC Kömmerling de doble cristal e insonorización total.</p>
+            <span class="btn-view-project">Ver Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Proyecto 2 -->
+        <a href="torre-corporativa-alianza-sps.html" class="project-card">
+          <div class="project-overlay">
+            <div class="project-tag">Comercial & Corporativo · San Pedro Sula</div>
+            <h2 class="project-title">Torre Corporativa Alianza</h2>
+            <p class="project-desc">Muro cortina estructural de 2,400 m² en vidrio solar reflectivo con aislamiento térmico para alta temperatura.</p>
+            <span class="btn-view-project">Ver Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Proyecto 3 -->
+        <a href="villas-oceanfront-resort-roatan.html" class="project-card">
+          <div class="project-overlay">
+            <div class="project-tag">Resort & Hotelería · Roatán</div>
+            <h2 class="project-title">Villas Oceanfront Resort (Bay Islands)</h2>
+            <p class="project-desc">Ventanería de aluminio marino anodizado resistente a la brisa salina y vientos tropicales de playa.</p>
+            <span class="btn-view-project">Ver Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-brand" style="margin-bottom:16px;">
+            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#fff; padding:4px 8px; border-radius:4px;">
+          </div>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Honduras.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../categorias/index.html">Categorías</a></li>
+            <li><a href="index.html">Proyectos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto Directo</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">ventas@ventanaleshn.com<br>+504 9999-9999</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Design Solutions By Ventanales.</div>
+        <div>Desarrollado por <b>grovi studio</b></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
