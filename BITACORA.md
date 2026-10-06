@@ -39,6 +39,7 @@ En esta sesión se realizó un **análisis integral 360°** de la presencia digi
 
 ## 📄 4. Entregables Generados en el Proyecto
 
+* **[index.html](file:///Users/cesarandresjimenezarci/Documents/Clientes/ventanaleshn/index.html):** Prototipo de sitio web moderno y optimizado para Ventanales HN, organizado por categorías de producto (Ventanas PVC/Aluminio, Cortinas Motorizadas, Fachadas, Pérgolas, Templados), portafolio de proyectos en Honduras y cotizador interactivo directo a WhatsApp.
 * **[SITE_INFO.md](file:///Users/cesarandresjimenezarci/Documents/Clientes/ventanaleshn/SITE_INFO.md):** Ficha técnica completa del sitio web y arquitectura.
 * **[PLAN_ESTRATEGICO_PROPUESTA_30_60_90.md](file:///Users/cesarandresjimenezarci/Documents/Clientes/ventanaleshn/PLAN_ESTRATEGICO_PROPUESTA_30_60_90.md):** Plan comercial y hoja de ruta estratégica a 30-60-90 días para el cliente.
 * **[Diagnostico-VentanalesHN-Presentacion.html](file:///Users/cesarandresjimenezarci/Documents/Clientes/ventanaleshn/Propuesta/Diagnostico-VentanalesHN-Presentacion.html):** Presentación comercial interactiva en HTML (19 slides) basada en el sistema de diseño visual de Grovi Studio, con simuladores interactivos de SOM y Pauta.
