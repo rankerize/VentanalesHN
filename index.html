@@ -54,7 +54,7 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 85px; }
-    .logo-brand { display: flex; align-items: center; text-decoration: none; }
+    .logo-brand display: flex; align-items: center; text-decoration: none; }
     .logo-brand img { height: 48px; width: auto; object-fit: contain; }
 
     nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
@@ -74,13 +74,13 @@
     /* Hero Section */
     .hero {
       position: relative;
-      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%);
-      color: #ffffff; padding: 90px 0 110px;
+      background: linear-gradient(135deg, rgba(33, 37, 41, 0.92) 0%, rgba(42, 42, 42, 0.88) 100%), url('assets/fotos/2026/09/0SABUD_IMG_0192.jpg') center/cover no-repeat;
+      color: #ffffff; padding: 100px 0 120px;
     }
     .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3);
       padding: 6px 16px; border-radius: 100px; font-size: 0.82rem; font-weight: 600;
       letter-spacing: 0.08em; text-transform: uppercase; color: #ffffff; margin-bottom: 20px;
     }
@@ -96,18 +96,18 @@
     }
     .btn-hero-primary:hover { background: #000000; }
     .btn-hero-secondary {
-      background: transparent; border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4);
       color: #ffffff; padding: 16px 32px; border-radius: var(--border-radius);
       font-weight: 600; font-size: 0.95rem; text-decoration: none; text-transform: uppercase; transition: background 0.2s;
     }
-    .btn-hero-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+    .btn-hero-secondary:hover { background: rgba(255, 255, 255, 0.25); }
 
     .hero-card-main {
-      background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--border-radius-lg); padding: 32px;
+      background: rgba(33, 37, 41, 0.75); backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--border-radius-lg); padding: 32px;
     }
     .hero-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
-    .hero-stat-item { background: rgba(255, 255, 255, 0.05); padding: 14px 18px; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .hero-stat-item { background: rgba(255, 255, 255, 0.08); padding: 14px 18px; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.15); }
     .hero-stat-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: #ffffff; }
     .hero-stat-lbl { font-size: 0.78rem; color: rgba(255, 255, 255, 0.75); text-transform: uppercase; letter-spacing: 0.05em; }
 
@@ -125,30 +125,37 @@
       overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); transition: transform 0.3s, box-shadow 0.3s;
       display: flex; flex-direction: column; text-decoration: none; color: inherit;
     }
-    .category-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); }
+    .category-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); }
     .category-img {
-      height: 200px; background: var(--dark-bg);
-      position: relative; display: flex; align-items: center; justify-content: center; color: #ffffff;
+      height: 220px; background-size: cover; background-position: center;
+      position: relative; display: flex; align-items: flex-end; padding: 16px;
     }
-    .category-img i { font-size: 3.8rem; color: rgba(255, 255, 255, 0.4); }
+    .category-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(33, 37, 41, 0.8) 0%, transparent 60%);
+    }
+    .category-img-title {
+      position: relative; z-index: 1; color: #ffffff; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+    }
     .category-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
-    .category-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px; }
     .category-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px; flex: 1; }
     .category-link-btn { font-size: 0.88rem; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 6px; text-transform: uppercase; }
 
     /* Projects Showcase */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 28px; }
     .project-card {
-      position: relative; border-radius: var(--border-radius-lg); overflow: hidden; height: 340px;
-      background: var(--dark-bg); box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      position: relative; border-radius: var(--border-radius-lg); overflow: hidden; height: 360px;
+      background-size: cover; background-position: center; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
       text-decoration: none; color: #ffffff; display: block;
     }
     .project-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(33, 37, 41, 0.95) 0%, rgba(33, 37, 41, 0.3) 70%);
       padding: 24px; display: flex; flex-direction: column; justify-content: flex-end;
+      transition: background 0.3s;
     }
-    .project-city { font-size: 0.78rem; font-weight: 700; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+    .project-card:hover .project-overlay { background: linear-gradient(to top, rgba(33, 37, 41, 0.98) 0%, rgba(33, 37, 41, 0.45) 100%); }
+    .project-city { font-size: 0.78rem; font-weight: 700; color: rgba(255, 255, 255, 0.75); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
     .project-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
     .project-desc { font-size: 0.85rem; color: rgba(255, 255, 255, 0.85); }
 
@@ -190,7 +197,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section con foto real de fondo -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
@@ -246,7 +253,7 @@
     </div>
   </section>
 
-  <!-- Categories Section -->
+  <!-- Categories Section con fotos reales del catálogo -->
   <section id="categorias">
     <div class="container">
       <div class="section-header">
@@ -259,11 +266,10 @@
         
         <!-- Cat 1 -->
         <a href="categorias/index.html" class="category-card">
-          <div class="category-img">
-            <i class="fa-solid fa-window-maximize"></i>
+          <div class="category-img" style="background-image: url('assets/fotos/2026/09/0SABUD_IMG_0192.jpg');">
+            <span class="category-img-title">Ventanas de PVC & Aluminio</span>
           </div>
           <div class="category-body">
-            <h3 class="category-title">Ventanas de PVC & Aluminio Termoacústico</h3>
             <p class="category-desc">Sistemas alemanes Kömmerling y perfilería Eurovent de alta resistencia y aislamiento de ruido.</p>
             <span class="category-link-btn">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
           </div>
@@ -271,11 +277,10 @@
 
         <!-- Cat 2 -->
         <a href="categorias/index.html" class="category-card">
-          <div class="category-img">
-            <i class="fa-solid fa-building"></i>
+          <div class="category-img" style="background-image: url('assets/fotos/2026/09/0SABUD_IMG_0207-EDIT.jpg');">
+            <span class="category-img-title">Fachadas de Vidrio & Templados</span>
           </div>
           <div class="category-body">
-            <h3 class="category-title">Fachadas de Vidrio & Templados</h3>
             <p class="category-desc">Muros cortina, fachadas flotantes y divisiones de baño en vidrio templado de seguridad.</p>
             <span class="category-link-btn">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
           </div>
@@ -283,11 +288,10 @@
 
         <!-- Cat 3 -->
         <a href="categorias/index.html" class="category-card">
-          <div class="category-img">
-            <i class="fa-solid fa-sliders"></i>
+          <div class="category-img" style="background-image: url('assets/fotos/2026/09/PVOSY2_IMG_7400.jpg');">
+            <span class="category-img-title">Cortinas, Persianas & Motorización</span>
           </div>
           <div class="category-body">
-            <h3 class="category-title">Cortinas, Persianas & Motorización</h3>
             <p class="category-desc">Sistemas Rollers, Blackout y Sheer Elegance integrados con motores Somfy y control inteligente.</p>
             <span class="category-link-btn">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
           </div>
@@ -295,11 +299,10 @@
 
         <!-- Cat 4 -->
         <a href="categorias/index.html" class="category-card">
-          <div class="category-img">
-            <i class="fa-solid fa-umbrella"></i>
+          <div class="category-img" style="background-image: url('assets/fotos/2026/09/17YKNS_060a1e5d-1fe4-4613-a28b-cafd040a9873.jpg');">
+            <span class="category-img-title">Pérgolas Bioclimáticas & Exteriores</span>
           </div>
           <div class="category-body">
-            <h3 class="category-title">Pérgolas Bioclimáticas & Exteriores</h3>
             <p class="category-desc">Pérgolas de aluminio de alta resistencia con lamas orientables y techos para terrazas.</p>
             <span class="category-link-btn">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
           </div>
@@ -307,11 +310,10 @@
 
         <!-- Cat 5 -->
         <a href="categorias/index.html" class="category-card">
-          <div class="category-img">
-            <i class="fa-solid fa-hospital"></i>
+          <div class="category-img" style="background-image: url('assets/fotos/2026/09/0SABUD_IMG_0219.jpg');">
+            <span class="category-img-title">Soluciones Hospitalarias & Corporativas</span>
           </div>
           <div class="category-body">
-            <h3 class="category-title">Soluciones Hospitalarias & Corporativas</h3>
             <p class="category-desc">Cortinas antibacterianas sanitarias, rieles médicos y mobiliario arquitectónico especial.</p>
             <span class="category-link-btn">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
           </div>
@@ -321,7 +323,7 @@
     </div>
   </section>
 
-  <!-- Projects Showcase Section -->
+  <!-- Projects Showcase Section con fotos reales -->
   <section id="proyectos" style="background:var(--surface);">
     <div class="container">
       <div class="section-header">
@@ -333,7 +335,7 @@
       <div class="projects-grid">
         
         <!-- Proyecto 1 -->
-        <a href="proyectos/index.html" class="project-card">
+        <a href="proyectos/residencia-villa-solana-hatillo.html" class="project-card" style="background-image: url('assets/fotos/2026/09/PVOSY2_IMG_3495.jpg');">
           <div class="project-overlay">
             <div class="project-city">Tegucigalpa · El Hatillo</div>
             <h3 class="project-name">Residencia Villa Solana</h3>
@@ -342,7 +344,7 @@
         </a>
 
         <!-- Proyecto 2 -->
-        <a href="proyectos/index.html" class="project-card">
+        <a href="proyectos/torre-corporativa-alianza-sps.html" class="project-card" style="background-image: url('assets/fotos/2026/09/BADB11_IMG_5603.jpg');">
           <div class="project-overlay">
             <div class="project-city">San Pedro Sula · Zona Corporativa</div>
             <h3 class="project-name">Torre Corporativa Alianza</h3>
@@ -351,7 +353,7 @@
         </a>
 
         <!-- Proyecto 3 -->
-        <a href="proyectos/index.html" class="project-card">
+        <a href="proyectos/villas-oceanfront-resort-roatan.html" class="project-card" style="background-image: url('assets/fotos/2026/09/FK5NV7_IMG_9474-EDIT.jpg');">
           <div class="project-overlay">
             <div class="project-city">Roatán · Bay Islands</div>
             <h3 class="project-name">Villas Oceanfront Resort</h3>
