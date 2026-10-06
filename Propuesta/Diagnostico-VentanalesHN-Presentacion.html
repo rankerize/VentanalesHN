@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico SEO & Plan de Crecimiento Digital · Design Solutions By Ventanales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Montserrat:wght@800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Palette definition */
+      --navy: #030f2b;         /* Solid Dark Navy for covers and section breaks */
+      --navy-card: #07173e;
+      --cream: #f4f3ef;        /* Solid Cream for all content slides */
+      --cream-card: #ffffff;
+      
+      --principal: #5b82ff;    /* Azul: Main accent */
+      --principal-dark: #2151f2;
+      --creativo: #c9b8ff;     /* Lavanda */
+      --toques: #cae664;       /* Lima: strictly for small borders/dots/accents */
+      
+      --border-dark: rgba(244, 243, 239, 0.16);
+      --border-light: rgba(3, 15, 43, 0.12);
+      
+      --font-display: 'Baloo 2', cursive, sans-serif;
+      --font-body: 'Poppins', sans-serif;
+      --font-num: 'Montserrat', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body {
+      background: var(--navy);
+      font-family: var(--font-body);
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.12;
+      margin: 0;
+      text-wrap: balance;
+    }
+    p { margin: 0; }
+
+    ::selection {
+      background: rgba(91, 130, 255, 0.35);
+      color: #ffffff;
+    }
+
+    /* Top progress bar */
+    .progress-bar-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--principal), var(--toques));
+      z-index: 9999;
+      transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    /* Deck and slides container */
+    .deck {
+      position: relative;
+      z-index: 1;
+      width: 100vw;
+      height: 100dvh;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(20px, 4vw, 65px) clamp(24px, 6vw, 95px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(40px) scale(0.99);
+      transition: opacity 0.45s ease, transform 0.5s cubic-bezier(0.22, 0.68, 0.32, 1);
+    }
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0) scale(1);
+    }
+    .slide.prevslide {
+      transform: translateX(-40px) scale(0.99);
+    }
+    .slide-inner {
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Solid Theme Variants */
+    .slide.dark-theme {
+      background: var(--navy);
+      color: var(--cream);
+    }
+    .slide.dark-theme h1, .slide.dark-theme h2, .slide.dark-theme h3 {
+      color: var(--cream);
+    }
+    .slide.dark-theme p, .slide.dark-theme li {
+      color: rgba(244, 243, 239, 0.82);
+    }
+
+    .slide.light-theme {
+      background: var(--cream);
+      color: var(--navy);
+    }
+    .slide.light-theme h1, .slide.light-theme h2, .slide.light-theme h3 {
+      color: var(--navy);
+    }
+    .slide.light-theme p, .slide.light-theme li {
+      color: rgba(3, 15, 43, 0.82);
+    }
+
+    /* Staggered reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .slide.active .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .slide.active .reveal:nth-child(1) { transition-delay: 0.05s; }
+    .slide.active .reveal:nth-child(2) { transition-delay: 0.12s; }
+    .slide.active .reveal:nth-child(3) { transition-delay: 0.19s; }
+    .slide.active .reveal:nth-child(4) { transition-delay: 0.26s; }
+    .slide.active .reveal:nth-child(5) { transition-delay: 0.33s; }
+
+    /* Brand Vector Badges */
+    .grovi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+    }
+    .grovi-badge svg {
+      width: 22px;
+      height: 22px;
+      flex: none;
+    }
+
+    /* Eyebrow & Badges */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .slide.dark-theme .eyebrow { color: rgba(244, 243, 239, 0.75); }
+    .slide.light-theme .eyebrow { color: var(--principal-dark); }
+
+    .kicker-num {
+      font-family: var(--font-num);
+      font-weight: 900;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+    }
+    .slide.dark-theme .kicker-num { color: var(--principal); }
+    .slide.light-theme .kicker-num { color: var(--principal-dark); }
+
+    .section-title {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      max-width: 20ch;
+      line-height: 1.1;
+    }
+
+    /* Clean Uniform Cards */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    
+    .panel {
+      border-radius: 18px;
+      padding: 20px 22px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .slide.dark-theme .panel {
+      background: var(--navy-card);
+      border: 1px solid var(--border-dark);
+    }
+    .slide.light-theme .panel {
+      background: var(--cream-card);
+      border: 1px solid var(--border-light);
+      box-shadow: 0 4px 18px rgba(3, 15, 43, 0.03);
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .slide.dark-theme .panel-title { color: #ffffff; }
+    .slide.light-theme .panel-title { color: var(--navy); }
+    .panel-title svg { width: 18px; height: 18px; flex: none; color: var(--principal-dark); }
+    
+    .panel p, .panel li {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Priority Badge */
+    .priority-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(226, 75, 75, 0.12);
+      color: #d93838;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-left: auto;
+    }
+
+    /* Numbers & Highlights */
+    .stat-hero {
+      font-family: var(--font-num);
+      font-weight: 900;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .slide.dark-theme .stat-hero { color: #ffffff; }
+    .slide.light-theme .stat-hero { color: var(--navy); }
+
+    .num-highlight {
+      font-family: var(--font-num);
+      font-weight: 900;
+    }
+    .slide.dark-theme .num-highlight { color: #ffffff; }
+    .slide.light-theme .num-highlight { color: var(--principal-dark); }
+
+    /* Foco Layout */
+    .foco-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .foco-title {
+      font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+    }
+    .foco-sub {
+      font-size: 0.96rem;
+      margin: 6px 0 18px;
+      max-width: 68ch;
+    }
+    .slide.dark-theme .foco-sub { color: rgba(244, 243, 239, 0.8); }
+    .slide.light-theme .foco-sub { color: rgba(3, 15, 43, 0.78); }
+
+    /* Animated Bars */
+    .bar-track {
+      height: 14px;
+      border-radius: 8px;
+      background: rgba(3, 15, 43, 0.08);
+      overflow: hidden;
+      margin: 6px 0 10px;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--principal), var(--principal-dark));
+      transition: width 1.2s cubic-bezier(0.22, 0.7, 0.3, 1);
+    }
+
+    /* Cover Slide Specifics */
+    .cover-top-logo {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cover-top-logo .grovi-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+    .cover-top-logo .grovi-sub {
+      font-size: 0.78rem;
+      color: var(--toques);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    .cover-title {
+      font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+      max-width: 18ch;
+      margin-bottom: 24px;
+    }
+    .cover-bottom-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #ffffff;
+      padding: 14px 28px;
+      border-radius: 16px;
+      margin-bottom: 28px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3);
+    }
+    .cover-bottom-brand .client-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .cover-bottom-brand .client-brand-sub {
+      font-size: 0.75rem;
+      color: var(--principal-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+    .cover-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .cover-meta .by {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: rgba(244, 243, 239, 0.8);
+    }
+    .cover-meta .sep { width: 4px; height: 4px; border-radius: 50%; background: rgba(244, 243, 239, 0.4); }
+    .cover-meta .date { font-size: 0.88rem; color: rgba(244, 243, 239, 0.5); }
+
+    /* Agenda Slide */
+    .agenda-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .agenda-item {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 18px 24px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 2px 10px rgba(3, 15, 43, 0.03);
+    }
+    .agenda-num {
+      font-family: var(--font-num);
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--navy);
+      background: var(--cream);
+      padding: 2px 12px;
+      border-radius: 8px;
+      flex: none;
+    }
+    .agenda-txt b {
+      font-size: 1.1rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      display: block;
+      color: var(--navy);
+    }
+    .agenda-txt span {
+      font-size: 0.86rem;
+      color: rgba(3, 15, 43, 0.65);
+    }
+
+    /* Differentiator Banner */
+    .differentiator-banner {
+      background: var(--navy);
+      color: #ffffff !important;
+      border-radius: 18px;
+      padding: 22px 26px;
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .differentiator-banner svg {
+      width: 32px;
+      height: 32px;
+      color: var(--toques);
+      flex: none;
+    }
+    .differentiator-banner b {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: #ffffff !important;
+    }
+    .differentiator-banner p {
+      font-size: 0.94rem;
+      color: #ffffff !important;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* Interactive Projection Tool */
+    .slider-box {
+      background: var(--navy);
+      color: var(--cream);
+      border-radius: 18px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+    .slider-control {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 12px;
+    }
+    .slider-control input[type=range] {
+      flex: 1;
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(244, 243, 239, 0.2);
+      outline: none;
+      cursor: pointer;
+      accent-color: var(--principal);
+    }
+    .slider-val-badge {
+      font-family: var(--font-num);
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--toques);
+      background: rgba(202, 230, 100, 0.12);
+      border: 1px solid var(--toques);
+      padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    /* Corner Watermark */
+    .corner-mark {
+      position: fixed;
+      bottom: 20px;
+      left: 28px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+    body.slide-dark-active .corner-mark { color: rgba(244, 243, 239, 0.5); }
+    body.slide-light-active .corner-mark { color: rgba(3, 15, 43, 0.45); }
+    .corner-mark svg { width: 18px; height: 18px; }
+
+    /* Presentation Navigation Controls */
+    .deck-nav {
+      position: fixed;
+      bottom: 18px;
+      right: 28px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(3, 15, 43, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(244, 243, 239, 0.15);
+      padding: 6px 14px;
+      border-radius: 100px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+    .nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--cream);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-btn:hover {
+      background: rgba(244, 243, 239, 0.15);
+      transform: scale(1.05);
+    }
+    .nav-btn svg { width: 18px; height: 18px; stroke-width: 2.5; }
+    .dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dots button {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(244, 243, 239, 0.3);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: width 0.25s, background 0.25s;
+    }
+    .dots button.active {
+      width: 20px;
+      border-radius: 10px;
+      background: var(--principal);
+    }
+    .counter {
+      font-family: var(--font-num);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: rgba(244, 243, 239, 0.85);
+      margin: 0 4px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Comparison Table Styling */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.86rem;
+    }
+    .compare-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--navy);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+    }
+    .compare-table th:first-child { border-top-left-radius: 10px; }
+    .compare-table th:last-child { border-top-right-radius: 10px; }
+    .compare-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-light);
+      background: #ffffff;
+      color: var(--navy);
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .status-bad { background: rgba(226,75,75,0.14); color: #d93838; }
+    .status-good { background: rgba(202,230,100,0.22); color: #436e00; }
+  </style>
+</head>
+
+<body class="slide-dark-active">
+  <!-- Top Progress Line -->
+  <div class="progress-bar-top" id="progressLine"></div>
+
+  <div class="deck">
+
+    <!-- SLIDE 1: PORTADA (NAVY SOLIDO) -->
+    <section class="slide dark-theme">
+      <div class="slide-inner">
+        <div class="cover-top-logo reveal">
+          <svg viewBox="0 0 32 32" fill="none" class="gicon">
+            <rect width="32" height="32" rx="8" fill="#5B82FF"/>
+            <path d="M9 16L14 21L23 11" stroke="#F4F3EF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <div class="grovi-title">grovi studio</div>
+            <div class="grovi-sub">C² Growth & Performance Studio</div>
+          </div>
+        </div>
+        
+        <h1 class="cover-title reveal">Diagnóstico SEO & Plan de Crecimiento Digital</h1>
+        
+        <div class="cover-bottom-brand reveal">
+          <div>
+            <div class="client-brand-title">Design Solutions By Ventanales</div>
+            <div class="client-brand-sub">Honduras (ventanaleshn.com)</div>
+          </div>
+        </div>
+
+        <div class="cover-meta reveal">
+          <span class="by">
+            Diseñado por grovi studio
+          </span>
+          <span class="sep"></span>
+          <span class="date">Octubre 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: AGENDA (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          Agenda Ejecutiva
+        </span>
+        <h2 class="section-title reveal" style="font-size:clamp(1.8rem,3.6vw,2.6rem); margin-bottom:24px;">Transformación Digital y Captación de Mercado</h2>
+        <div class="agenda-list">
+          <div class="agenda-item reveal">
+            <span class="agenda-num">01</span>
+            <div class="agenda-txt">
+              <b>Diagnóstico 360°</b>
+              <span>Estado actual de ventanaleshn.com, auditoría SEO on-page, perfil de backlinks y demanda de mercado en Honduras</span>
+            </div>
+          </div>
+          <div class="agenda-item reveal">
+            <span class="agenda-num">02</span>
+            <div class="agenda-txt">
+              <b>Plan Estratégico de Crecimiento</b>
+              <span>Arquitectura de la solución, pilares de conversión y proyección interactiva de mercado</span>
+            </div>
+          </div>
+          <div class="agenda-item reveal" style="border-left:4px solid var(--principal-dark);">
+            <span class="agenda-num" style="background:var(--navy); color:var(--creativo);">03</span>
+            <div class="agenda-txt">
+              <b>Way of Work · Cronograma 30 - 60 - 90 Días</b>
+              <span>Roadmap de ejecución detallado, modelo operativo y gobernanza</span>
+            </div>
+          </div>
+          <div class="agenda-item reveal">
+            <span class="agenda-num">04</span>
+            <div class="agenda-txt">
+              <b>Plan Financiero & Simulador de ROI</b>
+              <span>Desglose de inversión por bloques comerciales y calculadora interactiva de leads</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: SECCION DIAGNOSTICO (NAVY SOLIDO) -->
+    <section class="slide dark-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          01 · Diagnóstico 360°
+        </span>
+        <h1 class="section-title reveal">Para <b style="color:var(--principal);">liderar Honduras</b>, debemos entender qué está <b style="color:var(--principal);">ocurriendo hoy</b>.</h1>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: FOCO 01 MERCADO HONDURAS (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <div class="foco-head reveal"><span class="kicker-num">FOCO 01</span></div>
+        <h2 class="foco-title reveal">Oportunidad de Mercado: Búsquedas Digitales en Honduras</h2>
+        <p class="foco-sub reveal">
+          <b>¿Qué representa esta demanda?</b> Miles de arquitectos, constructores y propietarios en Tegucigalpa y San Pedro Sula buscan diariamente soluciones de ventanería, PVC y vidriería comercial.
+        </p>
+
+        <div class="grid-2 reveal">
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              Búsquedas de Alto Valor / Mes (Honduras)
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.86rem; font-weight:600;">
+                  <span>Ventanas de Aluminio (Tegucigalpa / SPS)</span>
+                  <span class="num-highlight">1.000 – 1.800 / mes</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-target="85"></div></div>
+              </div>
+              
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.86rem; font-weight:600;">
+                  <span>Ventanas de PVC & Sistemas Térmicos</span>
+                  <span class="num-highlight">450 – 850 / mes</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-target="55"></div></div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.86rem; font-weight:600;">
+                  <span>Cortinas & Persianas Motorizadas</span>
+                  <span class="num-highlight">350 – 600 / mes</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-target="40"></div></div>
+              </div>
+
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:0.86rem; font-weight:600;">
+                  <span>Fachadas Comerciales & Templados</span>
+                  <span class="num-highlight">300 – 500 / mes</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" data-target="35"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream);">
+            <div class="panel-title" style="color:var(--toques);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              Captación Actual vs Oportunidad
+            </div>
+            <div style="margin-top:10px;">
+              <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:12px;">
+                <span class="stat-hero" style="font-size:2.8rem; color:var(--toques);">~94</span>
+                <span style="font-size:0.88rem; color:rgba(244,243,239,0.8);">visitas orgánicas mensuales actuales (100% búsquedas de marca "ventanales")</span>
+              </div>
+              <p style="font-size:0.85rem; line-height:1.5; color:rgba(244,243,239,0.85);">
+                Actualmente, <b>ventanaleshn.com capta 0%</b> de las búsquedas sin marca de alta intención comercial. Palabras clave transaccionales masivas como <i>"ventanas"</i> (1,000 búsquedas/mes) quedan invisibles en la posición #40.
+              </p>
+              <div style="margin-top:14px; padding:12px; border-radius:10px; background:rgba(244,243,239,0.08); border:1px solid rgba(244,243,239,0.15);">
+                <span style="font-size:0.75rem; font-weight:700; color:var(--principal); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:4px;">🎯 Potencial Sin Explotar</span>
+                <span style="font-size:0.84rem;">Capturar solo el 15% de la demanda transaccional generaría <b>+300 visitas/mes calificadas</b> y decenas de cotizaciones directas.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: FOCO 02 SITIO WEB & AUDITORIA ON-PAGE (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <div class="foco-head reveal"><span class="kicker-num">FOCO 02</span></div>
+        <h2 class="foco-title reveal">Auditoría Técnica On-Page: Vulnerabilidades Críticas</h2>
+        <p class="foco-sub reveal">
+          El sitio web utiliza PHP 8.4.26 con plantilla Porto HTML, pero presenta fallas estructurales graves que impiden la indexación correcta en buscadores:
+        </p>
+
+        <div class="grid-4 reveal">
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              Duplicidad H1 & Títulos
+              <span class="priority-badge">Alta</span>
+            </div>
+            <div style="font-size:1.8rem; font-family:var(--font-num); font-weight:900; color:#d93838; margin:6px 0;">97%</div>
+            <p>144 de 149 páginas repiten exactamente el título genérico <i>"Bienvenidos | Design Solutions By Ventanales"</i>.</p>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+              Metas Description
+              <span class="priority-badge">Alta</span>
+            </div>
+            <div style="font-size:1.8rem; font-family:var(--font-num); font-weight:900; color:#d93838; margin:6px 0;">87%</div>
+            <p>129 URLs carecen de etiqueta meta description, disminuyendo drásticamente la tasa de clics (CTR) en Google.</p>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+              Robots & Sitemap
+              <span class="priority-badge">Crítica</span>
+            </div>
+            <div style="font-size:1.3rem; font-family:var(--font-num); font-weight:900; color:#d93838; margin:10px 0;">Sitemap 403</div>
+            <p>No existe <code>/robots.txt</code> plano (devuelve HTML) y el sitemap está bloqueado. Google no rastrea el catálogo.</p>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101"/></svg>
+              Canónicals
+              <span class="priority-badge">Media</span>
+            </div>
+            <div style="font-size:1.8rem; font-family:var(--font-num); font-weight:900; color:#d93838; margin:6px 0;">0%</div>
+            <p>97% de las URLs sin etiqueta canonical, generando riesgo de canibalización y duplicidad de URLs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: FOCO 03 OFF-PAGE & AGENT READINESS (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <div class="foco-head reveal"><span class="kicker-num">FOCO 03</span></div>
+        <h2 class="foco-title reveal">Riesgo Off-Page & Preparación para Agentes IA</h2>
+        <p class="foco-sub reveal">
+          Evaluación de la autoridad del dominio y la capacidad del sitio para interactuar con modelos de IA (ChatGPT, Gemini, Claude):
+        </p>
+
+        <div class="grid-2 reveal">
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              Auditoría de Backlinks (Spam/PBN)
+            </div>
+            <div style="margin-top:10px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span>Enlaces Totales Rastreados:</span>
+                <b class="num-highlight">355 backlinks (281 dominios)</b>
+              </div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span>Amenaza Detectada:</span>
+                <b style="color:#d93838; font-weight:700;">88+ enlaces PBN/Spam en inglés</b>
+              </div>
+              <p style="font-size:0.84rem; color:rgba(3,15,43,0.75); margin-top:8px;">
+                Existen múltiples enlaces automatizados (ej: <i>"premium backlink services ventanaleshn.com..."</i>) que arriesgan una penalización algorítmica de <b>Google SpamBrain</b>. Se requiere un archivo <code>disavow.txt</code> de inmediato.
+              </p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Evaluación IsItAgentReady (IA Readiness)
+            </div>
+            <div style="margin-top:10px;">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+                <div style="font-family:var(--font-num); font-weight:900; font-size:2.2rem; color:#d93838;">LEVEL 0 / 5</div>
+                <span class="priority-badge" style="margin:0;">Not Ready</span>
+              </div>
+              <p style="font-size:0.84rem; color:rgba(3,15,43,0.75);">
+                El sitio no cuenta con cabeceras RFC 8288, ni endpoints estructurados para asistentes de Inteligencia Artificial. Los agentes IA no pueden extraer el catálogo de ventanas ni cotizar autónomamente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: RESUMEN DIAGNOSTICO Y TABLA COMPARATIVA (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          Resumen del Diagnóstico
+        </span>
+        <h2 class="foco-title reveal">Estado Actual vs Estándar de la Industria</h2>
+        <p class="foco-sub reveal" style="margin-bottom:14px;">
+          Comparativa técnica entre la situación actual de ventanaleshn.com y el estándar óptimo para competir en el mercado hondureño:
+        </p>
+
+        <table class="compare-table reveal">
+          <thead>
+            <tr>
+              <th>Parámetro SEO / Técnico</th>
+              <th>Situación Actual (Octubre 2026)</th>
+              <th>Estándar de Industria (Grovi Target)</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Tráfico Orgánico Mensual</b></td>
+              <td>~94 visitas/mes (100% Marca)</td>
+              <td>300 – 500+ visitas/mes (Comercial)</td>
+              <td><span class="status-badge status-bad">Deficiente</span></td>
+            </tr>
+            <tr>
+              <td><b>Títulos & H1 Personalizados</b></td>
+              <td>97% Duplicados (Bienvenidos...)</td>
+              <td>100% Unicos con Keywords por URL</td>
+              <td><span class="status-badge status-bad">Crítico</span></td>
+            </tr>
+            <tr>
+              <td><b>Infraestructura (Robots / Sitemap)</b></td>
+              <td>Sitemap 403 / Robots HTML</td>
+              <td>Sitemap XML activo & Robots plano</td>
+              <td><span class="status-badge status-bad">Bloqueado</span></td>
+            </tr>
+            <tr>
+              <td><b>Perfil de Backlinks</b></td>
+              <td>355 backlinks con 88+ enlaces PBN Spam</td>
+              <td>Perfil limpio con Disavow activo</td>
+              <td><span class="status-badge status-bad">Riesgo Alto</span></td>
+            </tr>
+            <tr>
+              <td><b>Marcado Estructurado (JSON-LD)</b></td>
+              <td>Sin Schema.org</td>
+              <td>LocalBusiness, Product & Organization</td>
+              <td><span class="status-badge status-bad">Ausente</span></td>
+            </tr>
+            <tr>
+              <td><b>IA Agent Readiness</b></td>
+              <td>Level 0 / 5 (Incompatible)</td>
+              <td>Level 3+ (Cabeceras & Negociación MD)</td>
+              <td><span class="status-badge status-bad">Obsoleto</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: SECCION PLAN ESTRATEGICO (NAVY SOLIDO) -->
+    <section class="slide dark-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          02 · Plan Estratégico de Crecimiento
+        </span>
+        <h1 class="section-title reveal">Transformaremos <b style="color:var(--principal);">ventanaleshn.com</b> en un <b style="color:var(--principal);">canal activo de cotizaciones</b>.</h1>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: ARQUITECTURA DE LA SOLUCION (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          Estrategia 360°
+        </span>
+        <h2 class="foco-title reveal">Los 4 Pilares de la Estrategia de Crecimiento</h2>
+        <p class="foco-sub reveal" style="margin-bottom:16px;">
+          Un plan integral diseñado para corregir las fallas técnicas y posicionar a Design Solutions By Ventanales como la opción #1 en Honduras:
+        </p>
+
+        <div class="grid-4 reveal">
+          <div class="panel" style="border-top:4px solid var(--principal-dark);">
+            <div class="panel-title">01 · Fundamento Técnico</div>
+            <p>Implementación de <code>robots.txt</code> plano, desbloqueo de <code>sitemap.xml</code> y limpieza de backlinks mediante Disavow.</p>
+          </div>
+
+          <div class="panel" style="border-top:4px solid var(--principal-dark);">
+            <div class="panel-title">02 · Reconstrucción On-Page</div>
+            <p>Optimización de títulos, metas y H1s para 149 URLs + creación de 3 Landing Pages comerciales optimizadas para Honduras.</p>
+          </div>
+
+          <div class="panel" style="border-top:4px solid var(--principal-dark);">
+            <div class="panel-title">03 · Conversión (CRO)</div>
+            <p>Integración de botones flotantes de WhatsApp, formularios de cotización rápida y CTAs de alta conversión en escritorio y móvil.</p>
+          </div>
+
+          <div class="panel" style="border-top:4px solid var(--principal-dark);">
+            <div class="panel-title">04 · AI Agent Readiness</div>
+            <p>Habilitación de etiquetas RFC 8288 y compatibilidad con agentes de IA para búsquedas conversacionales avanzadas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: SIMULADOR DE CAPTURA DE MERCADO (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          Proyección Interactiva
+        </span>
+        <h2 class="foco-title reveal">Simulador de Captura de Mercado (SOM % Honduras)</h2>
+        <p class="foco-sub reveal">
+          Ajusta la cuota de mercado digital objetivo para visualizar el crecimiento estimado en visitas y cotizaciones calificadas:
+        </p>
+
+        <div class="slider-box reveal">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; font-size:0.92rem; color:var(--cream);">CUOTA DE MERCADO DE BÚSQUEDAS OBJETIVO (SOM %):</span>
+            <span class="slider-val-badge" id="somBadge">15%</span>
+          </div>
+          <div class="slider-control">
+            <input type="range" id="somSlider" min="5" max="40" step="5" value="15">
+          </div>
+        </div>
+
+        <div class="grid-3 reveal">
+          <div class="panel" style="background:var(--navy); color:var(--cream); text-align:center;">
+            <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:rgba(244,243,239,0.7);">Visitas Orgánicas / Mes</span>
+            <div class="stat-hero" id="simVisitasVal" style="font-size:2.4rem; color:var(--principal); margin:8px 0;">315 – 560</div>
+            <span style="font-size:0.8rem; color:rgba(244,243,239,0.7);">Visitas mensuales estimadas</span>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream); text-align:center;">
+            <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:rgba(244,243,239,0.7);">Leads & Cotizaciones / Mes</span>
+            <div class="stat-hero" id="simLeadsVal" style="font-size:2.4rem; color:var(--toques); margin:8px 0;">25 – 45</div>
+            <span style="font-size:0.8rem; color:rgba(244,243,239,0.7);">Leads B2B / B2C calificados</span>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream); text-align:center;">
+            <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:rgba(244,243,239,0.7);">Crecimiento vs Estado Actual</span>
+            <div class="stat-hero" id="simGrowthVal" style="font-size:2.4rem; color:#ffffff; margin:8px 0;">+350%</div>
+            <span style="font-size:0.8rem; color:rgba(244,243,239,0.7);">Incremento en alcance digital</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: SECCION CRONOGRAMA (NAVY SOLIDO) -->
+    <section class="slide dark-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          03 · Way of Work & Cronograma
+        </span>
+        <h1 class="section-title reveal">Plan de Trabajo a <b style="color:var(--principal);">30 - 60 - 90 Días</b>.</h1>
+      </div>
+    </section>
+
+    <!-- SLIDE 12: MES 1 (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <div class="foco-head reveal"><span class="kicker-num">MES 01 · DÍAS 1 A 30</span></div>
+        <h2 class="foco-title reveal">Fundamentos Técnicos, Indexación & Seguridad</h2>
+        <p class="foco-sub reveal">
+          Limpieza inmediata del perfil de backlinks, corrección de accesibilidad en servidor y estructuración base:
+        </p>
+
+        <div class="grid-2 reveal">
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+              Acciones Técnicas Principales
+            </div>
+            <ul style="margin:0; padding-left:1.2em; font-size:0.88rem; line-height:1.6; color:rgba(3,15,43,0.85);">
+              <li><b>Implementación de Robots.txt Plano:</b> Configuración limpia en servidor Apache con directivas para Googlebot y bots IA.</li>
+              <li><b>Generación y Envío de Sitemap.xml:</b> Creación y validación en Google Search Console para descubrimiento eficiente.</li>
+              <li><b>Limpieza Off-Page (Disavow):</b> Procesamiento de los 355 backlinks enviando el archivo <code>disavow.txt</code> para anular los 88+ enlaces PBN/Spam.</li>
+              <li><b>Marcado Estructurado JSON-LD:</b> Inserción de Schema <code>LocalBusiness</code> y <code>Organization</code> con datos corporativos de Honduras.</li>
+            </ul>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream);">
+            <div class="panel-title" style="color:var(--toques);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Entregables Clave Mes 1
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• Archivo <code>robots.txt</code> plano activo</b>
+              </div>
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• <code>sitemap.xml</code> indexado en Google Search Console</b>
+              </div>
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• Archivo <code>disavow.txt</code> procesado ante Google SpamBrain</b>
+              </div>
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• Código Schema JSON-LD activo en el Header</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13: MES 2 (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <div class="foco-head reveal"><span class="kicker-num">MES 02 · DÍAS 31 A 60</span></div>
+        <h2 class="foco-title reveal">Arquitectura, Contenido & Landing Pages Comerciales</h2>
+        <p class="foco-sub reveal">
+          Reescritura total de metas on-page y creación de páginas orientadas a captar la demanda comercial en Honduras:
+        </p>
+
+        <div class="grid-2 reveal">
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+              Acciones On-Page & Landings
+            </div>
+            <ul style="margin:0; padding-left:1.2em; font-size:0.88rem; line-height:1.6; color:rgba(3,15,43,0.85);">
+              <li><b>Matriz de Títulos, Metas y H1:</b> Reescritura personalizada para las 149 URLs del sitio web.</li>
+              <li><b>Canónicals y Consolidación:</b> Añadido de etiquetas <code>rel="canonical"</code> para eliminar duplicidad.</li>
+              <li><b>3 Landing Pages Comerciales Pilares:</b>
+                <br>1. <i>Ventanas de Aluminio & PVC (Tegucigalpa / SPS)</i>
+                <br>2. <i>Cortinas, Persianas & Motorización Arquitectónica</i>
+                <br>3. <i>Fachadas Comerciales & Vidriería Estructural</i>
+              </li>
+              <li><b>WPO (Optimización de Carga):</b> Conversión a formato WebP y optimización de imágenes pesadas.</li>
+            </ul>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream);">
+            <div class="panel-title" style="color:var(--toques);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Entregables Clave Mes 2
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• Matriz On-Page de 149 URLs implementada</b>
+              </div>
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• 3 Landing Pages comerciales lanzadas</b>
+              </div>
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• Reducción de tiempo de carga (WPO WebP)</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 14: MES 3 (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <div class="foco-head reveal"><span class="kicker-num">MES 03 · DÍAS 61 A 90</span></div>
+        <h2 class="foco-title reveal">Captación de Leads, CRO & Preparación para IA</h2>
+        <p class="foco-sub reveal">
+          Optimización de la tasa de conversión (CRO), contenido local y habilitación de estándares de Inteligencia Artificial:
+        </p>
+
+        <div class="grid-2 reveal">
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              Acciones de Conversión & IA
+            </div>
+            <ul style="margin:0; padding-left:1.2em; font-size:0.88rem; line-height:1.6; color:rgba(3,15,43,0.85);">
+              <li><b>Optimización CRO:</b> Botón flotante de WhatsApp, formulario de cotización rápida y CTAs claros en móvil.</li>
+              <li><b>Estrategia de Contenido Local:</b> Publicación de 2 artículos/guías de tendencias arquitectónicas en Honduras.</li>
+              <li><b>Agent Readiness:</b> Cabeceras RFC 8288 y directivas para rastreadores de IA.</li>
+              <li><b>Dashboard Ejecutivo de Métricas:</b> Reporte trimestral en vivo con evolución de tráfico y leads.</li>
+            </ul>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream);">
+            <div class="panel-title" style="color:var(--toques);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Metas Alcanzadas al Día 90
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• 300+ visitas orgánicas mensuales alcanzadas</b>
+              </div>
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• 15+ keywords comerciales en Top 10 Google Honduras</b>
+              </div>
+              <div style="padding:10px; border-radius:8px; background:rgba(244,243,239,0.08);">
+                <b>• Sistema de cotización directa por WhatsApp activo</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 15: MODELO OPERATIVO Y GOBERNANZA (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          Gobernanza del Proyecto
+        </span>
+        <h2 class="foco-title reveal">Modelo Operativo & Trabajo en Equipo</h2>
+        <p class="foco-sub reveal" style="margin-bottom:16px;">
+          Dynamic collaboration structure between Grovi Studio and Design Solutions By Ventanales:
+        </p>
+
+        <div class="grid-3 reveal">
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              Equipo Asignado
+            </div>
+            <p style="font-size:0.86rem; color:rgba(3,15,43,0.85);">
+              • Consultor Lead SEO & Strategist
+              <br>• Desarrollador Frontend / PHP
+              <br>• Especialista en Contenidos & CRO
+            </p>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Ritmo de Trabajo
+            </div>
+            <p style="font-size:0.86rem; color:rgba(3,15,43,0.85);">
+              • Sprints quincenales de avance
+              <br>• Reporte mensual de métricas y ROI
+              <br>• Canal dedicado en WhatsApp / Slack
+            </p>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+              Accesos Requeridos
+            </div>
+            <p style="font-size:0.86rem; color:rgba(3,15,43,0.85);">
+              • Google Search Console & Analytics
+              <br>• Acceso a Servidor cPanel / FTP / PHP
+              <br>• Gestor de DNS (Cloudflare / Dominio)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 16: SECCION PLAN FINANCIERO (NAVY SOLIDO) -->
+    <section class="slide dark-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          04 · Plan Financiero
+        </span>
+        <h1 class="section-title reveal">Propuesta Comercial e <b style="color:var(--principal);">Inversión Estratégica</b>.</h1>
+      </div>
+    </section>
+
+    <!-- SLIDE 17: SIMULADOR INTERACTIVO DE MEDIA BUDGET (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          Simulador de Tráfico Pagado (Opcional)
+        </span>
+        <h2 class="foco-title reveal">Calculadora de Inversión en Pauta Digital (Google Ads & Meta)</h2>
+        <p class="foco-sub reveal">
+          Estimación interactiva complementaria para acelerar la captación de leads mediante campañas pagadas en Honduras:
+        </p>
+
+        <div class="slider-box reveal">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; font-size:0.9rem; color:var(--cream);">PRESUPUESTO MENSUAL EN MEDIOS (USD):</span>
+            <span class="slider-val-badge" id="pautaBudgetBadge">$500 USD/mes</span>
+          </div>
+          <div class="slider-control">
+            <input type="range" id="pautaBudgetSlider" min="300" max="2000" step="100" value="500">
+          </div>
+        </div>
+
+        <div class="grid-4 reveal">
+          <div class="panel" style="background:var(--navy); color:var(--cream); text-align:center;">
+            <span style="font-size:0.72rem; text-transform:uppercase; color:rgba(244,243,239,0.7);">Clics / Mes Estimados</span>
+            <div class="stat-hero" id="pautaVisitas" style="font-size:1.8rem; color:var(--principal); margin:6px 0;">~1,250 clics</div>
+            <span style="font-size:0.75rem; color:rgba(244,243,239,0.6);" id="pautaVisitasTotal">Total 3m: ≈3,750 clics</span>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream); text-align:center;">
+            <span style="font-size:0.72rem; text-transform:uppercase; color:rgba(244,243,239,0.7);">Leads / Mes Estimados</span>
+            <div class="stat-hero" id="pautaLeads" style="font-size:1.8rem; color:var(--toques); margin:6px 0;">~85 leads</div>
+            <span style="font-size:0.75rem; color:rgba(244,243,239,0.6);" id="pautaLeadsTotal">Total 3m: ≈255 leads</span>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream); text-align:center;">
+            <span style="font-size:0.72rem; text-transform:uppercase; color:rgba(244,243,239,0.7);">Costo por Lead (CPL)</span>
+            <div class="stat-hero" id="pautaCpl" style="font-size:1.8rem; color:#ffffff; margin:6px 0;">$5.88 USD</div>
+            <span style="font-size:0.75rem; color:rgba(244,243,239,0.6);">Promedio estimado B2B/B2C</span>
+          </div>
+
+          <div class="panel" style="background:var(--navy); color:var(--cream); text-align:center;">
+            <span style="font-size:0.72rem; text-transform:uppercase; color:rgba(244,243,239,0.7);">ROAS Proyectado</span>
+            <div class="stat-hero" id="pautaRoas" style="font-size:1.8rem; color:var(--creativo); margin:6px 0;">ROAS ~6.5x</div>
+            <span style="font-size:0.75rem; color:rgba(244,243,239,0.6);">Retorno sobre inversión en pauta</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 18: DESGLOSE COMERCIAL DE INVERSION (CREMA SOLIDO) -->
+    <section class="slide light-theme">
+      <div class="slide-inner">
+        <span class="eyebrow reveal">
+          Plan Financiero · Desglose Comercial
+        </span>
+        <h2 class="foco-title reveal">Desglose de Valores por Bloque de Trabajo</h2>
+        <p class="foco-sub reveal" style="margin-bottom:14px;">
+          Resumen ejecutivo de la inversión por desarrollo técnico, optimización SEO y gestión de crecimiento digital:
+        </p>
+
+        <div class="grid-2 reveal" style="gap:16px;">
+          <!-- Bloque 1 -->
+          <div class="panel" style="background:#ffffff; border:1px solid var(--border-light); padding:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid rgba(3,15,43,0.08); padding-bottom:6px;">
+              <h3 style="font-size:1rem; color:var(--navy); margin:0;">Bloque 1: Setup Técnico & SEO Base (Pago Único)</h3>
+              <span style="font-family:var(--font-num); font-weight:900; font-size:1.15rem; color:var(--principal-dark);">$1,800 USD</span>
+            </div>
+            <ul style="margin:0; padding-left:1.1em; font-size:0.82rem; line-height:1.5; color:rgba(3,15,43,0.8);">
+              <li><b>Infraestructura SEO:</b> Creación de <code>robots.txt</code> plano y <code>sitemap.xml</code>.</li>
+              <li><b>Disavow Anti-Spam:</b> Limpieza de los 355 backlinks y envío a Google SpamBrain.</li>
+              <li><b>Matriz On-Page Completa:</b> Optimización de Títulos, Metas y H1 para las 149 URLs.</li>
+              <li><b>Marcado JSON-LD:</b> Implementación de Schema <code>LocalBusiness</code> para Honduras.</li>
+              <li><b>CRO Base:</b> Integración de botón WhatsApp y optimización de CTAs.</li>
+            </ul>
+          </div>
+
+          <!-- Bloque 2 -->
+          <div class="panel" style="background:#ffffff; border:1px solid var(--border-light); padding:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid rgba(3,15,43,0.08); padding-bottom:6px;">
+              <h3 style="font-size:1rem; color:var(--navy); margin:0;">Bloque 2: Growth Retainer & Contenidos (Mensual)</h3>
+              <span style="font-family:var(--font-num); font-weight:900; font-size:1.15rem; color:var(--principal-dark);">$650 USD / mes</span>
+            </div>
+            <ul style="margin:0; padding-left:1.1em; font-size:0.82rem; line-height:1.5; color:rgba(3,15,43,0.8);">
+              <li><b>Creación de Landings:</b> Desarrollo continuo de landing pages comerciales.</li>
+              <li><b>Estrategia de Contenidos:</b> 2 artículos/guías locales de arquitectura al mes.</li>
+              <li><b>Monitoreo & Indexación:</b> Seguimiento semanal de posiciones y errores en GSC.</li>
+              <li><b>IA Agent Readiness:</b> Mantención de compatibilidad con asistentes inteligentes.</li>
+              <li><b>Reporte de Performance:</b> Dashboard mensual con evolución de tráfico y leads.</li>
+            </ul>
+          </div>
+
+          <!-- Bloque 3 -->
+          <div class="panel" style="background:#ffffff; border:1px solid var(--border-light); padding:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid rgba(3,15,43,0.08); padding-bottom:6px;">
+              <h3 style="font-size:1rem; color:var(--navy); margin:0;">Bloque 3: Inversión en Pauta Digital (Opcional)</h3>
+              <span style="font-family:var(--font-num); font-weight:900; font-size:1.15rem; color:var(--navy);">$300 – $500 USD / mes</span>
+            </div>
+            <ul style="margin:0; padding-left:1.1em; font-size:0.82rem; line-height:1.5; color:rgba(3,15,43,0.8);">
+              <li><b>Directo a Plataformas:</b> Pago a Google Ads y Meta Ads sin intermediación.</li>
+              <li><b>Google Search (70%):</b> Captura de clientes en Honduras buscando soluciones ya.</li>
+              <li><b>Meta Ads (30%):</b> Retargeting y reconocimiento de marca en arquitectos e ingenieros.</li>
+            </ul>
+          </div>
+
+          <!-- Resumen Resaltado -->
+          <div class="panel" style="background:var(--navy); color:var(--cream); padding:18px; border:2px solid var(--toques);">
+            <div style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--toques); margin-bottom:6px;">
+              📊 RESUMEN CONSOLIDADO DE INVERSIÓN
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
+              <div style="background:rgba(244,243,239,0.08); padding:10px; border-radius:10px;">
+                <span style="font-size:0.72rem; color:rgba(244,243,239,0.7); text-transform:uppercase; font-weight:700; display:block;">Mes 1 (Setup + Retainer)</span>
+                <b style="font-family:var(--font-num); font-size:1.25rem; color:#ffffff;">$2,450 USD</b>
+              </div>
+              <div style="background:rgba(244,243,239,0.08); padding:10px; border-radius:10px;">
+                <span style="font-size:0.72rem; color:rgba(244,243,239,0.7); text-transform:uppercase; font-weight:700; display:block;">Mes 2 en Adelante</span>
+                <b style="font-family:var(--font-num); font-size:1.25rem; color:var(--toques);">$650 USD/mes</b>
+              </div>
+            </div>
+            <p style="font-size:0.76rem; color:rgba(244,243,239,0.8); margin-top:10px; text-align:center;">
+              Meta al Día 90: <b>+300 visitas/mes</b> y <b>15+ keywords comerciales en Top 10 Google Honduras</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 19: CIERRE Y PROXIMOS PASOS (NAVY SOLIDO) -->
+    <section class="slide dark-theme">
+      <div class="slide-inner" style="text-align:center;">
+        <span class="eyebrow reveal" style="justify-content:center;">
+          Próximos Pasos
+        </span>
+        <h1 class="section-title reveal" style="max-width:22ch; margin:0 auto 20px;">
+          ¿Listos para transformar la presencia digital de <b style="color:var(--principal);">VentanalesHN</b>?
+        </h1>
+        <p class="foco-sub reveal" style="max-width:55ch; margin:0 auto 30px; color:rgba(244,243,239,0.8);">
+          Iniciemos con la entrega de accesos y la implementación inmediata del Mes 1 para asegurar el dominio frente a los buscadores.
+        </p>
+
+        <div class="reveal" style="display:inline-flex; gap:16px; align-items:center; background:rgba(244,243,239,0.08); padding:16px 32px; border-radius:100px; border:1px solid rgba(244,243,239,0.2);">
+          <svg viewBox="0 0 32 32" fill="none" style="width:28px; height:28px;">
+            <rect width="32" height="32" rx="8" fill="#5B82FF"/>
+            <path d="M9 16L14 21L23 11" stroke="#F4F3EF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:#ffffff;">grovi studio · C² Growth & Performance</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Corner Watermark -->
+  <div class="corner-mark">
+    <svg viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="8" fill="#5B82FF"/>
+      <path d="M9 16L14 21L23 11" stroke="#F4F3EF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>grovi studio</span>
+  </div>
+
+  <!-- Presentation Navigation Controls -->
+  <nav class="deck-nav">
+    <button class="nav-btn" id="prevBtn" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="dots" id="dots"></div>
+    <span class="counter" id="counter">1 / 19</span>
+    <button class="nav-btn" id="nextBtn" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 6l6 6-6 6"/></svg></button>
+  </nav>
+
+  <script>
+  (function(){
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var dotsWrap = document.getElementById('dots');
+    var counter = document.getElementById('counter');
+    var progressLine = document.getElementById('progressLine');
+    var idx = 0;
+
+    slides.forEach(function(_, i){
+      var b = document.createElement('button');
+      b.addEventListener('click', function(){ goTo(i); });
+      dotsWrap.appendChild(b);
+    });
+    var dotEls = Array.prototype.slice.call(dotsWrap.children);
+
+    function animateBars(slide){
+      var bars = slide.querySelectorAll('.bar-fill');
+      bars.forEach(function(el){
+        var target = el.getAttribute('data-target');
+        if(target){
+          el.style.width = '0%';
+          requestAnimationFrame(function(){
+            setTimeout(function(){ el.style.width = target + '%'; }, 60);
+          });
+        }
+      });
+    }
+
+    function goTo(i){
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      slides.forEach(function(s, si){
+        s.classList.remove('active','prevslide');
+        if(si === i) s.classList.add('active');
+        else if(si < i) s.classList.add('prevslide');
+      });
+      idx = i;
+      
+      var active = slides[idx];
+      var isDark = active.classList.contains('dark-theme');
+      document.body.classList.toggle('slide-dark-active', isDark);
+      document.body.classList.toggle('slide-light-active', !isDark);
+
+      dotEls.forEach(function(d, di){ d.classList.toggle('active', di === idx); });
+      counter.textContent = (idx+1) + ' / ' + slides.length;
+      progressLine.style.width = (((idx+1)/slides.length) * 100) + '%';
+
+      setTimeout(function(){
+        animateBars(active);
+      }, 100);
+    }
+
+    /* Interactive SOM Simulator on Slide 10 */
+    var somSlider = document.getElementById('somSlider');
+    var somBadge = document.getElementById('somBadge');
+    var simVisitasVal = document.getElementById('simVisitasVal');
+    var simLeadsVal = document.getElementById('simLeadsVal');
+    var simGrowthVal = document.getElementById('simGrowthVal');
+
+    if(somSlider){
+      somSlider.addEventListener('input', function(){
+        var val = parseFloat(this.value);
+        somBadge.textContent = val + '%';
+        
+        var lowVisits = Math.round(2100 * (val / 100));
+        var highVisits = Math.round(3750 * (val / 100));
+        var lowLeads = Math.round(lowVisits * 0.08);
+        var highLeads = Math.round(highVisits * 0.08);
+        var growth = Math.round(((lowVisits / 94) - 1) * 100);
+        
+        if(simVisitasVal) simVisitasVal.textContent = lowVisits + ' – ' + highVisits;
+        if(simLeadsVal) simLeadsVal.textContent = lowLeads + ' – ' + highLeads;
+        if(simGrowthVal) simGrowthVal.textContent = '+' + growth + '%';
+      });
+    }
+
+    /* Interactive Pauta Budget Simulator on Slide 17 */
+    var pautaBudgetSlider = document.getElementById('pautaBudgetSlider');
+    var pautaBudgetBadge = document.getElementById('pautaBudgetBadge');
+    var pautaVisitas = document.getElementById('pautaVisitas');
+    var pautaVisitasTotal = document.getElementById('pautaVisitasTotal');
+    var pautaLeads = document.getElementById('pautaLeads');
+    var pautaLeadsTotal = document.getElementById('pautaLeadsTotal');
+    var pautaCpl = document.getElementById('pautaCpl');
+    var pautaRoas = document.getElementById('pautaRoas');
+
+    if(pautaBudgetSlider){
+      pautaBudgetSlider.addEventListener('input', function(){
+        var monthlyBudget = parseFloat(this.value);
+        pautaBudgetBadge.textContent = '$' + monthlyBudget + ' USD/mes';
+
+        var ratio = monthlyBudget / 500;
+        var mVisitas = Math.round(1250 * ratio);
+        var tVisitas = Math.round(3750 * ratio);
+        var mLeads = Math.round(85 * ratio);
+        var tLeads = Math.round(255 * ratio);
+        var cpl = (monthlyBudget / mLeads).toFixed(2);
+        var roas = (6.5 * ratio).toFixed(1);
+
+        if(pautaVisitas) pautaVisitas.textContent = '~' + mVisitas.toLocaleString() + ' clics';
+        if(pautaVisitasTotal) pautaVisitasTotal.textContent = 'Total 3m: ≈' + tVisitas.toLocaleString() + ' clics';
+        
+        if(pautaLeads) pautaLeads.textContent = '~' + mLeads + ' leads';
+        if(pautaLeadsTotal) pautaLeadsTotal.textContent = 'Total 3m: ≈' + tLeads + ' leads';
+
+        if(pautaCpl) pautaCpl.textContent = '$' + cpl + ' USD';
+        if(pautaRoas) pautaRoas.textContent = 'ROAS ~' + roas + 'x';
+      });
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', function(){ goTo(idx-1); });
+    document.getElementById('nextBtn').addEventListener('click', function(){ goTo(idx+1); });
+
+    window.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown'){ goTo(idx+1); e.preventDefault(); }
+      else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ goTo(idx-1); e.preventDefault(); }
+      else if(e.key === 'f' || e.key === 'F'){
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(function(){});
+        } else {
+          document.exitFullscreen().catch(function(){});
+        }
+      }
+    });
+
+    var touchX = null;
+    document.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; });
+    document.addEventListener('touchend', function(e){
+      if(touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      if(Math.abs(dx) > 50){ dx < 0 ? goTo(idx+1) : goTo(idx-1); }
+      touchX = null;
+    });
+
+    goTo(0);
+  })();
+  </script>
+</body>
+</html>
