@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos & Soluciones | Design Solutions By Ventanales Honduras</title>
+  <meta name="description" content="Catálogo de productos de Ventanales HN: Automatización Somfy, Cortinas y Persianas, Decoración e Interiorismo, Mobiliario a Medida, Soluciones Hospitalarias y Exteriores en Honduras.">
+  
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #383b3d;
+      --primary-dark: #2a2a2a;
+      --dark-bg: #212529;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-dark: #2a2a2a;
+      --text-muted: #666666;
+      --border-color: #e2e8f0;
+      --border-radius: 4px;
+      --border-radius-lg: 8px;
+      --whatsapp: #25d366;
+      --font-display: 'Overpass', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo-brand img { height: 46px !important; max-height: 46px !important; width: auto !important; object-fit: contain !important; }
+    nav ul { display: flex; align-items: center; gap: 24px; list-style: none; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    nav a.active { color: var(--primary); font-weight: 700; }
+    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; }
+
+    .hero-productos {
+      background: linear-gradient(135deg, rgba(33, 37, 41, 0.92) 0%, rgba(42, 42, 42, 0.88) 100%), url('assets/fotos/2026/09/PVOSY2_IMG_6736.jpg') center/cover no-repeat;
+      color: #ffffff; padding: 80px 0 90px; text-align: center;
+    }
+    .hero-title { font-family: var(--font-display); font-size: clamp(2.3rem, 4vw, 3.4rem); font-weight: 800; margin-bottom: 14px; }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: none; }
+
+    section { padding: 75px 0; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; }
+    .prod-card {
+      background: var(--surface); border-radius: var(--border-radius-lg); border: 1px solid var(--border-color);
+      overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.05); text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .prod-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.12); }
+    .prod-img { height: 220px; background-size: cover; background-position: center; position: relative; }
+    .prod-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+    .prod-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 10px; }
+    .prod-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 18px; flex: 1; line-height: 1.6; }
+    .btn-link { font-size: 0.84rem; font-weight: 700; text-transform: uppercase; color: var(--primary); display: inline-flex; align-items: center; gap: 8px; }
+
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: 60px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo-brand">
+        <img src="assets/img/logo.png" alt="Design Solutions By Ventanales">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="productos.html" class="active">Productos</a></li>
+          <li><a href="proyectos/index.html">Proyectos</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="cotizar.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="cotizar.html" class="btn-header">
+        <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Productos -->
+  <div class="hero-productos">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Inicio</a> / Catálogo de Productos</div>
+      <h1 class="hero-title">Catálogo Completo de Productos</h1>
+      <p style="max-width:720px; margin:0 auto; font-size:1.05rem; color:rgba(255,255,255,0.88);">
+        Conoce toda nuestra gama de soluciones: Ventanales de PVC y Aluminio, Automatización Somfy, Cortinas y Persianas, Decoración e Interiorismo, Mobiliario a Medida, Soluciones Hospitalarias y Pérgolas Exteriores en Honduras.
+      </p>
+    </div>
+  </div>
+
+  <!-- Grid de Productos completos -->
+  <section>
+    <div class="container">
+      <div class="products-grid">
+
+        <!-- 1. Automatizacion y Motorizacion -->
+        <a href="categorias/cortinas-motorizadas.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/E852GL_4c48f410-0d87-4b6f-98d3-6d82c48f3db3.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Automatización & Motorización Somfy</h2>
+            <p class="prod-desc">Motores ultra-silenciosos y automatización de cortinas, persianas y toldos mediante app móvil y comandos de voz.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 2. Cortinas y Persianas -->
+        <a href="categorias/cortinas-motorizadas.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/PVOSY2_IMG_7400.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Cortinas & Persianas</h2>
+            <p class="prod-desc">Sistemas Rollers, Blackout 100% privacidad, Sheer Elegance y persianas verticales para residencias y oficinas.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 3. Decoracion e Interiorismo -->
+        <a href="categorias/decoracion-interiorismo.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/0SABUD_IMG_0192.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Decoración e Interiorismo</h2>
+            <p class="prod-desc">Revestimientos de pared en cristal lacado, espejos biselados flotantes LED y cerramientos interiores de cristal.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 4. Mobiliario a Medida -->
+        <a href="categorias/mobiliario-a-medida.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/PVOSY2_IMG_7756.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Mobiliario a Medida</h2>
+            <p class="prod-desc">Walk-in closets con vidrio templado, estaciones de trabajo corporativas y carpintería arquitectónica personalizada.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 5. Ventanas de PVC & Aluminio -->
+        <a href="categorias/ventanas-pvc-aluminio.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/PVOSY2_IMG_6736.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Ventanas de PVC & Aluminio Termoacústico</h2>
+            <p class="prod-desc">Perfilería alemana Kömmerling y aluminio Eurovent con vidrios dobles insulados DVH para aislamiento de calor y ruido.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 6. Fachadas de Vidrio & Templados -->
+        <a href="categorias/fachadas-vidrio-templado.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/BADB11_IMG_5603.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Fachadas de Vidrio & Templados</h2>
+            <p class="prod-desc">Muros cortina estructurales, cristales Solar Control Low-E, herrajes Spider Glass y divisiones de baño.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 7. Soluciones Comerciales y Corporativas -->
+        <a href="categorias/soluciones-hospitalarias-corporativas.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/0SABUD_IMG_0219.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Soluciones Comerciales & Corporativas</h2>
+            <p class="prod-desc">Divisiones de cristal acústico conmutable Smart Glass, panelería corporativa y accesos automatizados.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 8. Soluciones Hospitalarias -->
+        <a href="categorias/soluciones-hospitalarias-corporativas.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/0SABUD_IMG_0224.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Soluciones Hospitalarias</h2>
+            <p class="prod-desc">Cortinas clínicas antibacterianas tratadas con biocida de plata, rieles médicos suspendidos y puertas herméticas para quirófanos.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 9. Toldos y Soluciones para Exteriores -->
+        <a href="categorias/pergolas-exteriores.html" class="prod-card">
+          <div class="prod-img" style="background-image: url('assets/fotos/2026/09/MWTHQR_IMG_8933.jpg');"></div>
+          <div class="prod-body">
+            <h2 class="prod-title">Toldos & Soluciones para Exteriores</h2>
+            <p class="prod-desc">Pérgolas bioclimáticas de aluminio con lamas orientables, techos de policarbonato y cerramientos de cristal para terrazas.</p>
+            <span class="btn-link">Ver Productos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-brand" style="margin-bottom:16px;">
+            <img src="assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
+          </div>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Especialistas en arquitectura en vidrio, ventanas termoacústicas y cortinas motorizadas en Honduras.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Productos & Categorías</h4>
+          <ul class="footer-links">
+            <li><a href="categorias/cortinas-motorizadas.html">Automatización & Cortinas</a></li>
+            <li><a href="categorias/decoracion-interiorismo.html">Decoración e Interiorismo</a></li>
+            <li><a href="categorias/mobiliario-a-medida.html">Mobiliario a Medida</a></li>
+            <li><a href="categorias/ventanas-pvc-aluminio.html">Ventanas PVC & Aluminio</a></li>
+            <li><a href="categorias/fachadas-vidrio-templado.html">Fachadas de Vidrio</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto Directo</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); line-height:1.8;">
+            <i class="fa-solid fa-location-dot"></i> Centro de Negocios Vertis, Local 105, Complejo Próceres, Tegucigalpa<br>
+            <i class="fa-solid fa-envelope"></i> ventas@ventanaleshn.com<br>
+            <i class="fa-solid fa-phone"></i> +504 8992-0617
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Design Solutions By Ventanales. Todos los derechos reservados.</div>
+        <div>Desarrollado por <b>grovi studio</b></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
