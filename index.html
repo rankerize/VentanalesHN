@@ -1032,18 +1032,60 @@
 
       startAutoPlay();
 
-      // 2. Works Carousel Logic
+      // 2. Works Carousel Auto-Play Logic ("Proyectos ruedan solos")
       const worksCarousel = document.getElementById('worksCarousel');
       const worksPrev = document.getElementById('worksPrev');
       const worksNext = document.getElementById('worksNext');
 
-      if (worksCarousel && worksPrev && worksNext) {
-        worksPrev.addEventListener('click', () => {
-          worksCarousel.scrollBy({ left: -380, behavior: 'smooth' });
-        });
-        worksNext.addEventListener('click', () => {
-          worksCarousel.scrollBy({ left: 380, behavior: 'smooth' });
-        });
+      if (worksCarousel) {
+        let worksTimer;
+        const cardWidth = 380;
+
+        function autoScrollWorks() {
+          const maxScroll = worksCarousel.scrollWidth - worksCarousel.clientWidth;
+          if (worksCarousel.scrollLeft >= maxScroll - 15) {
+            worksCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            worksCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+          }
+        }
+
+        function startWorksAutoPlay() {
+          stopWorksAutoPlay();
+          worksTimer = setInterval(autoScrollWorks, 3200);
+        }
+
+        function stopWorksAutoPlay() {
+          if (worksTimer) clearInterval(worksTimer);
+        }
+
+        // Auto-play continuo
+        startWorksAutoPlay();
+
+        // Pausa al pasar el cursor o interactuar táctil
+        worksCarousel.addEventListener('mouseenter', stopWorksAutoPlay);
+        worksCarousel.addEventListener('mouseleave', startWorksAutoPlay);
+        worksCarousel.addEventListener('touchstart', stopWorksAutoPlay, { passive: true });
+        worksCarousel.addEventListener('touchend', startWorksAutoPlay, { passive: true });
+
+        // Botones manuales de navegación
+        if (worksPrev && worksNext) {
+          worksPrev.addEventListener('click', () => {
+            stopWorksAutoPlay();
+            if (worksCarousel.scrollLeft <= 15) {
+              worksCarousel.scrollTo({ left: worksCarousel.scrollWidth, behavior: 'smooth' });
+            } else {
+              worksCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            }
+            startWorksAutoPlay();
+          });
+
+          worksNext.addEventListener('click', () => {
+            stopWorksAutoPlay();
+            autoScrollWorks();
+            startWorksAutoPlay();
+          });
+        }
       }
     });
   </script>
