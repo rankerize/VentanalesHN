@@ -536,6 +536,156 @@
       letter-spacing: 0.06em;
     }
 
+    /* ==========================================
+       SECCIONES DE CATEGORÍAS PADRE (LAYOUT 2 COLUMNAS)
+       ========================================== */
+    .parent-cat-section {
+      padding: 85px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .parent-cat-section.bg-alt {
+      background: var(--bg-light);
+    }
+    .parent-cat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+    .parent-cat-grid.reverse {
+      grid-template-areas: "media content";
+    }
+    
+    .parent-cat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 59, 61, 0.08);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .parent-cat-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.7rem);
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.18;
+      margin-bottom: 18px;
+    }
+    .parent-cat-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: #555555;
+    }
+    .parent-cat-desc {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    
+    .parent-cat-subcats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+    .subcat-pill {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--primary-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+    .subcat-pill:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    
+    .parent-cat-specs {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    .parent-cat-specs li {
+      font-size: 0.92rem;
+      color: #334155;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .parent-cat-specs i {
+      color: var(--primary);
+      background: rgba(56, 59, 61, 0.1);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .parent-cat-media {
+      position: relative;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      height: 420px;
+      border: 1px solid var(--border-color);
+    }
+    .parent-cat-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .parent-cat-media:hover img {
+      transform: scale(1.06);
+    }
+    .parent-cat-media-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(15, 17, 19, 0.85);
+      backdrop-filter: blur(10px);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    @media (min-width: 901px) {
+      .parent-cat-grid.reverse .parent-cat-content { grid-area: content; }
+      .parent-cat-grid.reverse .parent-cat-media { grid-area: media; }
+    }
+    @media (max-width: 900px) {
+      .parent-cat-grid, .parent-cat-grid.reverse { grid-template-columns: 1fr; gap: 35px; }
+      .parent-cat-media { height: 300px; }
+    }
+
     /* Footer oficial */
     footer { width: 100%; background: var(--dark-bg); color: #ffffff; padding: 70px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 50px; }
@@ -949,64 +1099,238 @@
   </section>
 
   <!-- ==========================================
-     CATEGORÍAS PRINCIPALES
+     CATEGORÍAS PADRE - SHOWCASE EN 2 COLUMNAS
      ========================================== -->
-  <section id="categorias" style="background:var(--surface);">
+  <section id="categorias" style="padding: 90px 0; background: #ffffff;">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Catálogo Completo</span>
-        <h2 class="section-title">Líneas de <em>Productos & Sistemas</em></h2>
-        <p class="section-sub">Explora nuestras 5 grandes familias de productos arquitectónicos.</p>
+        <span class="section-badge">Nuestras Soluciones Arquitectónicas</span>
+        <h2 class="section-title">Lo Que Hacemos &amp; <em>Nuestras Colecciones</em></h2>
+        <p class="section-sub">Conoce nuestras grandes familias de productos: desde ventanas de alta ingeniería de PVC Kömmerling® hasta fachadas de vidrio, cortinas inteligentes Somfy®, ebanistería a la medida y soluciones clínicas.</p>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:28px;">
-        
-        <a href="categorias/ventanas-pvc-aluminio.html" class="work-card">
-          <div class="work-img-wrap"><img src="assets/fotos/2026/09/PVOSY2_IMG_6736.jpg" alt="Ventanas de PVC termoacústicas Kömmerling en Tegucigalpa Honduras"></div>
-          <div class="work-body">
-            <h3 class="work-title">Ventanas de PVC & Aluminio Termoacústico</h3>
-            <p class="work-desc">Sistemas Kömmerling de 5 cámaras y perfiles Eurovent con vidrios DVH.</p>
-            <span class="btn-work-link">Explorar Categoría <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
+      <!-- SECCIÓN PADRE 1: Ventanaría & Cerramientos -->
+      <div class="parent-cat-section">
+        <div class="parent-cat-grid">
+          <div class="parent-cat-content">
+            <span class="parent-cat-badge"><i class="fa-solid fa-window-maximize"></i> Línea Ventanaría &amp; PVC</span>
+            <h3 class="parent-cat-title">Ventanas de PVC &amp; <em>Aluminio Termoacústico</em></h3>
+            <p class="parent-cat-desc">
+              Sistemas alemanes Kömmerling® de 5 cámaras herméticas y aluminio de grado marino anticorrosivo. Brindamos reducción de ruido urbano de hasta 45dB y aislamiento térmico para residencias y desarrollos en Tegucigalpa, San Pedro Sula y Roatán.
+            </p>
+            
+            <div class="parent-cat-subcats">
+              <a href="categorias/ventanas-pvc-aluminio.html" class="subcat-pill"><i class="fa-solid fa-check"></i> PVC Kömmerling® 5 Cámaras</a>
+              <a href="categorias/ventanas-pvc-aluminio.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Aluminio Anodizado Marino</a>
+              <a href="categorias/ventanas-pvc-aluminio.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Cristales Dobles DVH Low-E</a>
+              <a href="categorias/ventanas-pvc-aluminio.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Sistema Oscilobatiente &amp; Corredero</a>
+            </div>
 
-        <a href="categorias/fachadas-vidrio-templado.html" class="work-card">
-          <div class="work-img-wrap"><img src="assets/fotos/2026/09/BADB11_IMG_5603.jpg" alt="Fachada flotante de cristal templado y herrajes Spider Glass"></div>
-          <div class="work-body">
-            <h3 class="work-title">Fachadas de Vidrio & Templados</h3>
-            <p class="work-desc">Muros cortina, spider glass de acero inoxidable y cristales Solar Control.</p>
-            <span class="btn-work-link">Explorar Categoría <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
+            <ul class="parent-cat-specs">
+              <li><i class="fa-solid fa-volume-xmark"></i> Reducción acústica certificada contra ruido exterior.</li>
+              <li><i class="fa-solid fa-shield-halved"></i> Herrajes de cierre multipunto de alta seguridad.</li>
+              <li><i class="fa-solid fa-temperature-arrow-down"></i> Ahorro de energía en consumo de aire acondicionado.</li>
+            </ul>
 
-        <a href="categorias/cortinas-motorizadas.html" class="work-card">
-          <div class="work-img-wrap"><img src="assets/fotos/2026/09/E852GL_4c48f410-0d87-4b6f-98d3-6d82c48f3db3.jpg" alt="Cortinas motorizadas Somfy blackout de alta precisión en Honduras"></div>
-          <div class="work-body">
-            <h3 class="work-title">Cortinas, Persianas & Somfy Smart</h3>
-            <p class="work-desc">Rollers, Blackouts y automatización solar por app o voz.</p>
-            <span class="btn-work-link">Explorar Categoría <i class="fa-solid fa-arrow-right"></i></span>
+            <a href="categorias/ventanas-pvc-aluminio.html" class="btn-hero-primary" style="background:var(--primary); color:#ffffff;">
+              Ver Colección Ventanas <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-        </a>
 
-        <a href="categorias/pergolas-exteriores.html" class="work-card">
-          <div class="work-img-wrap"><img src="assets/fotos/2026/09/MWTHQR_IMG_8933.jpg" alt="Design Solutions By Ventanales - Arquitectura en Vidrio y Ventanas en Honduras"></div>
-          <div class="work-body">
-            <h3 class="work-title">Pérgolas Bioclimáticas & Exteriores</h3>
-            <p class="work-desc">Estructuras con lamas orientables y policarbonato para terrazas.</p>
-            <span class="btn-work-link">Explorar Categoría <i class="fa-solid fa-arrow-right"></i></span>
+          <div class="parent-cat-media">
+            <img src="assets/fotos/2026/09/PVOSY2_IMG_6736.jpg" alt="Ventanas de PVC Kömmerling termoacústicas en El Hatillo Tegucigalpa">
+            <div class="parent-cat-media-badge">
+              <i class="fa-solid fa-certificate"></i> Garantía Kömmerling® 10 Años
+            </div>
           </div>
-        </a>
-
-        <a href="categorias/soluciones-hospitalarias-corporativas.html" class="work-card">
-          <div class="work-img-wrap"><img src="assets/fotos/2026/09/0SABUD_IMG_0224.jpg" alt="Design Solutions By Ventanales - Arquitectura en Vidrio y Ventanas en Honduras"></div>
-          <div class="work-body">
-            <h3 class="work-title">Soluciones Hospitalarias & Corporativas</h3>
-            <p class="work-desc">Cortinas sanitarias antibacterianas, rieles médicos y panelería acústica.</p>
-            <span class="btn-work-link">Explorar Categoría <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
+        </div>
       </div>
+
+      <!-- SECCIÓN PADRE 2: Fachadas de Vidrio & Templados Estructurales (Layout Invertido) -->
+      <div class="parent-cat-section bg-alt">
+        <div class="parent-cat-grid reverse">
+          <div class="parent-cat-content">
+            <span class="parent-cat-badge"><i class="fa-solid fa-building"></i> Ingeniería Corporativa</span>
+            <h3 class="parent-cat-title">Fachadas de Vidrio &amp; <em>Templados Estructurales</em></h3>
+            <p class="parent-cat-desc">
+              Diseño e instalación de muros cortina Unitized/Stick de 2,400 m², sistemas flotantes Spider Glass en acero inoxidable 316 y cristal insulado Solar Control Low-E que rechaza la radiación solar en torres corporativas.
+            </p>
+
+            <div class="parent-cat-subcats">
+              <a href="categorias/fachadas-vidrio-templado.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Muros Cortina Frame &amp; Stick</a>
+              <a href="categorias/fachadas-vidrio-templado.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Spider Glass Acero 316</a>
+              <a href="categorias/fachadas-vidrio-templado.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Vidrios Solar Control 24mm</a>
+              <a href="categorias/fachadas-vidrio-templado.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Cristales Templados 10-12mm</a>
+            </div>
+
+            <ul class="parent-cat-specs">
+              <li><i class="fa-solid fa-sun"></i> Filtración del 99% de rayos infrarrojos y calor extremo.</li>
+              <li><i class="fa-solid fa-wind"></i> Resistencia estructural probada a ráfagas de viento.</li>
+              <li><i class="fa-solid fa-city"></i> Soluciones para torres comerciales, hoteles y oficinas.</li>
+            </ul>
+
+            <a href="categorias/fachadas-vidrio-templado.html" class="btn-hero-primary" style="background:var(--primary); color:#ffffff;">
+              Ver Fachadas de Vidrio <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="parent-cat-media">
+            <img src="assets/fotos/2026/09/BADB11_IMG_5603.jpg" alt="Muro Cortina de cristal en Torre Corporativa Alianza San Pedro Sula">
+            <div class="parent-cat-media-badge">
+              <i class="fa-solid fa-shield"></i> Cristal Solar Control Low-E
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN PADRE 3: Cortinas, Persianas & Somfy Smart -->
+      <div class="parent-cat-section">
+        <div class="parent-cat-grid">
+          <div class="parent-cat-content">
+            <span class="parent-cat-badge"><i class="fa-solid fa-sliders"></i> Control Solar &amp; Domótica</span>
+            <h3 class="parent-cat-title">Cortinas, Persianas &amp; <em>Motorización Somfy®</em></h3>
+            <p class="parent-cat-desc">
+              Cortinas Roller SunScreen para tamizar la luz natural con factores de apertura 1%, 3% y 5%, tejidos Blackout 100% privacidad total para dormitorios, y elegantes confecciones Sheer Elegance integradas con domótica Somfy®.
+            </p>
+
+            <div class="parent-cat-subcats">
+              <a href="categorias/cortinas-para-sala.html" class="subcat-pill"><i class="fa-solid fa-couch"></i> Cortinas para Sala &amp; Residencia</a>
+              <a href="categorias/cortinas-para-oficina.html" class="subcat-pill"><i class="fa-solid fa-briefcase"></i> Cortinas para Oficina &amp; B2B</a>
+              <a href="categorias/cortinas-motorizadas.html" class="subcat-pill"><i class="fa-solid fa-robot"></i> Motores Inteligentes Somfy®</a>
+              <a href="categorias/cortinas-motorizadas.html" class="subcat-pill"><i class="fa-solid fa-moon"></i> Blackout 100% Hermético</a>
+            </div>
+
+            <ul class="parent-cat-specs">
+              <li><i class="fa-solid fa-mobile-screen-button"></i> Control total desde App Somfy TaHoma, Alexa y Google Home.</li>
+              <li><i class="fa-solid fa-fire-flame-curved"></i> Telas ignífugas de seguridad clasificadas NFPA 701.</li>
+              <li><i class="fa-solid fa-eye-slash"></i> Oscurecimiento hermético para salas de conferencia y dormitorios.</li>
+            </ul>
+
+            <a href="categorias/cortinas-motorizadas.html" class="btn-hero-primary" style="background:var(--primary); color:#ffffff;">
+              Ver Cortinas &amp; Somfy <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="parent-cat-media">
+            <img src="assets/fotos/2026/09/E852GL_4c48f410-0d87-4b6f-98d3-6d82c48f3db3.jpg" alt="Cortinas motorizadas Somfy blackout de alta precisión en Penthouse Tegucigalpa">
+            <div class="parent-cat-media-badge">
+              <i class="fa-solid fa-robot"></i> Motores Somfy® 5 Años Garantía
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN PADRE 4: Pérgolas Bioclimáticas & Exteriores (Layout Invertido) -->
+      <div class="parent-cat-section bg-alt">
+        <div class="parent-cat-grid reverse">
+          <div class="parent-cat-content">
+            <span class="parent-cat-badge"><i class="fa-solid fa-umbrella-beach"></i> Terrazas &amp; Exteriores</span>
+            <h3 class="parent-cat-title">Pérgolas Bioclimáticas &amp; <em>Soluciones para Exteriores</em></h3>
+            <p class="parent-cat-desc">
+              Transformamos terrazas y áreas sociales con pérgolas bioclimáticas de aluminio extruido con lamas orientables motorizadas Somfy®, cerramientos en cristal panorámico plegable y toldos retráctiles Zip System.
+            </p>
+
+            <div class="parent-cat-subcats">
+              <a href="categorias/pergolas-exteriores.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Lamas Bioclimáticas 0°-135°</a>
+              <a href="categorias/pergolas-exteriores.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Cerramientos Cristal Plegable</a>
+              <a href="categorias/pergolas-exteriores.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Cortinas Zip Antiviento</a>
+              <a href="categorias/pergolas-exteriores.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Techos de Policarbonato</a>
+            </div>
+
+            <ul class="parent-cat-specs">
+              <li><i class="fa-solid fa-cloud-showers-heavy"></i> Sistema pluvial integrado para evacuar el agua de lluvia.</li>
+              <li><i class="fa-solid fa-lightbulb"></i> Iluminación ambiental LED perimetral cálida integrables.</li>
+              <li><i class="fa-solid fa-utensils"></i> Ideal para restaurantes, residencias y hoteles.</li>
+            </ul>
+
+            <a href="categorias/pergolas-exteriores.html" class="btn-hero-primary" style="background:var(--primary); color:#ffffff;">
+              Ver Pérgolas &amp; Terrazas <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="parent-cat-media">
+            <img src="assets/fotos/2026/09/MWTHQR_IMG_8933.jpg" alt="Pérgola bioclimática de aluminio en Terrazas del Merendón San Pedro Sula">
+            <div class="parent-cat-media-badge">
+              <i class="fa-solid fa-sun"></i> Protección Solar All-Weather
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN PADRE 5: Mobiliario a Medida & Cocinas de Autor -->
+      <div class="parent-cat-section">
+        <div class="parent-cat-grid">
+          <div class="parent-cat-content">
+            <span class="parent-cat-badge"><i class="fa-solid fa-kitchen-set"></i> Ebanistería &amp; Diseño</span>
+            <h3 class="parent-cat-title">Muebles de Cocina &amp; <em>Walk-in Closets a Medida</em></h3>
+            <p class="parent-cat-desc">
+              Carpintería fina y ebanistería arquitectónica: gabinetes de cocina integrales con tableros hidrófugos, tops de cuarzo o granito, walk-in closets personalizados en maderas finas y vanities con herrajes alemanes Blum®.
+            </p>
+
+            <div class="parent-cat-subcats">
+              <a href="categorias/muebles-de-cocina.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Muebles de Cocina a Medida</a>
+              <a href="categorias/mobiliario-a-medida.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Walk-in Closets de Madera</a>
+              <a href="categorias/decoracion-interiorismo.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Espejos LED &amp; Paneles Acústicos</a>
+              <a href="categorias/mobiliario-a-medida.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Herrajes Alemanes Blum®</a>
+            </div>
+
+            <ul class="parent-cat-specs">
+              <li><i class="fa-solid fa-toolbox"></i> Herrajes con sistema de amortiguación de cierre suave.</li>
+              <li><i class="fa-solid fa-droplet-slash"></i> Materiales hidrófugos resistentes a la humedad y vapor.</li>
+              <li><i class="fa-solid fa-ruler-combined"></i> Diseño 3D a la medida según planos arquitectónicos.</li>
+            </ul>
+
+            <a href="categorias/mobiliario-a-medida.html" class="btn-hero-primary" style="background:var(--primary); color:#ffffff;">
+              Ver Muebles &amp; Cocinas <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="parent-cat-media">
+            <img src="assets/fotos/2026/09/DNCW5Y_IMG_8807.jpg" alt="Walk-in closet y ebanistería a medida en El Hatillo Tegucigalpa">
+            <div class="parent-cat-media-badge">
+              <i class="fa-solid fa-hammer"></i> Ebanistería de Autor Blum®
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN PADRE 6: Soluciones Hospitalarias & Corporativas (Layout Invertido) -->
+      <div class="parent-cat-section bg-alt">
+        <div class="parent-cat-grid reverse">
+          <div class="parent-cat-content">
+            <span class="parent-cat-badge"><i class="fa-solid fa-hospital"></i> Grado Clínico &amp; Institucional</span>
+            <h3 class="parent-cat-title">Soluciones Hospitalarias &amp; <em>Especializadas B2B</em></h3>
+            <p class="parent-cat-desc">
+              Equipamiento técnico institucional para hospitales, clínicas privadas y edificios públicos: cortinas sanitarias antibacterianas tratadas con biocida de plata, rieles suspendidos de aluminio médico y film inteligente Switchable Privacy Glass.
+            </p>
+
+            <div class="parent-cat-subcats">
+              <a href="categorias/soluciones-hospitalarias-corporativas.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Cortinas Antibacterianas</a>
+              <a href="categorias/soluciones-hospitalarias-corporativas.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Rieles Médicos Suspendidos</a>
+              <a href="categorias/soluciones-hospitalarias-corporativas.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Puertas Herméticas Quirófano</a>
+              <a href="categorias/soluciones-hospitalarias-corporativas.html" class="subcat-pill"><i class="fa-solid fa-check"></i> Film Privacy Electrocromico</a>
+            </div>
+
+            <ul class="parent-cat-specs">
+              <li><i class="fa-solid fa-shield-virus"></i> Tejidos tratados con agente antimicrobiano e ignífugo.</li>
+              <li><i class="fa-solid fa-award"></i> Cumplimiento estricto de normas de bioseguridad clínica.</li>
+              <li><i class="fa-solid fa-building-shield"></i> Aislamiento y división de privacidad instantánea.</li>
+            </ul>
+
+            <a href="categorias/soluciones-hospitalarias-corporativas.html" class="btn-hero-primary" style="background:var(--primary); color:#ffffff;">
+              Ver Soluciones Clínicas <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="parent-cat-media">
+            <img src="assets/fotos/2026/09/0SABUD_IMG_0224.jpg" alt="Cortinas clínicas antibacterianas y rieles suspendidos en Centro Médico Tegucigalpa">
+            <div class="parent-cat-media-badge">
+              <i class="fa-solid fa-shield-virus"></i> Certificación Biocida Plata
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
