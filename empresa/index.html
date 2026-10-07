@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Empresa & Trayectoria | Design Solutions By Ventanales Honduras</title>
+  <meta name="description" content="Conoce la trayectoria de Ventanales HN: más de 15 años liderando obras para el gobierno, sector salud, constructoras y proyectos residenciales en Tegucigalpa, San Pedro Sula y Roatán.">
+  
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #383b3d;
+      --primary-dark: #2a2a2a;
+      --dark-bg: #191b1d;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-dark: #1e2329;
+      --text-muted: #667085;
+      --border-color: #e2e8f0;
+      --border-radius: 4px;
+      --border-radius-lg: 12px;
+      --whatsapp: #25d366;
+      --font-display: 'Overpass', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header oficial */
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo-brand { display: flex; align-items: center; text-decoration: none; max-width: 260px; }
+    .logo-brand img {
+      height: 46px !important;
+      max-height: 46px !important;
+      width: auto !important;
+      max-width: 240px !important;
+      object-fit: contain !important;
+      display: block;
+    }
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
+    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+    .btn-header:hover { background: var(--primary-dark); }
+
+    /* Hero Empresa */
+    .empresa-hero {
+      background: linear-gradient(135deg, rgba(25, 27, 29, 0.94) 0%, rgba(42, 42, 42, 0.88) 100%), url('../assets/fotos/2026/09/BADB11_IMG_5603.jpg') center/cover no-repeat;
+      color: #ffffff; padding: 90px 0 100px; text-align: center;
+    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 6px 18px; border-radius: 100px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #ffffff; margin-bottom: 20px; }
+    .empresa-hero-title { font-family: var(--font-display); font-size: clamp(2.3rem, 4vw, 3.6rem); font-weight: 800; margin-bottom: 18px; line-height: 1.15; }
+    .empresa-hero-title em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #f0f0f0; }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .empresa-hero-subtitle { max-width: 780px; margin: 0 auto; font-size: 1.08rem; color: rgba(255, 255, 255, 0.88); line-height: 1.65; font-weight: 300; }
+
+    /* Stats Bar */
+    .stats-bar { background: var(--surface); border-bottom: 1px solid var(--border-color); padding: 30px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; text-align: center; }
+    .stat-number { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+    /* Sections */
+    section { padding: 90px 0; }
+    .section-header { text-align: center; max-width: 780px; margin: 0 auto 54px; }
+    .section-badge { display: inline-block; font-family: var(--font-display); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); background: rgba(56, 59, 61, 0.08); padding: 5px 16px; border-radius: 100px; margin-bottom: 14px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2.1rem, 3.5vw, 2.8rem); font-weight: 800; color: var(--primary-dark); line-height: 1.18; margin-bottom: 14px; }
+    .section-title em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #555555; }
+    .section-sub { font-size: 1rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Timeline Section */
+    .timeline-container { position: relative; max-width: 960px; margin: 0 auto; padding: 20px 0; }
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--border-color);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+      width: 50%;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+    .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+
+    .timeline-icon {
+      position: absolute;
+      top: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 2;
+    }
+    .timeline-item:nth-child(odd) .timeline-icon { right: -22px; }
+    .timeline-item:nth-child(even) .timeline-icon { left: -22px; }
+
+    .timeline-card {
+      background: var(--surface);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .timeline-card:hover { transform: translateY(-4px); }
+
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .timeline-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .timeline-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      margin-top: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Sector Grid */
+    .sectors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+    .sector-card {
+      background: var(--surface);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      transition: transform 0.3s;
+    }
+    .sector-card:hover { transform: translateY(-6px); }
+    .sector-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(56, 59, 61, 0.08);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: 0 auto 20px;
+    }
+    .sector-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px; }
+    .sector-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* CTA Section */
+    .cta-section { padding: 75px 0; background: var(--surface); text-align: center; border-top: 1px solid var(--border-color); }
+    .cta-box { max-width: 800px; margin: 0 auto; background: var(--bg-light); border: 1px solid var(--border-color); padding: 45px 30px; border-radius: var(--border-radius-lg); }
+    .cta-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 14px; color: var(--primary-dark); }
+    .cta-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-cta-primary { background: var(--primary); color: #ffffff; padding: 14px 32px; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 10px; transition: background 0.2s; }
+    .btn-cta-primary:hover { background: var(--primary-dark); }
+    .btn-cta-wsp { background: var(--whatsapp); color: #ffffff; padding: 14px 32px; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 10px; transition: opacity 0.2s; }
+    .btn-cta-wsp:hover { opacity: 0.92; }
+
+    /* Footer oficial */
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 768px) {
+      .timeline-container::before { left: 20px; }
+      .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; text-align: left !important; }
+      .timeline-item:nth-child(even) { left: 0; }
+      .timeline-icon { left: 0 !important; right: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-brand">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="index.html" class="active">Empresa</a></li>
+          <li><a href="../categorias/index.html">Categorías</a></li>
+          <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../cotizar.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="../cotizar.html" class="btn-header">
+        <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Empresa -->
+  <div class="empresa-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Inicio</a> / Institucional</div>
+      <span class="hero-badge"><i class="fa-solid fa-building-flag"></i> Líderes Nacionales en Honduras</span>
+      <h1 class="empresa-hero-title">Pioneros en Arquitectura en Vidrio, <em>Ventanaría & Muebles de Lujo</em></h1>
+      <p class="empresa-hero-subtitle">
+        Con más de 15 años de trayectoria ininterrumpida en Honduras, respaldamos proyectos gubernamentales, entidades locales, los principales grupos constructores, centros hospitalarios y residencias exclusivas.
+      </p>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">+15 Años</div>
+          <div class="stat-label">Liderazgo Institucional</div>
+        </div>
+        <div>
+          <div class="stat-number">+850 Obras</div>
+          <div class="stat-label">Entregadas a Nivel Nacional</div>
+        </div>
+        <div>
+          <div class="stat-number">100% Grado Médico</div>
+          <div class="stat-label">Certificación Hospitalaria</div>
+        </div>
+        <div>
+          <div class="stat-number">3 Coberturas</div>
+          <div class="stat-label">Tegucigalpa · SPS · Roatán</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     LINEA DE TIEMPO DE TRAYECTORIA INSTITUCIONAL
+     ========================================== -->
+  <section style="background:var(--bg-light);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Trayectoria & Hitos</span>
+        <h2 class="section-title">Línea de Tiempo de <em>Nuestra Historia</em></h2>
+        <p class="section-sub">Un recorrido por los proyectos clave y alianzas estratégicas que han consolidado nuestra reputación en el país.</p>
+      </div>
+
+      <div class="timeline-container">
+        
+        <!-- Hito 1: Fundacion -->
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-flag"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2010</div>
+            <h3 class="timeline-title">Fundación & Pioneros en Tegucigalpa</h3>
+            <p class="timeline-desc">Iniciamos operaciones introduciendo perfilería de PVC de alta precisión y vidrios de seguridad para residencias de lujo en El Hatillo y Lomas del Guijarro.</p>
+            <img src="../assets/fotos/2026/09/PVOSY2_IMG_6736.jpg" alt="Inicios Tegucigalpa" class="timeline-img">
+          </div>
+        </div>
+
+        <!-- Hito 2: Expansión Corporativa y Constructoras -->
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-city"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2014</div>
+            <h3 class="timeline-title">Alianza con Grandes Constructoras & Zona Norte</h3>
+            <p class="timeline-desc">Expandimos presencia hacia San Pedro Sula firmando contratos para fachadas estructurales Muro Cortina y cristales insulados Solar Control con las principales empresas de ingeniería y construcción de Honduras.</p>
+            <img src="../assets/fotos/2026/09/BADB11_IMG_5603.jpg" alt="Muro Cortina San Pedro Sula" class="timeline-img">
+          </div>
+        </div>
+
+        <!-- Hito 3: Sector Hospitalario y Gobierno -->
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2017</div>
+            <h3 class="timeline-title">Equipamiento Hospitalario & Entidades Públicas</h3>
+            <p class="timeline-desc">Desarrollo y suministro homologado de cortinas clínicas antibacterianas tratadas con biocida de plata, rieles suspendidos en aluminio, puertas herméticas de presión y panelería acústica en hospitales públicos y clínicas del país.</p>
+            <img src="../assets/fotos/2026/09/0SABUD_IMG_0224.jpg" alt="Equipamiento Hospitalario" class="timeline-img">
+          </div>
+        </div>
+
+        <!-- Hito 4: Roatan e Islas de la Bahia -->
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-water"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2020</div>
+            <h3 class="timeline-title">Ventanaría Marina & Cobertura Insular en Roatán</h3>
+            <p class="timeline-desc">Implementación de soluciones en aluminio marino anodizado y vidrios laminados SentryGlas® resistentes a huracanes y salinidad extrema en resorts de West Bay y French Harbour.</p>
+            <img src="../assets/fotos/2026/09/FK5NV7_IMG_7552-EDIT.jpg" alt="Resort Roatan" class="timeline-img">
+          </div>
+        </div>
+
+        <!-- Hito 5: Motorizacion Somfy y Pergolas Bioclimaticas -->
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-sliders"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2023</div>
+            <h3 class="timeline-title">Automatización Smart Somfy & Pérgolas Bioclimáticas</h3>
+            <p class="timeline-desc">Consolidación de alianzas con Somfy Francia para motorización inteligente de cortinas y lanzamiento de pérgolas bioclimáticas con lamas orientables y control móvil.</p>
+            <img src="../assets/fotos/2026/09/MWTHQR_IMG_8933.jpg" alt="Pérgola Bioclimática" class="timeline-img">
+          </div>
+        </div>
+
+        <!-- Hito 6: Presente 2026 -->
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-year">2026</div>
+            <h3 class="timeline-title">Líderes Nacionales en Diseño & Muebles a la Medida</h3>
+            <p class="timeline-desc">Consolidados como el aliado estratégico n.º 1 en Honduras para proyectos institucionales, gubernamentales, hospitalarios, comerciales y residencias de autor.</p>
+            <img src="../assets/fotos/2026/09/E852GL_4c48f410-0d87-4b6f-98d3-6d82c48f3db3.jpg" alt="Presente 2026" class="timeline-img">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+     SECTORES ATENDIDOS & CONFIANZA INSTITUCIONAL
+     ========================================== -->
+  <section style="background:var(--surface);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Respaldo Institucional</span>
+        <h2 class="section-title">Sectores Atendidos a <em>Nivel Nacional</em></h2>
+        <p class="section-sub">Atendemos proyectos de alta exigencia donde la precisión, los tiempos de entrega y la garantía son fundamentales.</p>
+      </div>
+
+      <div class="sectors-grid">
+        
+        <div class="sector-card">
+          <div class="sector-icon"><i class="fa-solid fa-landmark"></i></div>
+          <h3 class="sector-title">Gobierno & Entidades Locales</h3>
+          <p class="sector-desc">Instalaciones en edificios administrativos, sedes municipales e infraestructura pública con especificaciones homologadas.</p>
+        </div>
+
+        <div class="sector-card">
+          <div class="sector-icon"><i class="fa-solid fa-city"></i></div>
+          <h3 class="sector-title">Constructoras & Desarrolladores</h3>
+          <p class="sector-desc">Muros cortina y ventanaría masiva para edificios de oficinas, apartamentos y complejos comerciales en Tegucigalpa y San Pedro Sula.</p>
+        </div>
+
+        <div class="sector-card">
+          <div class="sector-icon"><i class="fa-solid fa-hospital"></i></div>
+          <h3 class="sector-title">Sector Salud & Hospitales</h3>
+          <p class="sector-desc">Cortinas clínicas antibacterianas, rieles médicos suspendidos, puertas herméticas para quirófanos y vidrios acústicos conmutables.</p>
+        </div>
+
+        <div class="sector-card">
+          <div class="sector-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+          <h3 class="sector-title">Hotelería & Resorts de Costa</h3>
+          <p class="sector-desc">Perfilería de aluminio marino anodizado resistente al ambiente salino y cristales laminados anti-huracán en las Islas de la Bahía.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">¿Tienes una Licitación o Proyecto Institucional en Puerta?</h2>
+        <p class="cta-subtitle">Nuestros departamentos de ingeniería y diseño evalúan tus planos y certificaciones necesarias.</p>
+        <div class="cta-buttons">
+          <a href="../cotizar.html" class="btn-cta-primary"><i class="fa-solid fa-file-signature"></i> Solicitar Asesoría Institucional</a>
+          <a href="https://wa.me/50499999999?text=Hola,%20busco%20asesor%C3%ADa%20para%20un%20proyecto%20institucional" target="_blank" class="btn-cta-wsp"><i class="fa-brands fa-whatsapp"></i> Hablar con un Ingeniero</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer oficial -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-brand" style="margin-bottom:16px;">
+            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
+          </div>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Especialistas en arquitectura en vidrio, ventanas termoacústicas y cortinas motorizadas en Honduras.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="index.html">Empresa</a></li>
+            <li><a href="../categorias/index.html">Categorías</a></li>
+            <li><a href="../proyectos/index.html">Proyectos</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../cotizar.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto Directo</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); line-height:1.8;">
+            <i class="fa-solid fa-envelope"></i> ventas@ventanaleshn.com<br>
+            <i class="fa-solid fa-phone"></i> +504 9999-9999<br>
+            <i class="fa-solid fa-location-dot"></i> Tegucigalpa & San Pedro Sula
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Design Solutions By Ventanales. Todos los derechos reservados.</div>
+        <div>Desarrollado por <b>grovi studio</b></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
