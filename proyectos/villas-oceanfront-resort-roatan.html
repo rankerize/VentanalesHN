@@ -128,6 +128,61 @@
       .project-layout { grid-template-columns: 1fr; }
       .sidebar-card { position: static; }
     }
+  
+    /* Lightbox Modal Ampliación */
+    .lightbox-modal {
+      position: fixed; inset: 0; z-index: 10000;
+      background: rgba(15, 17, 19, 0.94); backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .lightbox-modal.active { opacity: 1; visibility: visible; }
+    .lightbox-wrapper {
+      position: relative; max-width: 90vw; max-height: 88vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .lightbox-wrapper img {
+      max-width: 90vw; max-height: 80vh; object-fit: contain;
+      border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      transform: scale(0.96); transition: transform 0.3s ease;
+    }
+    .lightbox-modal.active .lightbox-wrapper img { transform: scale(1); }
+    .lightbox-caption {
+      margin-top: 16px; color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 600;
+      text-align: center; font-family: var(--font-display);
+    }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 32px; color: #ffffff; font-size: 2.2rem;
+      cursor: pointer; opacity: 0.85; transition: opacity 0.2s; z-index: 10002;
+    }
+    .lightbox-close:hover { opacity: 1; color: #ffffff; }
+    .lightbox-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      transition: all 0.25s; z-index: 10002;
+    }
+    .lightbox-btn:hover { background: #ffffff; color: #111111; }
+    .lightbox-btn.prev { left: 24px; }
+    .lightbox-btn.next { right: 24px; }
+
+    .gallery-item {
+      cursor: pointer; position: relative; overflow: hidden;
+    }
+    .gallery-item::after {
+      content: '\f00e';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute; inset: 0;
+      background: rgba(15, 17, 19, 0.45);
+      color: #ffffff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+
   </style>
 </head>
 <body>
@@ -309,6 +364,90 @@
       </div>
     </div>
   </footer>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      if (!galleryItems.length) return;
+
+      const modal = document.createElement('div');
+      modal.className = 'lightbox-modal';
+      modal.id = 'lightboxModal';
+      modal.innerHTML = `
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <button class="lightbox-btn prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-btn next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-wrapper">
+          <img id="lightboxImg" src="" alt="Vista ampliada de la obra">
+          <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+
+      let currentIndex = 0;
+      const images = [];
+
+      galleryItems.forEach((item, index) => {
+        const bg = item.style.backgroundImage;
+        const urlMatch = bg.match(/url\(['"]?([^'"]+)['"]?\)/);
+        const url = urlMatch ? urlMatch[1] : '';
+        const caption = item.getAttribute('alt') || item.getAttribute('title') || `Registro Fotográfico ${index + 1}`;
+
+        images.push({ url, caption });
+
+        item.addEventListener('click', () => {
+          openLightbox(index);
+        });
+      });
+
+      function openLightbox(index) {
+        currentIndex = index;
+        const data = images[currentIndex];
+        if (!data || !data.url) return;
+
+        lightboxImg.src = data.url;
+        lightboxCaption.textContent = data.caption;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        openLightbox(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        openLightbox(currentIndex);
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === closeBtn) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      });
+    });
+  </script>
 
 </body>
 </html>
