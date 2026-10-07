@@ -39,48 +39,28 @@
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
     .logo-brand img { height: 46px !important; max-height: 46px !important; width: auto !important; object-fit: contain !important; }
     nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
-    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    nav a.active { color: var(--primary); font-weight: 700; }
-    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; }
-
-    .category-hero {
-      background: linear-gradient(135deg, rgba(33, 37, 41, 0.92) 0%, rgba(42, 42, 42, 0.88) 100%), url('../assets/fotos/2026/09/PVOSY2_IMG_6736.jpg') center/cover no-repeat;
-      color: #ffffff; padding: 80px 0 100px;
-    }
-    .category-hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.8vw, 3.4rem); font-weight: 800; margin-bottom: 16px; }
-    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
-    .breadcrumb a { color: #ffffff; text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-
-    section { padding: 75px 0; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px; }
-    .product-card { background: var(--surface); border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 6px 18px rgba(0,0,0,0.05); }
-    .product-img { height: 240px; background-size: cover; background-position: center; position: relative; }
-    .product-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
-    .product-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 10px; }
-    .product-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; flex: 1; line-height: 1.6; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
     
-    .spec-list { list-style: none; margin-bottom: 24px; border-top: 1px dashed var(--border-color); padding-top: 16px; }
-    .spec-list li { font-size: 0.85rem; color: var(--text-dark); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-    .spec-list i { color: var(--primary); font-size: 0.9rem; }
+    /* Menu Desplegable Productos */
+    nav ul li { position: relative; }
+    nav ul li.dropdown:hover .dropdown-menu { display: block; opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .dropdown-menu {
+      display: block; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%) translateY(10px); min-width: 270px;
+      background: #ffffff; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border-radius: 8px; padding: 10px 0; list-style: none; opacity: 0; visibility: hidden;
+      transition: all 0.25s ease-in-out; z-index: 1100;
+    }
+    .dropdown-menu li { display: block; width: 100%; }
+    .dropdown-menu a {
+      display: block; padding: 9px 18px; color: #1e2329 !important; font-size: 0.82rem !important;
+      font-weight: 500 !important; text-transform: none !important; letter-spacing: 0 !important;
+      white-space: nowrap; transition: background 0.2s, color 0.2s;
+    }
+    .dropdown-menu a:hover, .dropdown-menu a.active { background: #f8fafc; color: var(--primary) !important; font-weight: 700 !important; }
 
-    .btn-quote { background: var(--primary); color: #ffffff; text-align: center; padding: 12px; border-radius: var(--border-radius); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; transition: background 0.2s; }
-    .btn-quote:hover { background: var(--primary-dark); }
-
-    /* Features Highlight */
-    .features-section { background: var(--dark-bg); color: #ffffff; padding: 60px 0; }
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 28px; }
-    .feature-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 24px; border-radius: var(--border-radius-lg); }
-    .feature-box h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 10px; color: #ffffff; }
-    .feature-box p { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
-
-    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: 60px; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
-    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; }
-    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; }
   </style>
 </head>
 <body>
@@ -89,13 +69,24 @@
   <header>
     <div class="container header-inner">
       <a href="../index.html" class="logo-brand">
-        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales">
+        <img src="../assets/img/logo.png" alt="Ventanas de PVC termoacústicas Kömmerling en Tegucigalpa Honduras">
       </a>
 
       <nav>
         <ul>
           <li><a href="../index.html">Inicio</a></li>
-          <li><a href="index.html" class="active">Categorías</a></li>
+          <li class="dropdown">
+            <a href="index.html" class="active dropdown-toggle">Productos <i class="fa-solid fa-chevron-down" style="font-size:0.7rem; margin-left:3px;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="ventanas-pvc-aluminio.html" class="active">Ventanas de PVC & Aluminio</a></li>
+              <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio Templado</a></li>
+              <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas & Persianas</a></li>
+              <li><a href="pergolas-exteriores.html">Pérgolas Bioclimáticas & Exteriores</a></li>
+              <li><a href="soluciones-hospitalarias-corporativas.html">Soluciones Hospitalarias & Corporativas</a></li>
+              <li><a href="decoracion-interiorismo.html">Decoración e Interiorismo</a></li>
+              <li><a href="mobiliario-a-medida.html">Mobiliario Arquitectónico a Medida</a></li>
+            </ul>
+          </li>
           <li><a href="../proyectos/index.html">Proyectos</a></li>
           <li><a href="../blog/index.html">Blog</a></li>
           <li><a href="../cotizar.html">Contacto</a></li>
@@ -199,25 +190,28 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="logo-brand" style="margin-bottom:16px;">
-            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
+            <img src="../assets/img/logo.png" alt="Ventanas de PVC termoacústicas Kömmerling en Tegucigalpa Honduras" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
           </div>
           <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Especialistas en arquitectura en vidrio, ventanas termoacústicas y cortinas motorizadas en Honduras.</p>
         </div>
         <div class="footer-col">
-          <h4>Categorías</h4>
+          <h4>Categorías de Productos</h4>
           <ul class="footer-links">
             <li><a href="ventanas-pvc-aluminio.html">Ventanas PVC & Aluminio</a></li>
-            <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio</a></li>
-            <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas</a></li>
-            <li><a href="pergolas-exteriores.html">Pérgolas Bioclimáticas</a></li>
+            <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio Templado</a></li>
+            <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas & Persianas</a></li>
+            <li><a href="pergolas-exteriores.html">Pérgolas Bioclimáticas & Exteriores</a></li>
+            <li><a href="soluciones-hospitalarias-corporativas.html">Soluciones Hospitalarias & Corporativas</a></li>
+            <li><a href="decoracion-interiorismo.html">Decoración e Interiorismo</a></li>
+            <li><a href="mobiliario-a-medida.html">Mobiliario Arquitectónico a Medida</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contacto Directo</h4>
           <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); line-height:1.8;">
+            <i class="fa-solid fa-location-dot"></i> Centro de Negocios Vertis, Local 105, Complejo Próceres, Tegucigalpa<br>
             <i class="fa-solid fa-envelope"></i> ventas@ventanaleshn.com<br>
-            <i class="fa-solid fa-phone"></i> +504 8992-0617<br>
-            <i class="fa-solid fa-location-dot"></i> Tegucigalpa & San Pedro Sula
+            <i class="fa-solid fa-phone"></i> +504 8992-0617
           </p>
         </div>
       </div>
