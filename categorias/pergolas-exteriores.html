@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pérgolas Bioclimáticas & Exteriores | Design Solutions By Ventanales Honduras</title>
+  <meta name="description" content="Estructuras de aluminio de alta resistencia con lamas orientables y policarbonato para terrazas residenciales, restaurantes y hoteles en Honduras.">
+  
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #383b3d;
+      --primary-dark: #2a2a2a;
+      --dark-bg: #212529;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-dark: #2a2a2a;
+      --text-muted: #666666;
+      --border-color: #e2e8f0;
+      --border-radius: 4px;
+      --border-radius-lg: 8px;
+      --whatsapp: #25d366;
+      --font-display: 'Overpass', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo-brand img { height: 46px !important; max-height: 46px !important; width: auto !important; object-fit: contain !important; }
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    nav a.active { color: var(--primary); font-weight: 700; }
+    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; }
+
+    .category-hero {
+      background: linear-gradient(135deg, rgba(33, 37, 41, 0.92) 0%, rgba(42, 42, 42, 0.88) 100%), url('../assets/fotos/2026/09/MWTHQR_IMG_8933.jpg') center/cover no-repeat;
+      color: #ffffff; padding: 80px 0 100px;
+    }
+    .category-hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.8vw, 3.4rem); font-weight: 800; margin-bottom: 16px; }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    section { padding: 75px 0; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px; }
+    .product-card { background: var(--surface); border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 6px 18px rgba(0,0,0,0.05); }
+    .product-img { height: 240px; background-size: cover; background-position: center; position: relative; }
+    .product-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+    .product-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 10px; }
+    .product-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; flex: 1; line-height: 1.6; }
+    
+    .spec-list { list-style: none; margin-bottom: 24px; border-top: 1px dashed var(--border-color); padding-top: 16px; }
+    .spec-list li { font-size: 0.85rem; color: var(--text-dark); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .spec-list i { color: var(--primary); font-size: 0.9rem; }
+
+    .btn-quote { background: var(--primary); color: #ffffff; text-align: center; padding: 12px; border-radius: var(--border-radius); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; transition: background 0.2s; }
+    .btn-quote:hover { background: var(--primary-dark); }
+
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: 60px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-brand">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="index.html" class="active">Categorías</a></li>
+          <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../cotizar.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="../cotizar.html" class="btn-header">
+        <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Category -->
+  <div class="category-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="index.html">Categorías</a> / Pérgolas Bioclimáticas</div>
+      <h1 class="category-hero-title">Pérgolas Bioclimáticas & Exteriores</h1>
+      <p style="max-width:700px; font-size:1.05rem; color:rgba(255,255,255,0.88);">
+        Maximiza el uso de tus terrazas y jardines en Tegucigalpa, San Pedro Sula y zonas turísticas de Honduras. Estructuras de aluminio extruido con lamas orientables que protegen del sol intenso y de las lluvias tropicales.
+      </p>
+    </div>
+  </div>
+
+  <!-- Products Section -->
+  <section>
+    <div class="container">
+      <div class="products-grid">
+
+        <!-- Producto 1 -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_IMG_8933.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Pérgola Bioclimática Automatizada con Motor Somfy</h2>
+            <p class="product-desc">Lamas de aluminio orientables de 0° a 135° con sensor automático de lluvia y viento. Perfecta para residencias de lujo y zonas de piscina.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Sistema de desague integrado imperceptible</li>
+              <li><i class="fa-solid fa-check-circle"></i> Iluminación LED perimetral cálida incorporada</li>
+              <li><i class="fa-solid fa-check-circle"></i> Resistencia a vientos de hasta 120 km/h</li>
+            </ul>
+            <a href="../cotizar.html?producto=Pergola%20Bioclimatica" class="btn-quote">Solicitar Cotización</a>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_IMG_3443.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Pérgola Estructural de Aluminio & Policarbonato Alveolar</h2>
+            <p class="product-desc">Cubierta ligera de alta transmisión de luz natural con filtración UV del 99%. Ideal para terrazas comerciales, cafés y restaurantes en San Pedro Sula.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Policarbonato Bayer con tratamiento filtro UV</li>
+              <li><i class="fa-solid fa-check-circle"></i> Estructura en aluminio anodizado no maleable</li>
+              <li><i class="fa-solid fa-check-circle"></i> Instalación limpia y modular rápida</li>
+            </ul>
+            <a href="../cotizar.html?producto=Pergola%20Policarbonato" class="btn-quote">Solicitar Cotización</a>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_732f07f9-0999-482e-8131-f4382b75688c.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Cerramientos de Cristal Plegable para Pérgolas</h2>
+            <p class="product-desc">Paneles correderos-plegables de cristal templado transparente para cerrar tu terraza contra el viento y la lluvia sin perder las vistas al jardín o a las montañas.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Cristal templado de 10mm de alta durabilidad</li>
+              <li><i class="fa-solid fa-check-circle"></i> Sin perfiles verticales intermedios (vista panorámica)</li>
+              <li><i class="fa-solid fa-check-circle"></i> Sistema de rodamientos de acero inoxidable</li>
+            </ul>
+            <a href="../cotizar.html?producto=Cerramiento%20Plegable%20Pergola" class="btn-quote">Solicitar Cotización</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-brand" style="margin-bottom:16px;">
+            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
+          </div>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Especialistas en arquitectura en vidrio, ventanas termoacústicas y cortinas motorizadas en Honduras.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Categorías</h4>
+          <ul class="footer-links">
+            <li><a href="ventanas-pvc-aluminio.html">Ventanas PVC & Aluminio</a></li>
+            <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio</a></li>
+            <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas</a></li>
+            <li><a href="pergolas-exteriores.html">Pérgolas Bioclimáticas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto Directo</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); line-height:1.8;">
+            <i class="fa-solid fa-envelope"></i> ventas@ventanaleshn.com<br>
+            <i class="fa-solid fa-phone"></i> +504 9999-9999<br>
+            <i class="fa-solid fa-location-dot"></i> Tegucigalpa & San Pedro Sula
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Design Solutions By Ventanales.</div>
+        <div>Desarrollado por <b>grovi studio</b></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

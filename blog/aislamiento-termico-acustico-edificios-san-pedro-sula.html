@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aislamiento Térmico & Acústico en Edificios de San Pedro Sula | Blog Ventanales HN</title>
+  <meta name="description" content="Guía técnica para arquitectos y desarrolladores en San Pedro Sula: Reducción del gasto energético en climatización hasta un 40% con vidrios insulados DVH y PVC hermético.">
+  
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #383b3d;
+      --primary-dark: #2a2a2a;
+      --dark-bg: #212529;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-dark: #2a2a2a;
+      --text-muted: #666666;
+      --border-color: #e2e8f0;
+      --border-radius: 4px;
+      --border-radius-lg: 8px;
+      --whatsapp: #25d366;
+      --font-display: 'Overpass', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+      --font-serif: 'PT Serif', serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.7; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    .article-container { max-width: 840px; margin: 0 auto; }
+    
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo-brand img { height: 46px !important; max-height: 46px !important; width: auto !important; object-fit: contain !important; }
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    nav a.active { color: var(--primary); font-weight: 700; }
+    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; }
+
+    .article-hero { background: var(--dark-bg); color: #ffffff; padding: 60px 0 70px; text-align: center; }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: none; }
+    .article-tag { display: inline-block; background: var(--primary); color: #ffffff; padding: 4px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .article-title { font-family: var(--font-display); font-size: clamp(2.1rem, 3.8vw, 3.1rem); font-weight: 800; margin-bottom: 16px; line-height: 1.25; }
+    .article-meta { font-size: 0.88rem; color: rgba(255,255,255,0.7); display: flex; justify-content: center; gap: 20px; }
+
+    .article-body { padding: 60px 0; background: var(--surface); border-bottom: 1px solid var(--border-color); }
+    .featured-img-wrap { margin: -40px auto 40px; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+    .featured-img-wrap img { width: 100%; max-height: 480px; object-fit: cover; display: block; }
+    
+    .content-area h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; color: var(--primary-dark); margin: 36px 0 16px; }
+    .content-area h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--primary-dark); margin: 28px 0 12px; }
+    .content-area p { font-size: 1rem; color: #333333; margin-bottom: 20px; font-family: var(--font-body); }
+    
+    .callout-box { background: var(--bg-light); border-left: 4px solid var(--primary); padding: 24px; border-radius: var(--border-radius); margin: 30px 0; }
+    .callout-box h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--primary-dark); }
+    .callout-box p { font-size: 0.92rem; margin-bottom: 0; color: #555555; }
+
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-brand">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../categorias/index.html">Categorías</a></li>
+          <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="index.html" class="active">Blog</a></li>
+          <li><a href="../cotizar.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="../cotizar.html" class="btn-header">
+        <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Article -->
+  <div class="article-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="index.html">Blog</a> / Aislamiento Térmico en San Pedro Sula</div>
+      <span class="article-tag">Eficiencia Energética & Clima</span>
+      <h1 class="article-title">Aislamiento Térmico & Acústico en Edificios de San Pedro Sula: Guía Técnica 2026</h1>
+      <div class="article-meta">
+        <span><i class="fa-regular fa-calendar"></i> 05 Octubre, 2026</span>
+        <span><i class="fa-regular fa-clock"></i> 6 min de lectura</span>
+        <span><i class="fa-regular fa-user"></i> Ing. Luis Alvarado · Ventanales HN</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body Content -->
+  <div class="article-body">
+    <div class="container">
+      <div class="article-container">
+
+        <div class="featured-img-wrap">
+          <img src="../assets/fotos/2026/09/BADB11_IMG_5603.jpg" alt="Torre Corporativa en San Pedro Sula con Vidrio Solar Control">
+        </div>
+
+        <div class="content-area">
+          <p>
+            San Pedro Sula es conocida como la capital industrial de Honduras y también por sus elevadas temperaturas estivales que superan con frecuencia los 38°C. En proyectos residenciales de alta gama y edificios corporativos en zonas como Trejo, Río de Piedras y el circuito de Circunvalación, el mayor desafío arquitectónico es mitigar el calor extremo sin sacrificar la iluminación natural.
+          </p>
+
+          <h2>El Impacto de las Ventanas Tradicionales en la Factura Eléctrica</h2>
+          <p>
+            El cristal monolítico simple de 4mm o 6mm transmite más del 82% del calor solar al interior del inmueble. Esto obliga a los sistemas de aire acondicionado central o mini-split a operar de manera continua, elevando los costos energéticos mensuales considerablemente.
+          </p>
+
+          <div class="callout-box">
+            <h4>Dato Técnico Clave</h4>
+            <p>El uso de vidrio insulado de Doble Vidriado Hermético (DVH) con tecnología Solar Control Low-E reduce el Coeficiente de Ganancia de Calor Solar (SHGC) de 0.82 a solo 0.28, disminuyendo hasta un 40% el consumo eléctrico en climatización.</p>
+          </div>
+
+          <h2>¿Cómo Funciona el Vidrio Doble DVH Solar Control?</h2>
+          <p>
+            Un panel DVH consta de dos cristales separados por un perfil separador de aluminio con tamiz molecular (desecante), creando una cámara hermética de aire seco o gas argón.
+          </p>
+
+          <ul>
+            <li><strong>Cristal Exterior Low-E:</strong> Refleja la radiación infrarroja solar manteniendo el calor fuera.</li>
+            <li><strong>Cámara de Aire Seco (12mm):</strong> Rompe la conductividad térmica directa entre el exterior y el interior.</li>
+            <li><strong>Cristal Interior Claro / Templado:</strong> Garantiza seguridad y máxima nitidez visual hacia la ciudad o la Cordillera del Merendón.</li>
+          </ul>
+
+          <h2>Aislamiento Acústico Frente al Tráfico Urbano de SPS</h2>
+          <p>
+            Además del calor, el nivel de ruido en arterias viales principales de San Pedro Sula alcanza niveles de 75 a 85 dB. Un sistema de ventanas de PVC Kömmerling de 5 cámaras combinado con vidrios asimétricos (ej. 6mm exterior + 12mm aire + 4mm interior) logra una reducción acústica certificada de hasta 38 a 42 dB, transformando recámaras y oficinas en santuarios de tranquilidad.
+          </p>
+
+          <h2>Conclusión y Recomendaciones de Especificación</h2>
+          <p>
+            Para arquitectos y constructores en Honduras, integrar ventanaría termoacústica de PVC o aluminio de ruptura de puente térmico desde la etapa de planos no solo eleva la plusvalía del inmueble, sino que retorna la inversión inicial en un periodo aproximado de 3 a 4 años en ahorros energéticos.
+          </p>
+
+          <div style="margin-top: 40px; text-align: center; padding: 30px; background: var(--bg-light); border-radius: var(--border-radius-lg);">
+            <h3 style="margin-top:0;">¿Deseas asesoría técnica para tu proyecto en San Pedro Sula?</h3>
+            <p style="font-size:0.95rem; color:#666666;">Cotiza tus ventanales termoacústicos con nuestros ingenieros especializados.</p>
+            <a href="../cotizar.html" style="background: var(--primary); color:#ffffff; padding: 12px 28px; border-radius: 4px; font-weight:700; text-decoration:none; text-transform:uppercase; font-size:0.88rem; display:inline-block; margin-top:10px;">Solicitar Presupuesto</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-brand" style="margin-bottom:16px;">
+            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
+          </div>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Especialistas en arquitectura en vidrio, ventanas termoacústicas y cortinas motorizadas en Honduras.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../categorias/index.html">Categorías</a></li>
+            <li><a href="../proyectos/index.html">Proyectos</a></li>
+            <li><a href="index.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); line-height:1.8;">
+            <i class="fa-solid fa-envelope"></i> ventas@ventanaleshn.com<br>
+            <i class="fa-solid fa-phone"></i> +504 9999-9999<br>
+            <i class="fa-solid fa-location-dot"></i> Tegucigalpa & San Pedro Sula
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Design Solutions By Ventanales.</div>
+        <div>Desarrollado por <b>grovi studio</b></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

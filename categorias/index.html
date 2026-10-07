@@ -3,58 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Categorías de Productos & Soluciones Arquitectónicas | Design Solutions By Ventanales</title>
-  <meta name="description" content="Explora el catálogo completo de categorías de Ventanales HN: Ventanas de PVC y Aluminio, Fachadas de Vidrio, Cortinas Motorizadas, Pérgolas y Soluciones Hospitalarias.">
+  <title>Categorías de Productos & Soluciones Arquitectónicas | Design Solutions By Ventanales Honduras</title>
+  <meta name="description" content="Explora el catálogo completo de categorías de Ventanales HN: Ventanas de PVC Kömmerling y Aluminio, Fachadas de Vidrio, Cortinas Motorizadas Somfy, Pérgolas Bioclimáticas y Soluciones Hospitalarias.">
   
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+
+  <!-- Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --primary: #0f2b5c; --primary-light: #2151f2; --accent: #d4af37; --bg-light: #f8fafc;
-      --surface: #ffffff; --text-dark: #0f172a; --text-muted: #64748b; --border-color: #e2e8f0;
-      --radius-lg: 16px; --font-display: 'Baloo 2', cursive, sans-serif; --font-body: 'Poppins', sans-serif;
+      --primary: #383b3d;
+      --primary-dark: #2a2a2a;
+      --dark-bg: #212529;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-dark: #2a2a2a;
+      --text-muted: #666666;
+      --border-color: #e2e8f0;
+      --border-radius: 4px;
+      --border-radius-lg: 8px;
+      --whatsapp: #25d366;
+      --font-display: 'Overpass', sans-serif;
+      --font-body: 'Poppins', sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
     .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
     
-    header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
+    /* Header oficial */
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.3rem; }
-    .logo-text-title { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--primary); line-height: 1.1; }
-    .logo-text-sub { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; }
+    .logo-brand { display: flex; align-items: center; text-decoration: none; max-width: 260px; }
+    .logo-brand img {
+      height: 46px !important;
+      max-height: 46px !important;
+      width: auto !important;
+      max-width: 240px !important;
+      object-fit: contain !important;
+      display: block;
+    }
     nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
-    nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; }
-    nav a.active { color: var(--primary-light); font-weight: 600; }
-    .btn-header { background: linear-gradient(135deg, var(--primary-light), var(--primary)); color: #ffffff; padding: 12px 24px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
+    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+    .btn-header:hover { background: var(--primary-dark); }
 
-    .page-hero { background: linear-gradient(135deg, #07173e 0%, #030f2b 100%); color: #ffffff; padding: 60px 0 80px; text-align: center; }
-    .page-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 800; margin-bottom: 12px; }
-    .breadcrumb { font-size: 0.88rem; color: rgba(244, 243, 239, 0.7); margin-bottom: 16px; }
-    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    /* Page Hero con imagen real de fondo */
+    .page-hero {
+      background: linear-gradient(135deg, rgba(33, 37, 41, 0.92) 0%, rgba(42, 42, 42, 0.88) 100%), url('../assets/fotos/2026/09/PVOSY2_IMG_6736.jpg') center/cover no-repeat;
+      color: #ffffff; padding: 75px 0 85px; text-align: center;
+    }
+    .page-title { font-family: var(--font-display); font-size: clamp(2.3rem, 4vw, 3.4rem); font-weight: 800; margin-bottom: 14px; letter-spacing: -0.02em; }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .page-subtitle { max-width: 720px; margin: 0 auto; font-size: 1.05rem; color: rgba(255, 255, 255, 0.88); line-height: 1.6; }
 
-    section { padding: 80px 0; }
-    .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 30px; }
-    .category-card { background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--border-color); overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform 0.3s, box-shadow 0.3s; }
-    .category-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(15, 43, 92, 0.1); }
-    .category-img { height: 220px; background: linear-gradient(135deg, #07173e, #0f2b5c); display: flex; align-items: center; justify-content: center; color: #ffffff; }
-    .category-img i { font-size: 4rem; color: rgba(255, 255, 255, 0.3); }
+    /* Section Categories Grid */
+    section { padding: 70px 0 90px; }
+    .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px; }
+    .category-card {
+      background: var(--surface);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+    }
+    .category-img {
+      height: 240px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .category-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%);
+    }
+    .category-badge-num {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--primary);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      z-index: 2;
+    }
     .category-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
-    .category-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
-    .category-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; flex: 1; }
-    .btn-view-cat { font-size: 0.9rem; font-weight: 700; color: var(--primary-light); display: inline-flex; align-items: center; gap: 8px; }
+    .category-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 12px; line-height: 1.3; }
+    .category-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 22px; flex: 1; line-height: 1.6; }
+    .btn-view-cat { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+    .category-card:hover .btn-view-cat { gap: 12px; color: var(--primary-dark); }
 
-    footer { background: var(--primary); color: #ffffff; padding: 60px 0 30px; margin-top: 60px; }
+    /* CTA Section */
+    .cta-section { padding: 75px 0; background: var(--surface); text-align: center; border-top: 1px solid var(--border-color); }
+    .cta-box { max-width: 800px; margin: 0 auto; background: var(--bg-light); border: 1px solid var(--border-color); padding: 45px 30px; border-radius: var(--border-radius-lg); }
+    .cta-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 14px; color: var(--primary-dark); }
+    .cta-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-cta-primary { background: var(--primary); color: #ffffff; padding: 14px 32px; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 10px; transition: background 0.2s; }
+    .btn-cta-primary:hover { background: var(--primary-dark); }
+    .btn-cta-wsp { background: var(--whatsapp); color: #ffffff; padding: 14px 32px; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 10px; transition: opacity 0.2s; }
+    .btn-cta-wsp:hover { opacity: 0.92; }
+
+    /* Footer oficial */
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
-    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: var(--accent); }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; }
     .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 10px; }
-    .footer-links a { color: rgba(244, 243, 239, 0.8); text-decoration: none; font-size: 0.88rem; }
-    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; font-size: 0.85rem; color: rgba(244, 243, 239, 0.6); display: flex; justify-content: space-between; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 768px) {
+      .header-inner { height: 70px; }
+      nav { display: none; }
+      .categories-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -62,12 +151,8 @@
   <!-- Header -->
   <header>
     <div class="container header-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-icon"><i class="fa-solid fa-border-all"></i></div>
-        <div>
-          <div class="logo-text-title">Design Solutions</div>
-          <div class="logo-text-sub">BY VENTANALES · HONDURAS</div>
-        </div>
+      <a href="../index.html" class="logo-brand">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales">
       </a>
 
       <nav>
@@ -75,8 +160,8 @@
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="index.html" class="active">Categorías</a></li>
           <li><a href="../proyectos/index.html">Proyectos</a></li>
-          <li><a href="../blog/index.html">Blog & Guías</a></li>
-          <li><a href="../cotizar.html">Cotizador Online</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../cotizar.html">Contacto</a></li>
         </ul>
       </nav>
 
@@ -90,9 +175,9 @@
   <div class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href="../index.html">Inicio</a> / Categorías de Productos</div>
-      <h1 class="page-title">Catálogo Completo de Categorías</h1>
-      <p style="max-width:650px; margin:0 auto; font-size:1.05rem; color:rgba(244,243,239,0.85);">
-        Conoce nuestras 5 grandes líneas de soluciones de arquitectura en vidrio, ventanas termoacústicas, sombreado inteligente y equipamiento especial.
+      <h1 class="page-title">Catálogo de Categorías & Soluciones</h1>
+      <p class="page-subtitle">
+        Conoce nuestras 5 grandes líneas de ingeniería en ventanas termoacústicas, fachadas de vidrio estructural, sombreado automatizado Somfy y equipamiento especializado para Tegucigalpa, San Pedro Sula y Roatán.
       </p>
     </div>
   </div>
@@ -104,54 +189,78 @@
 
         <!-- 1. Ventanas PVC & Aluminio -->
         <a href="ventanas-pvc-aluminio.html" class="category-card">
-          <div class="category-img"><i class="fa-solid fa-window-maximize"></i></div>
+          <div class="category-img" style="background-image: url('../assets/fotos/2026/09/PVOSY2_IMG_6736.jpg');">
+            <span class="category-badge-num">Línea 01</span>
+          </div>
           <div class="category-body">
-            <h2 class="category-title">01 · Ventanas de PVC & Aluminio Termoacústico</h2>
-            <p class="category-desc">Sistemas alemanes Kömmerling de doble cristal hermético y perfilería de aluminio Eurovent con reducción de ruido y ahorro energético.</p>
-            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+            <h2 class="category-title">Ventanas de PVC & Aluminio Termoacústico</h2>
+            <p class="category-desc">Sistemas alemanes Kömmerling de 5 cámaras herméticas y aluminio Eurovent con vidrios dobles DVH. Reducción de ruido urbano y máxima eficiencia térmica para Tegucigalpa y San Pedro Sula.</p>
+            <span class="btn-view-cat">Explorar Productos de la Línea <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
         <!-- 2. Fachadas & Templados -->
         <a href="fachadas-vidrio-templado.html" class="category-card">
-          <div class="category-img"><i class="fa-solid fa-building"></i></div>
+          <div class="category-img" style="background-image: url('../assets/fotos/2026/09/BADB11_IMG_5603.jpg');">
+            <span class="category-badge-num">Línea 02</span>
+          </div>
           <div class="category-body">
-            <h2 class="category-title">02 · Fachadas de Vidrio & Templados</h2>
-            <p class="category-desc">Ingeniería en muros cortina, fachadas flotantes, spider glass y divisiones de baño en vidrio templado de alta seguridad.</p>
-            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+            <h2 class="category-title">Fachadas de Vidrio & Templados Estructurales</h2>
+            <p class="category-desc">Ingeniería en muros cortina, cristal insulado Solar Control Low-E, herrajes Spider Glass de acero inoxidable y divisiones templadas para torres corporativas y desarrollos en Honduras.</p>
+            <span class="btn-view-cat">Explorar Productos de la Línea <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
         <!-- 3. Cortinas & Motorización -->
         <a href="cortinas-motorizadas.html" class="category-card">
-          <div class="category-img"><i class="fa-solid fa-sliders"></i></div>
+          <div class="category-img" style="background-image: url('../assets/fotos/2026/09/E852GL_4c48f410-0d87-4b6f-98d3-6d82c48f3db3.jpg');">
+            <span class="category-badge-num">Línea 03</span>
+          </div>
           <div class="category-body">
-            <h2 class="category-title">03 · Cortinas, Persianas & Motorización Smart</h2>
-            <p class="category-desc">Sistemas Rollers, Blackout y Sheer Elegance integrados con motores Somfy y automatización por voz/app.</p>
-            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+            <h2 class="category-title">Cortinas, Persianas & Motorización Smart</h2>
+            <p class="category-desc">Sistemas Rollers, Blackout 100% privacidad y Sheer Elegance integrados con motores ultra-silenciosos Somfy. Control por app móvil, asistentes de voz y automatización solar inteligente.</p>
+            <span class="btn-view-cat">Explorar Productos de la Línea <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
         <!-- 4. Pérgolas & Exteriores -->
         <a href="pergolas-exteriores.html" class="category-card">
-          <div class="category-img"><i class="fa-solid fa-umbrella"></i></div>
+          <div class="category-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_IMG_8933.jpg');">
+            <span class="category-badge-num">Línea 04</span>
+          </div>
           <div class="category-body">
-            <h2 class="category-title">04 · Pérgolas Bioclimáticas & Exteriores</h2>
-            <p class="category-desc">Estructuras de aluminio de alta resistencia con lamas orientables y techos de policarbonato para terrazas residenciales y comerciales.</p>
-            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+            <h2 class="category-title">Pérgolas Bioclimáticas & Exteriores</h2>
+            <p class="category-desc">Estructuras de aluminio estructural de alta resistencia con lamas orientables motorizadas, cubiertas de policarbonato alveolar y cerramientos de cristal para terrazas residenciales y restaurantes.</p>
+            <span class="btn-view-cat">Explorar Productos de la Línea <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
         <!-- 5. Hospitalario & Corporativo -->
         <a href="soluciones-hospitalarias-corporativas.html" class="category-card">
-          <div class="category-img"><i class="fa-solid fa-hospital"></i></div>
+          <div class="category-img" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0224.jpg');">
+            <span class="category-badge-num">Línea 05</span>
+          </div>
           <div class="category-body">
-            <h2 class="category-title">05 · Soluciones Hospitalarias & Corporativas</h2>
-            <p class="category-desc">Cortinas sanitarias antibacterianas, rieles médicos, panelería especial y muebles arquitectónicos a la medida.</p>
-            <span class="btn-view-cat">Explorar Productos de esta Categoría <i class="fa-solid fa-arrow-right"></i></span>
+            <h2 class="category-title">Soluciones Hospitalarias & Corporativas</h2>
+            <p class="category-desc">Cortinas clínicas antibacterianas con rieles suspendidos en aluminio, panelería acústica corporativa y soluciones en vidrio inteligente para clínicas, hospitales y centros empresariales.</p>
+            <span class="btn-view-cat">Explorar Productos de la Línea <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">¿Necesitas Asesoría Técnica para Seleccionar la Mejor Solución?</h2>
+        <p class="cta-subtitle">Nuestros ingenieros y arquitectos evalúan tu proyecto según requerimientos térmicos, acústicos y de diseño en Tegucigalpa, San Pedro Sula o Roatán.</p>
+        <div class="cta-buttons">
+          <a href="../cotizar.html" class="btn-cta-primary"><i class="fa-solid fa-file-signature"></i> Solicitar Presupuesto</a>
+          <a href="https://wa.me/50499999999?text=Hola,%20quisiera%20asesor%C3%ADa%20sobre%20sus%20categor%C3%ADas%20de%20productos" target="_blank" class="btn-cta-wsp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Directo</a>
+        </div>
       </div>
     </div>
   </section>
@@ -161,28 +270,36 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h4>Design Solutions By Ventanales</h4>
-          <p style="font-size:0.88rem; color:rgba(244,243,239,0.75);">Soluciones integrales de ventanas, fachadas y cortinas en Tegucigalpa, San Pedro Sula y todo Honduras.</p>
+          <div class="logo-brand" style="margin-bottom:16px;">
+            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
+          </div>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Especialistas en arquitectura en vidrio, ventanas termoacústicas y cortinas motorizadas en Honduras.</p>
         </div>
         <div class="footer-col">
-          <h4>Categorías principales</h4>
+          <h4>Categorías Principales</h4>
           <ul class="footer-links">
             <li><a href="ventanas-pvc-aluminio.html">Ventanas PVC & Aluminio</a></li>
             <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio</a></li>
-            <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas</a></li>
+            <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas Somfy</a></li>
             <li><a href="pergolas-exteriores.html">Pérgolas Bioclimáticas</a></li>
+            <li><a href="soluciones-hospitalarias-corporativas.html">Soluciones Hospitalarias</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contacto</h4>
-          <p style="font-size:0.88rem; color:rgba(244,243,239,0.75);">ventas@ventanaleshn.com<br>+504 9999-9999</p>
+          <h4>Contacto Directo</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); line-height:1.8;">
+            <i class="fa-solid fa-envelope" style="margin-right:6px;"></i> ventas@ventanaleshn.com<br>
+            <i class="fa-solid fa-phone" style="margin-right:6px;"></i> +504 9999-9999<br>
+            <i class="fa-solid fa-location-dot" style="margin-right:6px;"></i> Tegucigalpa & San Pedro Sula
+          </p>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>&copy; 2026 Design Solutions By Ventanales.</div>
+        <div>&copy; 2026 Design Solutions By Ventanales. Todos los derechos reservados.</div>
         <div>Desarrollado por <b>grovi studio</b></div>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
