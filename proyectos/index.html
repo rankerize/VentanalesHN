@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Proyectos & Obras Ejecutadas | Design Solutions By Ventanales Honduras</title>
-  <meta name="description" content="Explora nuestro portafolio de obras reales: ventanales de PVC termoacústicos, fachadas muro cortina de vidrio y ventanería marina en Tegucigalpa, San Pedro Sula y Roatán.">
+  <meta name="description" content="Explora nuestro portafolio de obras reales: ventanales de PVC termoacústicos, fachadas muro cortina, pérgolas bioclimáticas y ventanería marina en Tegucigalpa, San Pedro Sula y Roatán.">
   
   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../assets/img/favicon.png">
@@ -25,8 +25,8 @@
       --text-dark: #2a2a2a;
       --text-muted: #666666;
       --border-color: #e2e8f0;
-      --border-radius: 4px;
-      --border-radius-lg: 8px;
+      --border-radius: 6px;
+      --border-radius-lg: 12px;
       --whatsapp: #25d366;
       --font-display: 'Overpass', sans-serif;
       --font-body: 'Poppins', sans-serif;
@@ -37,7 +37,7 @@
     body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
     .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
     
-    /* Header con control estricto del logo */
+    /* Header */
     header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
     .logo-brand { display: flex; align-items: center; text-decoration: none; max-width: 260px; }
@@ -60,58 +60,132 @@
     /* Page Hero */
     .page-hero {
       background: linear-gradient(135deg, rgba(33, 37, 41, 0.94) 0%, rgba(42, 42, 42, 0.9) 100%), url('../assets/fotos/2026/09/BADB11_IMG_5603.jpg') center/cover no-repeat;
-      color: #ffffff; padding: 75px 0 85px; text-align: center;
+      color: #ffffff; padding: 80px 0 90px; text-align: center;
     }
     .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
     .breadcrumb a { color: #ffffff; text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
-    .page-title { font-family: var(--font-display); font-size: clamp(2.3rem, 4vw, 3.4rem); font-weight: 800; margin-bottom: 14px; letter-spacing: -0.02em; }
-    .page-subtitle { max-width: 720px; margin: 0 auto; font-size: 1.05rem; color: rgba(255, 255, 255, 0.88); line-height: 1.6; }
+    .page-title { font-family: var(--font-display); font-size: clamp(2.4rem, 4.2vw, 3.6rem); font-weight: 800; margin-bottom: 16px; letter-spacing: -0.02em; }
+    .page-subtitle { max-width: 780px; margin: 0 auto; font-size: 1.08rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6; }
 
-    /* Filter Stats Bar */
-    .stats-bar { background: var(--surface); border-bottom: 1px solid var(--border-color); padding: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+    /* Stats Bar */
+    .stats-bar { background: var(--surface); border-bottom: 1px solid var(--border-color); padding: 22px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-    .stat-number { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--primary); }
-    .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+    .stat-number { font-family: var(--font-display); font-size: 1.85rem; font-weight: 800; color: var(--primary); }
+    .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Filter Controls Section */
+    .filter-section { padding: 45px 0 10px; background: var(--bg-light); text-align: center; }
+    .filter-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 20px; }
+    .filter-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 1050px; margin: 0 auto; }
+    .filter-btn {
+      background: var(--surface); color: var(--text-dark); border: 1px solid var(--border-color);
+      padding: 10px 20px; border-radius: 30px; font-family: var(--font-body); font-size: 0.88rem; font-weight: 600;
+      cursor: pointer; transition: all 0.25s ease; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .filter-btn:hover { background: #eef2f6; border-color: #cbd5e1; transform: translateY(-1px); }
+    .filter-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); box-shadow: 0 4px 12px rgba(56, 59, 61, 0.25); }
+    .filter-btn .count-tag { background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; }
+    .filter-btn.active .count-tag { background: rgba(255,255,255,0.25); color: #ffffff; }
 
     /* Projects Grid Section */
-    section.projects-section { padding: 70px 0 90px; }
+    section.projects-section { padding: 45px 0 90px; }
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px; }
     
     .project-card {
-      position: relative; border-radius: var(--border-radius-lg); overflow: hidden; height: 440px;
+      position: relative; border-radius: var(--border-radius-lg); overflow: hidden; min-height: 480px;
       background-size: cover; background-position: center; text-decoration: none; color: #ffffff; display: flex;
-      flex-direction: column; justify-content: flex-end; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.35s ease, box-shadow 0.35s ease;
+      flex-direction: column; justify-content: flex-end; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.35s ease;
     }
-    .project-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.25); }
+    .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(0,0,0,0.28); }
+    .project-card.hidden { display: none !important; }
     
     .project-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(21, 24, 27, 0.96) 0%, rgba(21, 24, 27, 0.6) 55%, rgba(21, 24, 27, 0.15) 100%);
-      padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; transition: background 0.3s;
+      background: linear-gradient(to top, rgba(17, 20, 24, 0.98) 0%, rgba(17, 20, 24, 0.72) 58%, rgba(17, 20, 24, 0.2) 100%);
+      padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; transition: background 0.3s;
     }
     .project-card:hover .project-overlay {
-      background: linear-gradient(to top, rgba(21, 24, 27, 0.98) 0%, rgba(21, 24, 27, 0.7) 65%, rgba(21, 24, 27, 0.25) 100%);
+      background: linear-gradient(to top, rgba(17, 20, 24, 1) 0%, rgba(17, 20, 24, 0.8) 65%, rgba(17, 20, 24, 0.3) 100%);
     }
 
-    .project-badge { display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; width: fit-content; border: 1px solid rgba(255,255,255,0.25); }
-    .project-location { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
-    .project-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; line-height: 1.25; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-    .project-desc { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 18px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .btn-view-project { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #ffffff; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s; }
-    .project-card:hover .btn-view-project { gap: 12px; color: #ffffff; }
+    .card-top-tags { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .project-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); padding: 5px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid rgba(255,255,255,0.3); }
+    .project-location { font-size: 0.84rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .project-title { font-family: var(--font-display); font-size: 1.55rem; font-weight: 800; margin-bottom: 10px; line-height: 1.25; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+    .project-desc { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 16px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    
+    .tech-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+    .tech-pill { background: rgba(255,255,255,0.12); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; padding: 3px 8px; font-size: 0.72rem; font-weight: 500; color: rgba(255,255,255,0.9); }
 
-    /* Technical Value Prop Banner */
-    .value-banner { background: var(--dark-bg); color: #ffffff; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .value-item { text-align: left; padding: 20px; background: rgba(255,255,255,0.03); border-radius: var(--border-radius-lg); border: 1px solid rgba(255,255,255,0.06); }
+    .card-actions { display: flex; gap: 10px; align-items: center; }
+    .btn-card-primary {
+      flex: 1; background: #ffffff; color: var(--dark-bg); text-align: center; padding: 11px 16px; border-radius: var(--border-radius);
+      text-decoration: none; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;
+    }
+    .btn-card-primary:hover { background: #f1f5f9; color: #000000; }
+    .btn-card-lightbox {
+      background: rgba(255,255,255,0.18); color: #ffffff; border: 1px solid rgba(255,255,255,0.35); padding: 11px 14px;
+      border-radius: var(--border-radius); cursor: pointer; font-size: 0.85rem; transition: background 0.2s;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .btn-card-lightbox:hover { background: rgba(255,255,255,0.35); }
+
+    /* Lightbox Modal System */
+    .lightbox-modal {
+      position: fixed; inset: 0; z-index: 10000;
+      background: rgba(15, 17, 19, 0.95); backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+      padding: 20px;
+    }
+    .lightbox-modal.active { opacity: 1; visibility: visible; }
+    .lightbox-wrapper {
+      position: relative; max-width: 1000px; width: 100%; max-height: 90vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .lightbox-img-box { position: relative; width: 100%; display: flex; justify-content: center; align-items: center; }
+    .lightbox-img-box img {
+      max-width: 100%; max-height: 75vh; object-fit: contain;
+      border-radius: var(--border-radius-lg); box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+      transform: scale(0.96); transition: transform 0.3s ease;
+    }
+    .lightbox-modal.active .lightbox-img-box img { transform: scale(1); }
+    
+    .lightbox-info {
+      margin-top: 18px; color: #ffffff; text-align: center; max-width: 800px;
+    }
+    .lightbox-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; margin-bottom: 6px; }
+    .lightbox-sub { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+    
+    .lightbox-close {
+      position: absolute; top: -45px; right: 0; color: #ffffff; font-size: 2.2rem;
+      cursor: pointer; opacity: 0.85; transition: opacity 0.2s; z-index: 10002; line-height: 1;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      transition: all 0.25s; z-index: 10002;
+    }
+    .lightbox-nav:hover { background: #ffffff; color: #111111; }
+    .lightbox-nav.prev { left: -65px; }
+    .lightbox-nav.next { right: -65px; }
+
+    /* Technical Value Banner */
+    .value-banner { background: var(--dark-bg); color: #ffffff; padding: 65px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+    .value-item { text-align: left; padding: 24px; background: rgba(255,255,255,0.03); border-radius: var(--border-radius-lg); border: 1px solid rgba(255,255,255,0.06); }
     .value-icon { font-size: 2rem; color: #ffffff; margin-bottom: 14px; }
     .value-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
     .value-text { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 
     /* CTA Section */
     .cta-section { padding: 75px 0; background: var(--surface); text-align: center; border-top: 1px solid var(--border-color); }
-    .cta-box { max-width: 800px; margin: 0 auto; background: var(--bg-light); border: 1px solid var(--border-color); padding: 45px 30px; border-radius: var(--border-radius-lg); }
+    .cta-box { max-width: 820px; margin: 0 auto; background: var(--bg-light); border: 1px solid var(--border-color); padding: 50px 32px; border-radius: var(--border-radius-lg); }
     .cta-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 14px; color: var(--primary-dark); }
     .cta-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; }
     .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
@@ -130,11 +204,15 @@
     .footer-links a:hover { color: #ffffff; }
     .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
+    @media (max-width: 992px) {
+      .lightbox-nav.prev { left: 10px; }
+      .lightbox-nav.next { right: 10px; }
+    }
     @media (max-width: 768px) {
       .header-inner { height: 70px; }
       nav { display: none; }
       .projects-grid { grid-template-columns: 1fr; }
-      .project-card { height: 380px; }
+      .project-card { min-height: 420px; }
     }
   </style>
 </head>
@@ -167,9 +245,9 @@
   <div class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href="../index.html">Inicio</a> / Portafolio de Proyectos</div>
-      <h1 class="page-title">Proyectos de Obras Ejecutadas</h1>
+      <h1 class="page-title">Proyectos & Obras Ejecutadas</h1>
       <p class="page-subtitle">
-        Casos reales de éxito residencial, corporativo y hotelero. Descubre cómo nuestras ventanas de PVC, muros cortina de vidrio y ventanería marina elevan la arquitectura en Honduras.
+        Portafolio documentado de obras en Honduras. Soluciones avanzadas de ventanería en PVC Kömmerling, fachadas muro cortina de vidrio, pérgolas bioclimáticas y ventanería marina anti-huracán en Tegucigalpa, San Pedro Sula y Roatán.
       </p>
     </div>
   </div>
@@ -183,8 +261,8 @@
           <div class="stat-label">Líderes en Honduras</div>
         </div>
         <div>
-          <div class="stat-number">+500 Obras</div>
-          <div class="stat-label">Instalaciones Exitosas</div>
+          <div class="stat-number">7 Obras</div>
+          <div class="stat-label">Casos Destacados</div>
         </div>
         <div>
           <div class="stat-number">3 Zonas</div>
@@ -198,66 +276,207 @@
     </div>
   </div>
 
-  <!-- Projects Grid -->
+  <!-- Filter Buttons Section -->
+  <div class="filter-section">
+    <div class="container">
+      <div class="filter-title"><i class="fa-solid fa-filter" style="margin-right: 8px;"></i> Filtrar Obras por Categoría Especializada:</div>
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fa-solid fa-layer-group"></i> Todos <span class="count-tag">7</span>
+        </button>
+        <button class="filter-btn" data-filter="residencial">
+          <i class="fa-solid fa-house-chimney"></i> Residencial de Lujo <span class="count-tag">2</span>
+        </button>
+        <button class="filter-btn" data-filter="corporativo">
+          <i class="fa-solid fa-building"></i> Corporativo <span class="count-tag">1</span>
+        </button>
+        <button class="filter-btn" data-filter="hoteleria-roatan">
+          <i class="fa-solid fa-umbrella-beach"></i> Hotelería & Roatán <span class="count-tag">2</span>
+        </button>
+        <button class="filter-btn" data-filter="salud-clinicas">
+          <i class="fa-solid fa-hospital"></i> Salud & Clínicas <span class="count-tag">1</span>
+        </button>
+        <button class="filter-btn" data-filter="terrazas-pergolas">
+          <i class="fa-solid fa-sun"></i> Terrazas & Pérgolas <span class="count-tag">1</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Grid Section -->
   <section class="projects-section">
     <div class="container">
-      <div class="projects-grid">
+      <div class="projects-grid" id="projectsGrid">
 
         <!-- Proyecto 1: Residencia Villa Solana -->
-        <a href="residencia-villa-solana-hatillo.html" class="project-card" style="background-image: url('../assets/fotos/2026/09/PVOSY2_IMG_7756.jpg');">
+        <div class="project-card" data-category="residencial" data-img="../assets/fotos/2026/09/PVOSY2_IMG_7756.jpg" data-title="Residencia Villa Solana" data-location="El Hatillo, Tegucigalpa" style="background-image: url('../assets/fotos/2026/09/PVOSY2_IMG_7756.jpg');">
           <div class="project-overlay">
-            <span class="project-badge">Residencial de Lujo</span>
+            <div class="card-top-tags">
+              <span class="project-badge"><i class="fa-solid fa-house-chimney"></i> Residencial de Lujo</span>
+            </div>
             <div class="project-location"><i class="fa-solid fa-location-dot"></i> El Hatillo, Tegucigalpa</div>
             <h2 class="project-title">Residencia Villa Solana</h2>
-            <p class="project-desc">Sistema integral de ventanas termoacústicas en PVC Kömmerling de 5 cámaras y cortinas motorizadas somfy.</p>
-            <span class="btn-view-project">Ver Ficha y Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+            <p class="project-desc">Sistema integral de ventanas termoacústicas de PVC Kömmerling de 5 cámaras y cortinas motorizadas Somfy con atenuación de ruido de 42 dB.</p>
+            <div class="tech-pills">
+              <span class="tech-pill">PVC Kömmerling</span>
+              <span class="tech-pill">Doble Cristal DVH</span>
+              <span class="tech-pill">Somfy Motorizado</span>
+            </div>
+            <div class="card-actions">
+              <a href="residencia-villa-solana-hatillo.html" class="btn-card-primary">Ver Ficha Completa <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn-card-lightbox" title="Ampliar Foto"><i class="fa-solid fa-expand"></i></button>
+            </div>
           </div>
-        </a>
+        </div>
 
         <!-- Proyecto 2: Torre Corporativa Alianza -->
-        <a href="torre-corporativa-alianza-sps.html" class="project-card" style="background-image: url('../assets/fotos/2026/09/BADB11_IMG_5603.jpg');">
+        <div class="project-card" data-category="corporativo" data-img="../assets/fotos/2026/09/BADB11_IMG_5603.jpg" data-title="Torre Corporativa Alianza" data-location="San Pedro Sula, Cortés" style="background-image: url('../assets/fotos/2026/09/BADB11_IMG_5603.jpg');">
           <div class="project-overlay">
-            <span class="project-badge">Corporativo & Comercial</span>
+            <div class="card-top-tags">
+              <span class="project-badge"><i class="fa-solid fa-building"></i> Corporativo</span>
+            </div>
             <div class="project-location"><i class="fa-solid fa-location-dot"></i> San Pedro Sula, Cortés</div>
             <h2 class="project-title">Torre Corporativa Alianza</h2>
-            <p class="project-desc">Fachada estructural tipo Muro Cortina de 2,400 m² con cristal doble Solar Control Low-E de alto rendimiento térmico.</p>
-            <span class="btn-view-project">Ver Ficha y Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+            <p class="project-desc">Fachada estructural tipo Muro Cortina de 2,400 m² con cristal doble Solar Control Low-E de alto rendimiento térmico y atenuación acústica.</p>
+            <div class="tech-pills">
+              <span class="tech-pill">Muro Cortina</span>
+              <span class="tech-pill">Solar Control Low-E</span>
+              <span class="tech-pill">Vidrio Templado</span>
+            </div>
+            <div class="card-actions">
+              <a href="torre-corporativa-alianza-sps.html" class="btn-card-primary">Ver Ficha Completa <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn-card-lightbox" title="Ampliar Foto"><i class="fa-solid fa-expand"></i></button>
+            </div>
           </div>
-        </a>
+        </div>
 
         <!-- Proyecto 3: Villas Oceanfront Resort -->
-        <a href="villas-oceanfront-resort-roatan.html" class="project-card" style="background-image: url('../assets/fotos/2026/09/FK5NV7_IMG_7552-EDIT.jpg');">
+        <div class="project-card" data-category="hoteleria-roatan" data-img="../assets/fotos/2026/09/FK5NV7_IMG_7552-EDIT.jpg" data-title="Villas Oceanfront Resort" data-location="West Bay, Roatán" style="background-image: url('../assets/fotos/2026/09/FK5NV7_IMG_7552-EDIT.jpg');">
           <div class="project-overlay">
-            <span class="project-badge">Hotelería & Resort</span>
+            <div class="card-top-tags">
+              <span class="project-badge"><i class="fa-solid fa-umbrella-beach"></i> Hotelería & Roatán</span>
+            </div>
             <div class="project-location"><i class="fa-solid fa-location-dot"></i> West Bay, Roatán</div>
             <h2 class="project-title">Villas Oceanfront Resort</h2>
-            <p class="project-desc">Ventanería de aluminio marino anodizado resistente a la brisa salina y vidrios laminados anti-huracán.</p>
-            <span class="btn-view-project">Ver Ficha y Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+            <p class="project-desc">Ventanería de aluminio marino anodizado resistente a la brisa salina y vidrios laminados anti-huracán clase 4 contra ráfagas de 250 km/h.</p>
+            <div class="tech-pills">
+              <span class="tech-pill">Aluminio Marino</span>
+              <span class="tech-pill">Vidrio Anti-Huracán</span>
+              <span class="tech-pill">Acero Inox 316</span>
+            </div>
+            <div class="card-actions">
+              <a href="villas-oceanfront-resort-roatan.html" class="btn-card-primary">Ver Ficha Completa <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn-card-lightbox" title="Ampliar Foto"><i class="fa-solid fa-expand"></i></button>
+            </div>
           </div>
-        </a>
+        </div>
+
+        <!-- Proyecto 4: Centro Médico & Clínica Especializada -->
+        <div class="project-card" data-category="salud-clinicas" data-img="../assets/fotos/2026/09/0SABUD_IMG_0224.jpg" data-title="Centro Médico & Clínica Especializada" data-location="Tegucigalpa, Francisco Morazán" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0224.jpg');">
+          <div class="project-overlay">
+            <div class="card-top-tags">
+              <span class="project-badge"><i class="fa-solid fa-hospital"></i> Salud & Clínicas</span>
+            </div>
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Tegucigalpa, Francisco Morazán</div>
+            <h2 class="project-title">Centro Médico & Clínica Especializada</h2>
+            <p class="project-desc">Cortinas clínicas antibacterianas ignífugas, rieles médicos de aluminio anodizado y divisiones sanitarias herméticas de vidrio templado satinado.</p>
+            <div class="tech-pills">
+              <span class="tech-pill">Cortinas Antibacterianas</span>
+              <span class="tech-pill">Rieles Médicos</span>
+              <span class="tech-pill">Vidrio Satinado</span>
+            </div>
+            <div class="card-actions">
+              <a href="clinica-medica-especializada-tegucigalpa.html" class="btn-card-primary">Ver Ficha Completa <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn-card-lightbox" title="Ampliar Foto"><i class="fa-solid fa-expand"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 5: Restaurante & Terrazas del Merendón -->
+        <div class="project-card" data-category="terrazas-pergolas" data-img="../assets/fotos/2026/09/MWTHQR_IMG_8933.jpg" data-title="Restaurante & Terrazas del Merendón" data-location="San Pedro Sula, Cortés" style="background-image: url('../assets/fotos/2026/09/MWTHQR_IMG_8933.jpg');">
+          <div class="project-overlay">
+            <div class="card-top-tags">
+              <span class="project-badge"><i class="fa-solid fa-sun"></i> Terrazas & Pérgolas</span>
+            </div>
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> San Pedro Sula, Cortés</div>
+            <h2 class="project-title">Restaurante & Terrazas del Merendón</h2>
+            <p class="project-desc">Pérgolas bioclimáticas de aluminio extrudido con lamas orientables motorizadas Somfy y cerramientos de cortina de cristal panorámico deslizante.</p>
+            <div class="tech-pills">
+              <span class="tech-pill">Pérgola Bioclimática</span>
+              <span class="tech-pill">Cristal Panorámico</span>
+              <span class="tech-pill">Lamas Somfy</span>
+            </div>
+            <div class="card-actions">
+              <a href="restaurante-terraza-merendon-sps.html" class="btn-card-primary">Ver Ficha Completa <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn-card-lightbox" title="Ampliar Foto"><i class="fa-solid fa-expand"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 6: Penthouse Lomas del Guijarro -->
+        <div class="project-card" data-category="residencial" data-img="../assets/fotos/2026/09/E852GL_4c48f410-0d87-4b6f-98d3-6d82c48f3db3.jpg" data-title="Penthouse Lomas del Guijarro" data-location="Tegucigalpa, Francisco Morazán" style="background-image: url('../assets/fotos/2026/09/E852GL_4c48f410-0d87-4b6f-98d3-6d82c48f3db3.jpg');">
+          <div class="project-overlay">
+            <div class="card-top-tags">
+              <span class="project-badge"><i class="fa-solid fa-house-chimney"></i> Residencial de Lujo</span>
+            </div>
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Tegucigalpa, Francisco Morazán</div>
+            <h2 class="project-title">Penthouse Lomas del Guijarro</h2>
+            <p class="project-desc">Puertas corredizas panorámicas de elevación, cristal insulado doble con filtro UV del 99% y automatización domótica de persianas integradas.</p>
+            <div class="tech-pills">
+              <span class="tech-pill">Corredizas Elevables</span>
+              <span class="tech-pill">Vidrio Insulado UV</span>
+              <span class="tech-pill">Automatización Somfy</span>
+            </div>
+            <div class="card-actions">
+              <a href="penthouse-lomas-del-guijarro.html" class="btn-card-primary">Ver Ficha Completa <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn-card-lightbox" title="Ampliar Foto"><i class="fa-solid fa-expand"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 7: Complejo Residencial West Bay -->
+        <div class="project-card" data-category="hoteleria-roatan" data-img="../assets/fotos/2026/09/FK5NV7_IMG_7560.jpg" data-title="Complejo Residencial West Bay" data-location="West Bay, Roatán" style="background-image: url('../assets/fotos/2026/09/FK5NV7_IMG_7560.jpg');">
+          <div class="project-overlay">
+            <div class="card-top-tags">
+              <span class="project-badge"><i class="fa-solid fa-umbrella-beach"></i> Hotelería & Roatán</span>
+            </div>
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> West Bay, Roatán</div>
+            <h2 class="project-title">Complejo Residencial West Bay</h2>
+            <p class="project-desc">Sistema de cerramientos de PVC reforzado anti-corrosión salina, vidrios de seguridad laminados SentryGlas resistentes a vientos de 250 km/h.</p>
+            <div class="tech-pills">
+              <span class="tech-pill">PVC Marino UV</span>
+              <span class="tech-pill">SentryGlas Anti-Huracán</span>
+              <span class="tech-pill">Inox AISI 316</span>
+            </div>
+            <div class="card-actions">
+              <a href="complejo-residencial-west-bay.html" class="btn-card-primary">Ver Ficha Completa <i class="fa-solid fa-arrow-right"></i></a>
+              <button class="btn-card-lightbox" title="Ampliar Foto"><i class="fa-solid fa-expand"></i></button>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Technical Value Prop -->
+  <!-- Technical Value Prop Banner -->
   <div class="value-banner">
     <div class="container">
       <div class="value-grid">
         <div class="value-item">
           <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
           <h3 class="value-title">Ingeniería Certificada</h3>
-          <p class="value-text">Perfiles y herrajes importados cumpliendo las normativas térmicas y de resistencia a vientos más exigentes.</p>
+          <p class="value-text">Perfilería y herrajes importados cumpliendo las normativas europeas y norteamericanas de atenuación acústica y resistencia al viento.</p>
         </div>
         <div class="value-item">
           <div class="value-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
           <h3 class="value-title">Eficiencia Energética</h3>
-          <p class="value-text">Sistemas con ruptura de puente térmico y vidrios cámara DVH que reducen el gasto en aire acondicionado hasta un 40%.</p>
+          <p class="value-text">Sistemas con ruptura de puente térmico y vidrios cámara DVH que reducen el consumo en aire acondicionado hasta un 40%.</p>
         </div>
         <div class="value-item">
           <div class="value-icon"><i class="fa-solid fa-truck-fast"></i></div>
           <h3 class="value-title">Cobertura Nacional</h3>
-          <p class="value-text">Equipos técnicos capacitados para instalación y mantenimiento en Tegucigalpa, San Pedro Sula, Roatán y todo el país.</p>
+          <p class="value-text">Equipos técnicos capacitados para instalación y garantía técnica directa en Tegucigalpa, San Pedro Sula, Roatán y todo el territorio hondureño.</p>
         </div>
       </div>
     </div>
@@ -268,7 +487,7 @@
     <div class="container">
       <div class="cta-box">
         <h2 class="cta-title">¿Tienes un Proyecto Residencial o Comercial en Mente?</h2>
-        <p class="cta-subtitle">Nuestros especialistas en arquitectura en vidrio y perfilería te asesoran desde la fase de planos hasta la instalación final.</p>
+        <p class="cta-subtitle">Nuestros ingenieros y especialistas en arquitectura en vidrio te asesoran desde la revisión de planos hasta la instalación final.</p>
         <div class="cta-buttons">
           <a href="../cotizar.html" class="btn-cta-primary"><i class="fa-solid fa-file-signature"></i> Solicitar Presupuesto</a>
           <a href="https://wa.me/50489920617?text=Hola,%20me%20interesa%20asesor%C3%ADa%20para%20un%20proyecto%20de%20ventanales" target="_blank" class="btn-cta-wsp"><i class="fa-brands fa-whatsapp"></i> Hablar con un Asesor</a>
@@ -276,6 +495,22 @@
       </div>
     </div>
   </section>
+
+  <!-- Lightbox Modal Component -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Visor de Fotografías de Obras">
+    <div class="lightbox-wrapper">
+      <span class="lightbox-close" id="lightboxClose" title="Cerrar (Esc)">&times;</span>
+      <button class="lightbox-nav prev" id="lightboxPrev" title="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="lightbox-img-box">
+        <img src="" alt="Fotografía del Proyecto" id="lightboxImage">
+      </div>
+      <button class="lightbox-nav next" id="lightboxNext" title="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="lightbox-info">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-sub" id="lightboxLocation"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -312,6 +547,107 @@
       </div>
     </div>
   </footer>
+
+  <!-- Filter & Lightbox Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Filter Logic
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filterValue = btn.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (filterValue === 'all' || cardCategory === filterValue) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // Lightbox Logic
+      const lightboxModal = document.getElementById('lightboxModal');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxLocation = document.getElementById('lightboxLocation');
+      const lightboxClose = document.getElementById('lightboxClose');
+      const lightboxPrev = document.getElementById('lightboxPrev');
+      const lightboxNext = document.getElementById('lightboxNext');
+
+      let currentProjectIndex = 0;
+      const visibleProjectsData = () => {
+        return Array.from(document.querySelectorAll('.project-card:not(.hidden)'));
+      };
+
+      function openLightbox(index) {
+        const visibleCards = visibleProjectsData();
+        if (index < 0 || index >= visibleCards.length) return;
+        currentProjectIndex = index;
+        const card = visibleCards[currentProjectIndex];
+
+        lightboxImage.src = card.getAttribute('data-img');
+        lightboxTitle.textContent = card.getAttribute('data-title');
+        lightboxLocation.innerHTML = `<i class="fa-solid fa-location-dot" style="margin-right:6px;"></i> ` + card.getAttribute('data-location');
+
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Attach clicks to Lightbox buttons
+      document.querySelectorAll('.btn-card-lightbox').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const card = btn.closest('.project-card');
+          const visibleCards = visibleProjectsData();
+          const index = visibleCards.indexOf(card);
+          openLightbox(index);
+        });
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) {
+          closeLightbox();
+        }
+      });
+
+      lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const visibleCards = visibleProjectsData();
+        currentProjectIndex = (currentProjectIndex - 1 + visibleCards.length) % visibleCards.length;
+        openLightbox(currentProjectIndex);
+      });
+
+      lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const visibleCards = visibleProjectsData();
+        currentProjectIndex = (currentProjectIndex + 1) % visibleCards.length;
+        openLightbox(currentProjectIndex);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightboxModal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') lightboxPrev.click();
+        if (e.key === 'ArrowRight') lightboxNext.click();
+      });
+    });
+  </script>
 
 </body>
 </html>

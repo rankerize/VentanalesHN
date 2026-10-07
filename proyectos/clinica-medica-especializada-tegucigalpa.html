@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Médico & Clínica Especializada (Tegucigalpa) | Proyecto Ventanales HN</title>
+  <meta name="description" content="Caso de Estudio: Equipamiento hospitalario con cortinas clínicas antibacterianas, rieles médicos de aluminio y ventanería hermética en Tegucigalpa.">
+  
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #383b3d;
+      --primary-dark: #2a2a2a;
+      --dark-bg: #212529;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-dark: #2a2a2a;
+      --text-muted: #666666;
+      --border-color: #e2e8f0;
+      --border-radius: 4px;
+      --border-radius-lg: 8px;
+      --whatsapp: #25d366;
+      --font-display: 'Overpass', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header */
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo-brand { display: flex; align-items: center; text-decoration: none; max-width: 260px; }
+    .logo-brand img {
+      height: 46px !important;
+      max-height: 46px !important;
+      width: auto !important;
+      max-width: 240px !important;
+      object-fit: contain !important;
+      display: block;
+    }
+
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
+    
+    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+    .btn-header:hover { background: var(--primary-dark); }
+
+    /* Project Hero */
+    .project-hero {
+      background: linear-gradient(135deg, rgba(33, 37, 41, 0.92) 0%, rgba(42, 42, 42, 0.85) 100%), url('../assets/fotos/2026/09/0SABUD_IMG_0224.jpg') center/cover no-repeat;
+      color: #ffffff; padding: 70px 0 85px;
+    }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .project-tag { display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.25); }
+    .project-hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.8vw, 3.2rem); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .project-hero-subtitle { font-size: 1.05rem; color: rgba(255, 255, 255, 0.88); max-width: 750px; line-height: 1.6; }
+
+    /* Main Section Content Layout */
+    section.project-body { padding: 70px 0; }
+    .project-layout { display: grid; grid-template-columns: 1fr 380px; gap: 48px; }
+
+    .section-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 18px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+    .project-p { font-size: 0.98rem; color: #444444; margin-bottom: 22px; line-height: 1.8; }
+    
+    .tech-specs-box { background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 28px; margin: 30px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+    .tech-specs-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .tech-specs-list { list-style: none; }
+    .tech-specs-list li { font-size: 0.92rem; color: #444444; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
+    .tech-specs-list i { color: var(--primary); margin-top: 4px; font-size: 0.95rem; }
+
+    .gallery-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--primary-dark); margin: 40px 0 20px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .gallery-item { position: relative; border-radius: var(--border-radius-lg); overflow: hidden; height: 240px; background-size: cover; background-position: center; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+    /* Technical Sidebar */
+    .sidebar-card { background: #ffffff; border-radius: var(--border-radius-lg); border: 1px solid var(--border-color); padding: 32px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); position: sticky; top: 100px; }
+    .sidebar-card-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border-color); }
+    
+    .meta-row { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px dashed var(--border-color); }
+    .meta-row:last-of-type { border-bottom: none; margin-bottom: 24px; }
+    .meta-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .meta-value { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--primary-dark); }
+    
+    .btn-quote-side { background: var(--primary); color: #ffffff; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; transition: background 0.2s; margin-bottom: 12px; }
+    .btn-quote-side:hover { background: var(--primary-dark); }
+    .btn-wsp-side { background: var(--whatsapp); color: #ffffff; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; transition: opacity 0.2s; }
+    .btn-wsp-side:hover { opacity: 0.92; }
+
+    /* Footer */
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 992px) {
+      .project-layout { grid-template-columns: 1fr; }
+      .sidebar-card { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-brand">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales - Ventanas y Fachadas en Honduras">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../categorias/index.html">Categorías</a></li>
+          <li><a href="index.html" class="active">Proyectos</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../cotizar.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="../cotizar.html" class="btn-header">
+        <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+      </a>
+    </div>
+  </header>
+
+  <!-- Project Hero -->
+  <div class="project-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="index.html">Proyectos</a> / Centro Médico & Clínica Especializada</div>
+      <span class="project-tag">Salud & Clínicas · Tegucigalpa</span>
+      <h1 class="project-hero-title">Centro Médico & Clínica Especializada</h1>
+      <p class="project-hero-subtitle">
+        Diseño e instalación de cortinas clínicas antibacterianas, rieles hospitalarios de aluminio anodizado y divisiones acristaladas de alta higiene.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Content Layout -->
+  <section class="project-body">
+    <div class="container project-layout">
+      
+      <div>
+        <h2 class="section-title">El Reto Arquitectónico y Sanitario</h2>
+        <p class="project-p">
+          Las áreas hospitalarias y consultorios del nuevo centro médico en Tegucigalpa requerían un cumplimiento estricto de normas bioseguras, privacidad para los pacientes, control de iluminación y aislamiento térmico en salas de examen y recuperación.
+        </p>
+
+        <h2 class="section-title">Solución e Instalación Especializada</h2>
+        <p class="project-p">
+          Se implementaron cortinas clínicas lavables con tratamiento antimicrobiano ignífugo, montadas sobre rieles de aluminio curvos de alta precisión. Adicionalmente, se instalaron ventanales herméticos con cristal templado satinado para aislar el ruido exterior sin sacrificar la luminosidad natural.
+        </p>
+
+        <div class="tech-specs-box">
+          <h3 class="tech-specs-title"><i class="fa-solid fa-screwdriver-wrench"></i> Especificaciones Técnicas del Proyecto</h3>
+          <ul class="tech-specs-list">
+            <li><i class="fa-solid fa-circle-check"></i> <b>Cortinas Clínicas:</b> Tejido antibacteriano lavable con malla superior para circulación de aire HVAC.</li>
+            <li><i class="fa-solid fa-circle-check"></i> <b>Sistemas de Rieles:</b> Rieles suspendidos de aluminio anodizado heavy-duty con rodamientos silenciosos.</li>
+            <li><i class="fa-solid fa-circle-check"></i> <b>Ventanería y Divisiones:</b> Cristal templado laminado de 10mm con acabado satinado traslúcido.</li>
+            <li><i class="fa-solid fa-circle-check"></i> <b>Aislamiento Higiénico:</b> Sellados con silicona neutra anti-hongos de grado quirúrgico.</li>
+          </ul>
+        </div>
+
+        <h2 class="gallery-title">Galería de Obra Ejecutada</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0224.jpg');"></div>
+          <div class="gallery-item" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0219.jpg');"></div>
+          <div class="gallery-item" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_4257.jpg');"></div>
+          <div class="gallery-item" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0192.jpg');"></div>
+        </div>
+      </div>
+
+      <!-- Technical Sidebar -->
+      <div>
+        <div class="sidebar-card">
+          <h3 class="sidebar-card-title">Ficha Técnica de Obra</h3>
+          
+          <div class="meta-row">
+            <div class="meta-label">Proyecto / Obra</div>
+            <div class="meta-value">Centro Médico Especializado</div>
+          </div>
+
+          <div class="meta-row">
+            <div class="meta-label">Ubicación</div>
+            <div class="meta-value">Tegucigalpa, Francisco Morazán</div>
+          </div>
+
+          <div class="meta-row">
+            <div class="meta-label">Categoría</div>
+            <div class="meta-value">Salud & Soluciones Hospitalarias</div>
+          </div>
+
+          <div class="meta-row">
+            <div class="meta-label">Módulos Instalados</div>
+            <div class="meta-value">45 Cubículos / Consultorios</div>
+          </div>
+
+          <div class="meta-row">
+            <div class="meta-label">Año de Entrega</div>
+            <div class="meta-value">2026</div>
+          </div>
+
+          <a href="../cotizar.html" class="btn-quote-side"><i class="fa-solid fa-file-signature"></i> Cotizar Proyecto Hospitalario</a>
+          <a href="https://wa.me/50489920617?text=Hola,%20quisiera%20cotizar%20cortinas%20clinicas%20y%20ventaneria%20hospitalaria" target="_blank" class="btn-wsp-side"><i class="fa-brands fa-whatsapp"></i> Asesoría por WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-brand" style="margin-bottom:16px;">
+            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
+          </div>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Especialistas en arquitectura en vidrio, ventanas termoacústicas y cortinas clínicas en Honduras.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../categorias/index.html">Categorías</a></li>
+            <li><a href="index.html">Proyectos</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../cotizar.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto Directo</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); line-height:1.8;">
+            <i class="fa-solid fa-envelope" style="margin-right:6px;"></i> ventas@ventanaleshn.com<br>
+            <i class="fa-solid fa-phone" style="margin-right:6px;"></i> +504 8992-0617<br>
+            <i class="fa-solid fa-location-dot" style="margin-right:6px;"></i> Tegucigalpa & San Pedro Sula
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Design Solutions By Ventanales. Todos los derechos reservados.</div>
+        <div>Desarrollado por <b>grovi studio</b></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
