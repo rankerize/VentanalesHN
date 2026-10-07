@@ -142,3 +142,23 @@ Cualquier subagente, agente secundario o desarrollador que modifique o amplíe e
    * `CATEGORIAS_ARQUITECTURA_URL.md`: Matriz oficial de URLs y Sitemap jerárquico.
    * `INFORME_SEMRUSH_COMPLETO_VENTANALES.md`: Reporte de métricas SEO y volumen por nicho.
 
+
+
+---
+
+## 📌 Sesión 6 de Octubre, 2026 (noche II) — Análisis de Competencia & Guías de Integración WordPress/Nativas
+
+* **Estudio de Competencia Directa (Honduras):**
+  * Rastreó y analizó a los dos competidores principales: **Canet Central América** (`canetcam.com`) y **Estilos y Detalles** (`estilosydetalles.net`).
+  * Entregable generado: `ANALISIS_COMPETENCIA_CANET_ESTILOS_Y_DETALLES.md`.
+* **Innovaciones e Implementaciones Inmediatas:**
+  * **Visualización de Cortinas:** Adopción de la especificación técnica de Canet (Factores de Apertura Screen 1%, 3%, 5% y Blackout 100%, protección UV 99%, certificación ignífuga NFPA 701).
+  * **Servicio a Domicilio:** Banner y sección de *Visita Técnica + Maletín de Muestras Físicas a Domicilio en Tegucigalpa y SPS*.
+  * **Proceso de Servicio:** Estructuración del customer journey en 5 Pasos transparentes.
+  * Entregable generado: `NOTAS_IMPLEMENTACION_INMEDIATA.md`.
+* **Arquitectura para Migración a WordPress + Tema Astra:**
+  * Guía paso a paso para montar el sitio en Astra Pro + Spectra / Elementor + Custom Fields (ACF) + Rank Math SEO.
+  * Entregable generado: `GUIA_MIGRACION_WORDPRESS_ASTRA.md`.
+* **Formularios 100% Nativos Sin Plugins (WPCode + PHP):**
+  * Desarrollo del snippet PHP nativo para procesar cotizaciones vía `wp_mail()` y AJAX sin cargar plugins de formularios.
+  * Entregable generado: `FORMULARIO_SIN_PLUGINS_WPCODE.md`.
