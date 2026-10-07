@@ -1,0 +1,334 @@
+/* ==========================================================
+   VENTANALES HN — CAPA MINIMALISTA
+   Se carga después del <style> de cada página.
+   Paleta oficial intacta: #383b3d · #2a2a2a · #191b1d · #ffffff · #f8fafc
+   Principios: menos adornos, más aire, líneas finas, esquinas rectas,
+   una sola familia tipográfica para titulares (sin cursivas serif).
+   ========================================================== */
+
+:root {
+  --primary: #383b3d;
+  --primary-dark: #2a2a2a;
+  --dark-bg: #191b1d;
+  --bg-light: #f8fafc;
+  --text-dark: #2a2a2a;
+  --text-muted: #6b6f72;
+  --border-color: #e4e4e2;
+  --line: #e4e4e2;
+  --border-radius: 0px;
+  --border-radius-lg: 0px;
+  --font-serif: 'Overpass', sans-serif;
+}
+
+body { background: #ffffff; color: var(--text-dark); font-weight: 300; letter-spacing: 0.005em; }
+p { font-weight: 300; }
+
+/* ---------- Sin sombras, sin "saltos" al pasar el cursor ---------- */
+header, .work-card, .product-card, .prod-card, .project-card, .category-card,
+.blog-card, .article-card, .related-card, .sector-card, .timeline-card, .summary-card,
+.form-card, .sidebar-card, .coverage-card, .faq-card, .cta-box, .cta-banner-box,
+.marquee-item, .bespoke-img-card, .gallery-item, .tech-specs-box, .callout-box,
+.summary-box, .author-card, .value-item, .stats-bar, .featured-img-wrap,
+.article-figure, .filter-btn, .btn-header, .btn-hero-primary, .btn-hero-secondary,
+.btn-cta-primary, .btn-cta-wsp, .btn-quote, .btn-quote-side, .btn-wsp-side,
+.btn-submit-wpp, .btn-card-primary, .btn-card-secondary, .btn-callout,
+.btn-hero-search, .hero-search-wrapper, .dropdown-menu, .wpp-float, .lightbox-btn {
+  box-shadow: none !important;
+}
+.work-card:hover, .product-card:hover, .prod-card:hover, .project-card:hover,
+.category-card:hover, .blog-card:hover, .article-card:hover, .related-card:hover,
+.sector-card:hover, .timeline-card:hover, .value-item:hover, .coverage-card:hover,
+.btn-header:hover, .btn-hero-primary:hover, .btn-hero-secondary:hover,
+.btn-cta-primary:hover, .btn-cta-wsp:hover, .btn-quote:hover, .btn-card-primary:hover,
+.btn-card-secondary:hover, .btn-submit-wpp:hover, .btn-quote-side:hover,
+.btn-wsp-side:hover, .filter-btn:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ---------- Esquinas rectas (lenguaje arquitectónico) ---------- */
+.work-card, .work-img-wrap, .product-card, .product-img, .prod-card, .prod-img,
+.project-card, .category-card, .category-card-media, .category-card-img,
+.blog-card, .blog-img, .article-card, .related-card, .related-img, .sector-card,
+.timeline-card, .timeline-img, .summary-card, .form-card, .sidebar-card,
+.coverage-card, .faq-card, .cta-box, .cta-banner-box, .marquee-item,
+.bespoke-img-card, .gallery-item, .gallery-item img, .tech-specs-box, .callout-box,
+.summary-box, .author-card, .featured-img-wrap, .article-figure, .article-figure img,
+.value-item, .stats-bar, .lightbox-img-box, .lightbox-img-box img,
+.btn-header, .btn-hero-primary, .btn-hero-secondary, .btn-cta-primary, .btn-cta-wsp,
+.btn-quote, .btn-quote-side, .btn-wsp-side, .btn-submit-wpp, .btn-card-primary,
+.btn-card-secondary, .btn-callout, .btn-hero-search, .hero-search-wrapper,
+.hero-search-input, .filter-btn, .dropdown-menu, input, select, textarea,
+.compare-table, .table-responsive {
+  border-radius: 0 !important;
+}
+
+/* ---------- Titulares: una sola voz, sin cursiva serif ---------- */
+h1, h2, h3, h4,
+.section-title, .hero-title, .page-title, .project-hero-title, .category-hero-title,
+.empresa-hero-title, .hero-editorial-title, .article-title, .cta-title, .cta-banner-title {
+  font-family: 'Overpass', sans-serif;
+  letter-spacing: -0.02em;
+}
+.section-title, .page-title, .category-hero-title, .project-hero-title,
+.empresa-hero-title, .hero-editorial-title, .article-title, .cta-title, .cta-banner-title {
+  font-weight: 600 !important;
+}
+.section-title { color: var(--primary-dark); }
+.bespoke-section .section-title, .cta-banner-section .section-title { color: #ffffff; }
+.hero-title { font-weight: 600 !important; }
+h1 em, h2 em, h3 em, .section-title em, .hero-title em, .page-title em,
+.category-hero-title em, .project-hero-title em, .empresa-hero-title em,
+.hero-editorial-title em, .cta-title em, .cta-banner-title em, .article-title em {
+  font-family: 'Overpass', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  color: inherit;
+  opacity: 0.62;
+}
+
+/* ---------- Etiquetas: de "píldora" a texto con línea fina ---------- */
+.section-badge, .hero-subtitle-badge, .hero-badge, .hero-badge-pill, .article-tag,
+.project-tag, .blog-badge, .category-type-badge {
+  background: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase;
+  color: var(--text-muted) !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 14px;
+}
+.section-badge::before, .hero-subtitle-badge::before, .hero-badge::before,
+.hero-badge-pill::before, .article-tag::before, .project-tag::before {
+  content: ""; width: 32px; height: 1px; background: currentColor; display: inline-block;
+}
+.hero-subtitle-badge, .hero-slider-wrapper .hero-badge, .project-hero .project-tag,
+.empresa-hero .hero-badge, .page-hero .hero-badge, .category-hero .hero-badge {
+  color: rgba(255,255,255,0.75) !important;
+}
+.hero-subtitle-badge i, .section-badge i, .hero-badge i { display: none; }
+
+/* Etiquetas sobre fotos (tarjetas): pequeñas, planas */
+.work-tag, .project-badge, .card-top-tags span, .category-line-number, .count-tag {
+  background: #ffffff !important;
+  color: var(--primary-dark) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  font-size: 0.66rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+  padding: 6px 10px !important;
+}
+
+/* ---------- Aire y ritmo ---------- */
+section { padding: 120px 0; }
+.section-header { text-align: left !important; max-width: 1240px !important; margin: 0 0 64px !important;
+  display: grid; grid-template-columns: 1fr; gap: 0; }
+.section-header .section-title { max-width: 760px; }
+.section-header .section-sub { max-width: 560px; }
+.section-sub { color: var(--text-muted); font-weight: 300; }
+.page-subtitle, .project-hero-subtitle, .empresa-hero-subtitle, .hero-editorial-desc { font-weight: 300; }
+
+/* ---------- Header ---------- */
+header {
+  background: rgba(255,255,255,0.97) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+.header-inner { height: 76px; }
+nav a { font-size: 0.78rem !important; font-weight: 400 !important; letter-spacing: 0.14em !important; color: var(--primary-dark) !important; position: relative; }
+nav a:hover, nav a.active { font-weight: 400 !important; color: var(--primary-dark) !important; }
+nav > ul > li > a.active::after, nav > ul > li > a:hover::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: var(--primary-dark);
+}
+.btn-header {
+  background: transparent !important; color: var(--primary-dark) !important;
+  border: 1px solid var(--primary-dark) !important;
+  font-weight: 500 !important; font-size: 0.74rem !important; letter-spacing: 0.14em !important;
+  padding: 11px 22px !important;
+}
+.btn-header:hover { background: var(--primary-dark) !important; color: #ffffff !important; }
+.btn-header i { display: none; }
+.dropdown-menu { border: 1px solid var(--line) !important; }
+
+/* ---------- Botones ---------- */
+.btn-hero-primary, .btn-cta-primary, .btn-quote, .btn-quote-side, .btn-card-primary,
+.btn-submit-wpp, .btn-callout, .btn-hero-search {
+  font-weight: 500 !important; letter-spacing: 0.14em !important; font-size: 0.76rem !important;
+  padding: 16px 30px !important;
+}
+.btn-cta-wsp, .btn-wsp-side { font-weight: 500 !important; letter-spacing: 0.14em !important; font-size: 0.76rem !important; }
+.btn-hero-secondary, .btn-card-secondary {
+  background: transparent !important; backdrop-filter: none !important;
+  font-weight: 500 !important; letter-spacing: 0.14em !important; font-size: 0.76rem !important;
+}
+.btn-hero-secondary { border: 1px solid rgba(255,255,255,0.6) !important; }
+.btn-hero-secondary:hover { background: #ffffff !important; color: var(--primary-dark) !important; }
+.btn-hero-primary i, .btn-hero-secondary i, .btn-cta-primary i, .btn-card-primary i, .btn-card-secondary i { display: none; }
+
+/* Enlaces tipo "Ver proyecto" */
+.btn-work-link, .btn-link, .btn-read-more {
+  font-weight: 500 !important; letter-spacing: 0.14em !important; font-size: 0.72rem !important;
+  color: var(--primary-dark) !important; border-bottom: 1px solid var(--primary-dark);
+  padding-bottom: 4px; display: inline-flex !important; width: fit-content;
+}
+
+/* ---------- Hero ---------- */
+.hero-overlay {
+  background: linear-gradient(to top, rgba(25,27,29,0.78) 0%, rgba(25,27,29,0.25) 55%, rgba(25,27,29,0.1) 100%) !important;
+  align-items: flex-end !important; padding-bottom: 110px;
+}
+.hero-title { font-size: clamp(2.4rem, 4.6vw, 4.2rem) !important; line-height: 1.04 !important; }
+.hero-desc { font-size: 1rem !important; max-width: 520px; color: rgba(255,255,255,0.8) !important; }
+.hero-nav-btn { background: transparent !important; backdrop-filter: none !important; border: 1px solid rgba(255,255,255,0.45) !important; width: 42px !important; height: 42px !important; }
+.hero-dot { height: 1px !important; width: 28px !important; border-radius: 0 !important; }
+.hero-dot.active { width: 56px !important; }
+.hero-project-info { background: none !important; backdrop-filter: none !important; border: none !important; padding: 0 !important; font-size: 0.72rem !important; letter-spacing: 0.16em; text-transform: uppercase; }
+.hero-project-info i { display: none; }
+
+/* El carrusel de miniaturas del hero repite fotos: se retira por simplicidad */
+.marquee-section { display: none !important; }
+
+/* ---------- Tarjetas: foto + texto, sin caja ---------- */
+.work-card, .product-card, .prod-card, .category-card, .blog-card,
+.article-card, .related-card {
+  background-color: transparent !important;
+  border: none !important;
+}
+.work-body, .product-body, .prod-body, .category-card-body,
+.blog-body, .related-info { padding: 22px 0 0 !important; background: transparent !important; }
+.work-title, .product-title, .prod-title, .project-title, .category-card-title,
+.blog-title, .related-card-title {
+  font-family: 'Overpass', sans-serif !important; font-weight: 600 !important; letter-spacing: -0.01em;
+}
+.work-title, .product-title, .prod-title, .blog-title, .related-card-title { color: var(--primary-dark); }
+.work-location, .blog-date, .related-card-sub {
+  font-size: 0.7rem !important; letter-spacing: 0.16em !important; font-weight: 400 !important; color: var(--text-muted) !important;
+}
+.work-location i, .project-location i, .blog-date i { display: none; }
+.work-desc, .product-desc, .prod-desc, .blog-desc {
+  color: var(--text-muted) !important; font-weight: 300;
+}
+.work-img-wrap img, .product-img img, .prod-img img, .category-card-media img,
+.category-card-img img, .blog-img img, .related-img img, .gallery-item img {
+  transition: transform 0.9s cubic-bezier(.2,.6,.2,1), filter 0.6s ease !important;
+}
+.work-card:hover img, .product-card:hover img, .prod-card:hover img,
+.category-card:hover img, .blog-card:hover img, .related-card:hover img {
+  transform: scale(1.03) !important;
+}
+
+/* Pastillas técnicas */
+.tech-pill, .tech-pills span {
+  background: none !important; border: 1px solid var(--line) !important; border-radius: 0 !important;
+  color: var(--text-muted) !important; font-weight: 400 !important;
+}
+
+.project-card .tech-pill, .project-card .tech-pills span { border-color: rgba(255,255,255,0.3) !important; color: rgba(255,255,255,0.8) !important; }
+.project-desc { color: rgba(255,255,255,0.78) !important; }
+
+/* Filtros */
+.filter-btn {
+  background: transparent !important; border: none !important; border-bottom: 1px solid transparent !important;
+  color: var(--text-muted) !important; font-weight: 400 !important; letter-spacing: 0.12em; padding: 8px 2px !important;
+}
+.filter-btn.active, .filter-btn:hover { color: var(--primary-dark) !important; border-bottom-color: var(--primary-dark) !important; background: transparent !important; }
+
+/* Controles de carrusel */
+.btn-carousel-ctrl {
+  background: transparent !important; border: 1px solid var(--primary-dark) !important; color: var(--primary-dark) !important;
+  border-radius: 0 !important; box-shadow: none !important;
+}
+.btn-carousel-ctrl:hover { background: var(--primary-dark) !important; color: #fff !important; }
+
+/* ---------- Bloques de soporte ---------- */
+.sidebar-card, .tech-specs-box, .form-card, .coverage-card, .faq-card, .author-card {
+  border: 1px solid var(--line) !important;
+}
+.value-item, .summary-card { border: 1px solid rgba(255,255,255,0.1) !important; }
+.project-card { border: none !important; }
+.project-overlay { background: linear-gradient(to top, rgba(25,27,29,0.92) 0%, rgba(25,27,29,0.45) 55%, rgba(25,27,29,0.05) 100%) !important; }
+.callout-box, .summary-box {
+  background: var(--bg-light) !important; border: none !important; border-left: 2px solid var(--primary-dark) !important;
+}
+.stats-bar { background: transparent !important; border-top: 1px solid var(--line) !important; border-bottom: 1px solid var(--line) !important; }
+.stat-number { font-weight: 300 !important; }
+
+input, select, textarea {
+  border: none !important; border-bottom: 1px solid #cfcfcc !important; background: transparent !important;
+  padding-left: 0 !important; font-weight: 300;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-bottom-color: var(--primary-dark) !important; box-shadow: none !important; }
+
+/* Banners CTA */
+.cta-box, .cta-banner-box { border: none !important; }
+
+/* ---------- Footer ---------- */
+footer { padding: 90px 0 36px !important; border-top: none !important; }
+footer .logo-brand { height: auto !important; max-width: none !important; overflow: visible !important; }
+footer .logo-brand img { height: 36px !important; background: #ffffff; padding: 6px 10px; border-radius: 0 !important; }
+.footer-col h4 { font-size: 0.72rem !important; font-weight: 500 !important; letter-spacing: 0.2em !important; color: rgba(255,255,255,0.5) !important; }
+.footer-links a { font-weight: 300; }
+.footer-bottom { font-size: 0.74rem !important; letter-spacing: 0.04em; }
+footer i.fa-solid { display: none; }
+
+/* WhatsApp: discreto */
+.wpp-float { width: 52px !important; height: 52px !important; font-size: 1.5rem !important; }
+
+/* Breadcrumb */
+.breadcrumb, .breadcrumb a { font-size: 0.72rem !important; letter-spacing: 0.12em; }
+
+/* Sección oscura "a la medida" */
+.bespoke-img-lbl {
+  background: none !important; backdrop-filter: none !important; border-radius: 0 !important;
+  left: 0 !important; right: 0 !important; bottom: 0 !important; padding: 40px 14px 12px !important;
+  background: linear-gradient(to top, rgba(25,27,29,0.75), transparent) !important;
+  font-size: 0.68rem !important; font-weight: 500 !important; letter-spacing: 0.16em !important;
+}
+.bespoke-features li { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 14px; font-weight: 300; }
+.bespoke-features i { background: none !important; width: auto !important; height: auto !important; font-size: 0.7rem !important; opacity: 0.6; }
+.bespoke-img-card { border: none !important; }
+
+@media (max-width: 900px) {
+  section { padding: 80px 0; }
+  .section-header { margin-bottom: 40px !important; }
+  .hero-overlay { padding-bottom: 90px; }
+}
+
+/* ---------- Menú móvil universal ---------- */
+.vm-burger { display: none; background: none; border: none; width: 40px; height: 40px; cursor: pointer; position: relative; }
+.vm-burger span { position: absolute; left: 9px; right: 9px; height: 1px; background: var(--primary-dark); transition: transform .3s ease, top .3s ease; }
+.vm-burger span:first-child { top: 16px; }
+.vm-burger span:last-child { top: 24px; }
+header.vm-open .vm-burger span:first-child { top: 20px; transform: rotate(45deg); }
+header.vm-open .vm-burger span:last-child { top: 20px; transform: rotate(-45deg); }
+
+@media (max-width: 900px) {
+  html, body { overflow-x: hidden; }
+  .header-inner { height: 64px; }
+  .logo-brand img { height: 36px !important; }
+  header:not(:has(.mobile-menu-toggle)) nav { display: none; }
+  header:not(:has(.mobile-menu-toggle)) .btn-header { display: none !important; }
+  .vm-burger { display: block; }
+  header.vm-open nav {
+    display: block; position: absolute; top: 64px; left: 0; right: 0;
+    background: #ffffff; border-bottom: 1px solid var(--line); padding: 8px 24px 24px;
+  }
+  header.vm-open nav ul { flex-direction: column; align-items: flex-start; gap: 0; }
+  header.vm-open nav li { width: 100%; border-bottom: 1px solid var(--line); }
+  header.vm-open nav a { display: block; padding: 16px 0; }
+  header.vm-open nav a::after { display: none; }
+  .hero-title { font-size: 2.2rem !important; }
+  .hero-btns { flex-direction: column; align-items: stretch; }
+  .hero-btns a { justify-content: center; }
+  .hero-slider-nav { right: 24px !important; bottom: 24px !important; }
+  .hero-project-info { display: none !important; }
+  .wpp-float { bottom: 16px !important; right: 16px !important; }
+}

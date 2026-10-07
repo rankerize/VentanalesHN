@@ -94,32 +94,37 @@
     .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; }
     .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
   </style>
+  <link rel="stylesheet" href="../assets/css/minimal.css">
 </head>
 <body>
 
   <!-- Header -->
+    <!-- Header -->
   <header>
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="../index.html" class="logo-brand">
-        <img src="../assets/img/logo.png" alt="Revestimientos decorativos de vidrio templado y espejos biselados">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales - Ventanas y Fachadas en Honduras">
       </a>
 
       <nav>
         <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li class="dropdown">
-            <a href="index.html" class="active dropdown-toggle">Productos <i class="fa-solid fa-chevron-down" style="font-size:0.7rem; margin-left:3px;"></i></a>
+          <li class="nav-item-dropdown">
+            <a href="../categorias/index.html">Productos <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="ventanas-pvc-aluminio.html">Ventanas de PVC & Aluminio</a></li>
-              <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio Templado</a></li>
-              <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas & Persianas</a></li>
-              <li><a href="pergolas-exteriores.html">Pérgolas Bioclimáticas & Exteriores</a></li>
-              <li><a href="soluciones-hospitalarias-corporativas.html">Soluciones Hospitalarias & Corporativas</a></li>
-              <li><a href="decoracion-interiorismo.html" class="active">Decoración e Interiorismo</a></li>
-              <li><a href="mobiliario-a-medida.html">Mobiliario Arquitectónico a Medida</a></li>
+              <li><a href="../categorias/ventanas-pvc-aluminio.html"><i class="fa-solid fa-window-maximize"></i> Ventanas PVC & Aluminio</a></li>
+              <li><a href="../categorias/fachadas-vidrio-templado.html"><i class="fa-solid fa-building"></i> Fachadas de Vidrio & Templados</a></li>
+              <li><a href="../categorias/cortinas-motorizadas.html"><i class="fa-solid fa-sliders"></i> Cortinas Motorizadas & Somfy Smart</a></li>
+              <li><a href="../categorias/cortinas-para-sala.html"><i class="fa-solid fa-couch"></i> Cortinas para Sala & Hogar</a></li>
+              <li><a href="../categorias/cortinas-para-oficina.html"><i class="fa-solid fa-briefcase"></i> Cortinas para Oficina & B2B</a></li>
+              <li><a href="../categorias/pergolas-exteriores.html"><i class="fa-solid fa-umbrella"></i> Pérgolas Bioclimáticas & Exteriores</a></li>
+              <li><a href="../categorias/muebles-de-cocina.html"><i class="fa-solid fa-kitchen-set"></i> Muebles de Cocina a Medida</a></li>
+              <li><a href="../categorias/mobiliario-a-medida.html"><i class="fa-solid fa-door-closed"></i> Walk-in Closets & Mobiliario</a></li>
+              <li><a href="../categorias/soluciones-hospitalarias-corporativas.html"><i class="fa-solid fa-hospital"></i> Soluciones Hospitalarias & Clínicas</a></li>
+              <li><a href="../categorias/decoracion-interiorismo.html"><i class="fa-solid fa-palette"></i> Decoración e Interiorismo</a></li>
             </ul>
           </li>
           <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="../empresa/index.html">Empresa</a></li>
           <li><a href="../blog/index.html">Blog</a></li>
           <li><a href="../cotizar.html">Contacto</a></li>
         </ul>
@@ -145,50 +150,94 @@
   <!-- Products Section -->
   <section>
     <div class="container">
+      
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: var(--font-display); font-size: 2rem; color: var(--primary-dark); margin-bottom: 12px;">Soluciones de Decoración e Interiorismo a Medida</h2>
+        <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto 24px;">Equipamiento textil, acentuación en cristal, alfombras técnicas y panelería acústica para hoteles, residencias y empresas.</p>
+        
+        <!-- Categorías de Filtrado Visual -->
+        <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+          <span style="background:var(--primary); color:#fff; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Todas las Soluciones</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Alfombras Corporativas & Hoteles</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Espejos & Puertas de Baño</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Paneles & Puertas Acústicas</span>
+        </div>
+      </div>
+
       <div class="products-grid">
 
-        <!-- Producto 1 -->
+        <!-- Producto 1: Alfombras Comerciales, Hoteles y Residenciales -->
         <div class="product-card">
           <div class="product-img" style="background-image: url('../assets/fotos/2026/09/E852GL_4c48f410-0d87-4b6f-98d3-6d82c48f3db3.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Panelería & Revestimientos en Vidrio Decorativo</h2>
-            <p class="product-desc">Revestimientos de pared en cristal lacado (Lacobel) y vidrios satinados para vestíbulos residenciales, recepciones corporativas y salas de juntas.</p>
+            <h2 class="product-title">Alfombras Comerciales, Hoteles & Residenciales</h2>
+            <p class="product-desc">Alfombras modulares en paletas técnicas de alto tráfico para corporativos, suites de hotel y residencias. Tratamiento antimanchas y de fácil mantenimiento.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Gran variedad de tonos y acabados personalizados</li>
-              <li><i class="fa-solid fa-check-circle"></i> Cristal templado de seguridad de 6mm a 10mm</li>
-              <li><i class="fa-solid fa-check-circle"></i> Instalación limpia con adhesivos estructurales Dow Corning</li>
+              <li><i class="fa-solid fa-check-circle"></i> Alfombras modulares en rollo o paletas</li>
+              <li><i class="fa-solid fa-check-circle"></i> Clasificación de alto tráfico comercial (Heavy Duty)</li>
+              <li><i class="fa-solid fa-check-circle"></i> Propiedades ignífugas y de atenuación acústica</li>
             </ul>
-            <a href="../cotizar.html?producto=Paneleria%20Vidrio%20Decorativo" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=alfombras_comerciales_hoteles" class="btn-quote">Solicitar Cotización</a>
           </div>
         </div>
 
-        <!-- Producto 2 -->
+        <!-- Producto 2: Espejos a Medida & Retroiluminados LED -->
         <div class="product-card">
           <div class="product-img" style="background-image: url('../assets/fotos/2026/09/PVOSY2_IMG_7400.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Espejos Biselados & Flotantes a la Medida</h2>
-            <p class="product-desc">Espejos de alta definición sin cobre anti-corrosión con biselado perimetral o retroiluminación LED cálida para baños de lujo y suites hoteleras.</p>
+            <h2 class="product-title">Espejos a la Medida (Retroiluminados LED)</h2>
+            <p class="product-desc">Espejos de cristal ecológico libre de cobre, con cortes biselados, marcos de aluminio y retroiluminación LED cálida o fría con sensor táctil.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Iluminación táctil integrada (Touch Sensor)</li>
-              <li><i class="fa-solid fa-check-circle"></i> Película desempañante automática incorporada</li>
-              <li><i class="fa-solid fa-check-circle"></i> Fabricación exacta a las dimensiones del espacio</li>
+              <li><i class="fa-solid fa-check-circle"></i> Cristal de alta definición sin distorsión</li>
+              <li><i class="fa-solid fa-check-circle"></i> Sensor Touch encendido/dimmer y anti-empañante</li>
+              <li><i class="fa-solid fa-check-circle"></i> Fabricación exacta a las medidas del proyecto</li>
             </ul>
-            <a href="../cotizar.html?producto=Espejos%20Biselados%20LED" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=espejos_a_medida" class="btn-quote">Solicitar Cotización</a>
           </div>
         </div>
 
-        <!-- Producto 3 -->
+        <!-- Producto 3: Paneles Acústicos & Puertas Acústicas -->
         <div class="product-card">
           <div class="product-img" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0192.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Cerramientos Interiores & Puertas Plegables de Cristal</h2>
-            <p class="product-desc">Divisiones divisorias minimalistas con perfiles ultra-delgados en aluminio negro mate para integrar y dividir espacios residenciales o salas de lectura.</p>
+            <h2 class="product-title">Paneles & Puertas Acústicas Insonorizadas</h2>
+            <p class="product-desc">Revestimientos fonoabsorbentes y puertas de núcleo acústico para aislamiento de sonido en salas de juntas, auditorios, hoteles y consultorios.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Sistema de rodamientos superiores silenciosos</li>
-              <li><i class="fa-solid fa-check-circle"></i> Vidrio acanalado (Fluted Glass) o cristal claro</li>
-              <li><i class="fa-solid fa-check-circle"></i> Diseño arquitectónico de tendencia europea</li>
+              <li><i class="fa-solid fa-check-circle"></i> Reducción de reverberación sonora (NRC 0.85+)</li>
+              <li><i class="fa-solid fa-check-circle"></i> Acabados en madera, tela fonoabsorbente o PET</li>
+              <li><i class="fa-solid fa-check-circle"></i> Puertas con sellado perimetral acústico de guillotina</li>
             </ul>
-            <a href="../cotizar.html?producto=Cerramientos%20Interiores%20Cristal" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=paneles_puertas_acusticas" class="btn-quote">Solicitar Cotización</a>
+          </div>
+        </div>
+
+        <!-- Producto 4: Puertas & Canceles para Baño en Vidrio Templado -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0224.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Puertas & Canceles de Baño en Vidrio Templado</h2>
+            <p class="product-desc">Puertas corredizas y batientes para ducha en cristal templado de 8mm y 10mm con herrajes de acero inoxidable satinado o negro mate.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Vidrio templado de seguridad con sello ClearShield</li>
+              <li><i class="fa-solid fa-check-circle"></i> Herrajes anticorrosivos de acero inoxidable 316</li>
+              <li><i class="fa-solid fa-check-circle"></i> Diseños minimalistas sin marco (Frameless)</li>
+            </ul>
+            <a href="../cotizar.html?producto=puertas_bano_vidrio_templado" class="btn-quote">Solicitar Cotización</a>
+          </div>
+        </div>
+
+        <!-- Producto 5: Diseño de Interiores & Asesoría Arquitectónica -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/FK5NV7_9820e577-f77d-4ed2-9853-18e1fde6fd79.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Diseño de Interiores & Asesoría 3D</h2>
+            <p class="product-desc">Servicio integral de conceptualización, planos de acabado, paletas de materiales y renderizado 3D para proyectos residenciales y comerciales.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Renders fotorrealistas y distribución de plano</li>
+              <li><i class="fa-solid fa-check-circle"></i> Selección y especificación técnica de materiales</li>
+              <li><i class="fa-solid fa-check-circle"></i> Acompañamiento de obra e instalación final</li>
+            </ul>
+            <a href="../cotizar.html?producto=diseno_interiores_asesoria" class="btn-quote">Solicitar Asesoría 3D</a>
           </div>
         </div>
 
@@ -234,5 +283,6 @@
     </div>
   </footer>
 
+  <script src="../assets/js/minimal-nav.js" defer></script>
 </body>
 </html>

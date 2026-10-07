@@ -12,7 +12,7 @@
   <!-- Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -841,43 +841,39 @@
       .filter-bar-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
+  <link rel="stylesheet" href="../assets/css/minimal.css">
 </head>
 <body>
 
   <!-- ==========================================
      HEADER OFICIAL CON DROPDOWN DE PRODUCTOS
      ========================================== -->
+    <!-- Header -->
   <header>
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="../index.html" class="logo-brand">
         <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales - Ventanas y Fachadas en Honduras">
       </a>
 
-      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Abrir Menú">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
-      <nav id="mainNav">
+      <nav>
         <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="../empresa.html">Empresa</a></li>
           <li class="nav-item-dropdown">
-            <a href="index.html" class="active">
-              Productos <i class="fa-solid fa-chevron-down dropdown-icon"></i>
-            </a>
+            <a href="../categorias/index.html">Productos <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="cortinas-motorizadas.html"><i class="fa-solid fa-robot"></i> Automatización y Motorización</a></li>
-              <li><a href="cortinas-motorizadas.html"><i class="fa-solid fa-blinds"></i> Cortinas y Persianas</a></li>
-              <li><a href="decoracion-interiorismo.html"><i class="fa-solid fa-couch"></i> Decoración e Interiorismo</a></li>
-              <li><a href="mobiliario-a-medida.html"><i class="fa-solid fa-hammer"></i> Mobiliario a Medida</a></li>
-              <li><a href="ventanas-pvc-aluminio.html"><i class="fa-solid fa-border-all"></i> Ventanas de PVC &amp; Aluminio</a></li>
-              <li><a href="fachadas-vidrio-templado.html"><i class="fa-solid fa-building"></i> Fachadas de Vidrio &amp; Templados</a></li>
-              <li><a href="soluciones-hospitalarias-corporativas.html"><i class="fa-solid fa-briefcase"></i> Soluciones Comerciales y Corporativas</a></li>
-              <li><a href="soluciones-hospitalarias-corporativas.html"><i class="fa-solid fa-hospital"></i> Soluciones Hospitalarias</a></li>
-              <li><a href="pergolas-exteriores.html"><i class="fa-solid fa-umbrella-beach"></i> Toldos y Soluciones para Exteriores</a></li>
+              <li><a href="../categorias/ventanas-pvc-aluminio.html"><i class="fa-solid fa-window-maximize"></i> Ventanas PVC & Aluminio</a></li>
+              <li><a href="../categorias/fachadas-vidrio-templado.html"><i class="fa-solid fa-building"></i> Fachadas de Vidrio & Templados</a></li>
+              <li><a href="../categorias/cortinas-motorizadas.html"><i class="fa-solid fa-sliders"></i> Cortinas Motorizadas & Somfy Smart</a></li>
+              <li><a href="../categorias/cortinas-para-sala.html"><i class="fa-solid fa-couch"></i> Cortinas para Sala & Hogar</a></li>
+              <li><a href="../categorias/cortinas-para-oficina.html"><i class="fa-solid fa-briefcase"></i> Cortinas para Oficina & B2B</a></li>
+              <li><a href="../categorias/pergolas-exteriores.html"><i class="fa-solid fa-umbrella"></i> Pérgolas Bioclimáticas & Exteriores</a></li>
+              <li><a href="../categorias/muebles-de-cocina.html"><i class="fa-solid fa-kitchen-set"></i> Muebles de Cocina a Medida</a></li>
+              <li><a href="../categorias/mobiliario-a-medida.html"><i class="fa-solid fa-door-closed"></i> Walk-in Closets & Mobiliario</a></li>
+              <li><a href="../categorias/soluciones-hospitalarias-corporativas.html"><i class="fa-solid fa-hospital"></i> Soluciones Hospitalarias & Clínicas</a></li>
+              <li><a href="../categorias/decoracion-interiorismo.html"><i class="fa-solid fa-palette"></i> Decoración e Interiorismo</a></li>
             </ul>
           </li>
           <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="../empresa/index.html">Empresa</a></li>
           <li><a href="../blog/index.html">Blog</a></li>
           <li><a href="../cotizar.html">Contacto</a></li>
         </ul>
@@ -1451,5 +1447,6 @@
       }
     });
   </script>
+  <script src="../assets/js/minimal-nav.js" defer></script>
 </body>
 </html>

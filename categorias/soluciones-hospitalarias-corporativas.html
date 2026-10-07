@@ -94,32 +94,37 @@
     .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; }
     .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
   </style>
+  <link rel="stylesheet" href="../assets/css/minimal.css">
 </head>
 <body>
 
   <!-- Header -->
+    <!-- Header -->
   <header>
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="../index.html" class="logo-brand">
-        <img src="../assets/img/logo.png" alt="Cortinas clínicas antibacterianas y rieles médicos en Honduras">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales - Ventanas y Fachadas en Honduras">
       </a>
 
       <nav>
         <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li class="dropdown">
-            <a href="index.html" class="active dropdown-toggle">Productos <i class="fa-solid fa-chevron-down" style="font-size:0.7rem; margin-left:3px;"></i></a>
+          <li class="nav-item-dropdown">
+            <a href="../categorias/index.html">Productos <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="ventanas-pvc-aluminio.html">Ventanas de PVC & Aluminio</a></li>
-              <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio Templado</a></li>
-              <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas & Persianas</a></li>
-              <li><a href="pergolas-exteriores.html">Pérgolas Bioclimáticas & Exteriores</a></li>
-              <li><a href="soluciones-hospitalarias-corporativas.html" class="active">Soluciones Hospitalarias & Corporativas</a></li>
-              <li><a href="decoracion-interiorismo.html">Decoración e Interiorismo</a></li>
-              <li><a href="mobiliario-a-medida.html">Mobiliario Arquitectónico a Medida</a></li>
+              <li><a href="../categorias/ventanas-pvc-aluminio.html"><i class="fa-solid fa-window-maximize"></i> Ventanas PVC & Aluminio</a></li>
+              <li><a href="../categorias/fachadas-vidrio-templado.html"><i class="fa-solid fa-building"></i> Fachadas de Vidrio & Templados</a></li>
+              <li><a href="../categorias/cortinas-motorizadas.html"><i class="fa-solid fa-sliders"></i> Cortinas Motorizadas & Somfy Smart</a></li>
+              <li><a href="../categorias/cortinas-para-sala.html"><i class="fa-solid fa-couch"></i> Cortinas para Sala & Hogar</a></li>
+              <li><a href="../categorias/cortinas-para-oficina.html"><i class="fa-solid fa-briefcase"></i> Cortinas para Oficina & B2B</a></li>
+              <li><a href="../categorias/pergolas-exteriores.html"><i class="fa-solid fa-umbrella"></i> Pérgolas Bioclimáticas & Exteriores</a></li>
+              <li><a href="../categorias/muebles-de-cocina.html"><i class="fa-solid fa-kitchen-set"></i> Muebles de Cocina a Medida</a></li>
+              <li><a href="../categorias/mobiliario-a-medida.html"><i class="fa-solid fa-door-closed"></i> Walk-in Closets & Mobiliario</a></li>
+              <li><a href="../categorias/soluciones-hospitalarias-corporativas.html"><i class="fa-solid fa-hospital"></i> Soluciones Hospitalarias & Clínicas</a></li>
+              <li><a href="../categorias/decoracion-interiorismo.html"><i class="fa-solid fa-palette"></i> Decoración e Interiorismo</a></li>
             </ul>
           </li>
           <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="../empresa/index.html">Empresa</a></li>
           <li><a href="../blog/index.html">Blog</a></li>
           <li><a href="../cotizar.html">Contacto</a></li>
         </ul>
@@ -145,50 +150,96 @@
   <!-- Products Section -->
   <section>
     <div class="container">
+      
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: var(--font-display); font-size: 2rem; color: var(--primary-dark); margin-bottom: 12px;">Soluciones B2B por Sector Industrial y Comercial</h2>
+        <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto 24px;">Fabricación e instalación especializada a la medida para proyectos de gran escala en toda Honduras.</p>
+        
+        <!-- Categorías de Filtrado por Sector B2B -->
+        <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+          <span style="background:var(--primary); color:#fff; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Todos los Sectores B2B</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Hoteles &amp; Hospitality</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Oficinas &amp; Corporativos</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Condominios &amp; Desarrollos</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Restaurantes &amp; Terrazas</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Auditorios &amp; Hospitales</span>
+        </div>
+      </div>
+
       <div class="products-grid">
 
-        <!-- Producto 1 -->
+        <!-- Producto 1: Cortinas Antibacteriales & Hospitalarias -->
         <div class="product-card">
           <div class="product-img" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0224.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Cortinas Clínicas Antibacterianas & Rieles Médicos</h2>
-            <p class="product-desc">Sistemas de cortinaje lavable de grado médico tratadas con biocida de plata. Rieles suspendidos de aluminio extruido con carros ultra-silenciosos para salas de hospitalización y emergencias.</p>
+            <h2 class="product-title">Cortinas Antibacteriales & Hospitalarias (NFPA 701)</h2>
+            <p class="product-desc">Sistemas de cortinaje clínico lavable de grado médico tratadas con biocida de plata. Malla de ventilación superior norma internacional para salas de hospitalización y emergencias.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Tela Ignífuga NFPA 701 y Antibacteriana</li>
-              <li><i class="fa-solid fa-check-circle"></i> Malla de ventilación superior norma internacional</li>
-              <li><i class="fa-solid fa-check-circle"></i> Rieles articulados adaptables a esquinas y camas</li>
+              <li><i class="fa-solid fa-check-circle"></i> Tela Ignífuga NFPA 701 y Antibacteriana (Iones de Plata)</li>
+              <li><i class="fa-solid fa-check-circle"></i> Malla de ventilación superior para aspersores contra incendio</li>
+              <li><i class="fa-solid fa-check-circle"></i> Lavables a alta temperatura sin perder propiedades</li>
             </ul>
-            <a href="../cotizar.html?producto=Cortinas%20Clinicas%20Medicas" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=cortinas_antibacteriales_hospitalarias" class="btn-quote">Solicitar Cotización B2B</a>
           </div>
         </div>
 
-        <!-- Producto 2 -->
+        <!-- Producto 2: Rieles Hospitalarios & Médicos de Aluminio -->
         <div class="product-card">
           <div class="product-img" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0219.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Divisiones Corporativas en Vidrio Acústico Smart</h2>
-            <p class="product-desc">Tabiquería en vidrio laminado acústico con película electrocrómica conmutable de transparente a opaca para salas de juntas y consultorios médicos ejecutivos.</p>
+            <h2 class="product-title">Rieles Hospitalarios & Médicos de Aluminio</h2>
+            <p class="product-desc">Rieles de aluminio extruido suspendidos de techo o adosados, con carros ultra-silenciosos de nylon para recorridos rectos, curvas y divisiones entre camas.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Control de privacidad mediante interruptor o app</li>
-              <li><i class="fa-solid fa-check-circle"></i> Atenuación sonora certificada de 42 dB</li>
-              <li><i class="fa-solid fa-check-circle"></i> Perfilería oculta en aluminio negro mate</li>
+              <li><i class="fa-solid fa-check-circle"></i> Aluminio extruido de grado médico anodizado</li>
+              <li><i class="fa-solid fa-check-circle"></i> Carros de nylon deslizantes con ganchos de acero inoxidable</li>
+              <li><i class="fa-solid fa-check-circle"></i> Diseño articulable adaptable a cualquier geometría de sala</li>
             </ul>
-            <a href="../cotizar.html?producto=Divisiones%20Vidrio%20Smart" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=rieles_hospitalarios_medicos" class="btn-quote">Solicitar Cotización B2B</a>
           </div>
         </div>
 
-        <!-- Producto 3 -->
+        <!-- Producto 3: Cortinas para Baños Hospitalarios (Impermeables) -->
         <div class="product-card">
           <div class="product-img" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_4257.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Puertas Herméticas e Insonorizadas para Quirófanos</h2>
-            <p class="product-desc">Sistemas de puertas correderas herméticas de acero inoxidable o vidrio laminado con sellado perimetral contra presión de aire para quirófanos y laboratorios.</p>
+            <h2 class="product-title">Cortinas para Baños Hospitalarios (Impermeables)</h2>
+            <p class="product-desc">Cortinas sanitarias repeltentes al agua y moho para áreas de ducha de pacientes, cubículos de aseo y baños adaptados en clínicas y hospitales.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Automatización mediante sensor de pie / infrarrojo</li>
-              <li><i class="fa-solid fa-check-circle"></i> Sello hermético neumático certificado</li>
-              <li><i class="fa-solid fa-check-circle"></i> Mirilla rasante en cristal de seguridad</li>
+              <li><i class="fa-solid fa-check-circle"></i> Vinilo de grado sanitario 100% impermeable</li>
+              <li><i class="fa-solid fa-check-circle"></i> Tratamiento anti-hongos y anti-bacterias de fácil limpieza</li>
+              <li><i class="fa-solid fa-check-circle"></i> Ojales de latón niquelado antirrusting</li>
             </ul>
-            <a href="../cotizar.html?producto=Puertas%20Hermeticas%20Quirofano" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=cortinas_banos_hospitalarios" class="btn-quote">Solicitar Cotización B2B</a>
+          </div>
+        </div>
+
+        <!-- Producto 4: Paneles Divisorios Modulares & Biombos Sanitarios -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_0224.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Paneles Divisorios Modulares & Biombos Sanitarios</h2>
+            <p class="product-desc">Paneles modulares a la medida y biombos de separación higiénica para camas, áreas de triaje, cubículos de examinación e internamiento.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Superficies lavables con productos de desinfección clínica</li>
+              <li><i class="fa-solid fa-check-circle"></i> Estructuras modulares de aluminio liviano de alta resistencia</li>
+              <li><i class="fa-solid fa-check-circle"></i> Fabricación 100% a la medida por habitación</li>
+            </ul>
+            <a href="../cotizar.html?producto=paneles_divisorios_hospitalarios" class="btn-quote">Solicitar Cotización B2B</a>
+          </div>
+        </div>
+
+        <!-- Producto 5: Proyectos Hospitalarios & Puertas Herméticas para Quirófanos -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/0SABUD_IMG_4257.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Proyectos Hospitalarios & Puertas Quirófano</h2>
+            <p class="product-desc">Suministro integral y licitaciones para centros de salud: puertas herméticas automatizadas para quirófanos, vidrios plomados y tabiquería limpia.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Puertas correderas herméticas de acero inoxidable / vidrio</li>
+              <li><i class="fa-solid fa-check-circle"></i> Experiencia en licitaciones privadas e institucionales</li>
+              <li><i class="fa-solid fa-check-circle"></i> Instalación y garantías directas en toda Honduras</li>
+            </ul>
+            <a href="../cotizar.html?producto=proyectos_hospitalarios_licitaciones" class="btn-quote">Solicitar Asesoría B2B</a>
           </div>
         </div>
 
@@ -234,5 +285,6 @@
     </div>
   </footer>
 
+  <script src="../assets/js/minimal-nav.js" defer></script>
 </body>
 </html>

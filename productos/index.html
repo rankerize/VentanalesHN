@@ -72,23 +72,101 @@
     .footer-links li { margin-bottom: 12px; }
     .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; }
     .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+  
+    /* Dropdown Menú Productos */
+    .nav-item-dropdown {
+      position: relative;
+    }
+    .dropdown-icon {
+      font-size: 0.75rem;
+      transition: transform 0.25s ease;
+    }
+    .nav-item-dropdown:hover .dropdown-icon {
+      transform: rotate(180deg);
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(14px);
+      background: #ffffff;
+      min-width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.04);
+      border: 1px solid #e2e8f0;
+      padding: 12px;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-item-dropdown:hover .dropdown-menu,
+    .nav-item-dropdown:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(6px);
+    }
+    .dropdown-menu li a {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 10px 14px !important;
+      border-radius: 6px !important;
+      color: #1e2329 !important;
+      font-size: 0.84rem !important;
+      font-weight: 500 !important;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+      transition: all 0.2s ease !important;
+    }
+    .dropdown-menu li a:hover {
+      background: #f1f5f9 !important;
+      color: #383b3d !important;
+      transform: translateX(4px) !important;
+    }
+    .dropdown-menu li a i {
+      width: 20px !important;
+      color: #383b3d !important;
+      font-size: 0.9rem !important;
+      text-align: center !important;
+    }
+
   </style>
+  <link rel="stylesheet" href="../assets/css/minimal.css">
 </head>
 <body>
 
   <!-- Header -->
+    <!-- Header -->
   <header>
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="../index.html" class="logo-brand">
         <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales - Ventanas y Fachadas en Honduras">
       </a>
 
       <nav>
         <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="../empresa/index.html">Empresa</a></li>
-          <li><a href="index.html" class="active">Productos</a></li>
+          <li class="nav-item-dropdown">
+            <a href="../categorias/index.html">Productos <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="../categorias/ventanas-pvc-aluminio.html"><i class="fa-solid fa-window-maximize"></i> Ventanas PVC & Aluminio</a></li>
+              <li><a href="../categorias/fachadas-vidrio-templado.html"><i class="fa-solid fa-building"></i> Fachadas de Vidrio & Templados</a></li>
+              <li><a href="../categorias/cortinas-motorizadas.html"><i class="fa-solid fa-sliders"></i> Cortinas Motorizadas & Somfy Smart</a></li>
+              <li><a href="../categorias/cortinas-para-sala.html"><i class="fa-solid fa-couch"></i> Cortinas para Sala & Hogar</a></li>
+              <li><a href="../categorias/cortinas-para-oficina.html"><i class="fa-solid fa-briefcase"></i> Cortinas para Oficina & B2B</a></li>
+              <li><a href="../categorias/pergolas-exteriores.html"><i class="fa-solid fa-umbrella"></i> Pérgolas Bioclimáticas & Exteriores</a></li>
+              <li><a href="../categorias/muebles-de-cocina.html"><i class="fa-solid fa-kitchen-set"></i> Muebles de Cocina a Medida</a></li>
+              <li><a href="../categorias/mobiliario-a-medida.html"><i class="fa-solid fa-door-closed"></i> Walk-in Closets & Mobiliario</a></li>
+              <li><a href="../categorias/soluciones-hospitalarias-corporativas.html"><i class="fa-solid fa-hospital"></i> Soluciones Hospitalarias & Clínicas</a></li>
+              <li><a href="../categorias/decoracion-interiorismo.html"><i class="fa-solid fa-palette"></i> Decoración e Interiorismo</a></li>
+            </ul>
+          </li>
           <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="../empresa/index.html">Empresa</a></li>
           <li><a href="../blog/index.html">Blog</a></li>
           <li><a href="../cotizar.html">Contacto</a></li>
         </ul>
@@ -246,5 +324,6 @@
     </div>
   </footer>
 
+  <script src="../assets/js/minimal-nav.js" defer></script>
 </body>
 </html>

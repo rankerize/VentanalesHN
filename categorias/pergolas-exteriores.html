@@ -94,32 +94,37 @@
     .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; }
     .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
   </style>
+  <link rel="stylesheet" href="../assets/css/minimal.css">
 </head>
 <body>
 
   <!-- Header -->
+    <!-- Header -->
   <header>
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="../index.html" class="logo-brand">
-        <img src="../assets/img/logo.png" alt="Pérgola bioclimática de aluminio con lamas orientables en Tegucigalpa">
+        <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales - Ventanas y Fachadas en Honduras">
       </a>
 
       <nav>
         <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li class="dropdown">
-            <a href="index.html" class="active dropdown-toggle">Productos <i class="fa-solid fa-chevron-down" style="font-size:0.7rem; margin-left:3px;"></i></a>
+          <li class="nav-item-dropdown">
+            <a href="../categorias/index.html">Productos <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="ventanas-pvc-aluminio.html">Ventanas de PVC & Aluminio</a></li>
-              <li><a href="fachadas-vidrio-templado.html">Fachadas de Vidrio Templado</a></li>
-              <li><a href="cortinas-motorizadas.html">Cortinas Motorizadas & Persianas</a></li>
-              <li><a href="pergolas-exteriores.html" class="active">Pérgolas Bioclimáticas & Exteriores</a></li>
-              <li><a href="soluciones-hospitalarias-corporativas.html">Soluciones Hospitalarias & Corporativas</a></li>
-              <li><a href="decoracion-interiorismo.html">Decoración e Interiorismo</a></li>
-              <li><a href="mobiliario-a-medida.html">Mobiliario Arquitectónico a Medida</a></li>
+              <li><a href="../categorias/ventanas-pvc-aluminio.html"><i class="fa-solid fa-window-maximize"></i> Ventanas PVC & Aluminio</a></li>
+              <li><a href="../categorias/fachadas-vidrio-templado.html"><i class="fa-solid fa-building"></i> Fachadas de Vidrio & Templados</a></li>
+              <li><a href="../categorias/cortinas-motorizadas.html"><i class="fa-solid fa-sliders"></i> Cortinas Motorizadas & Somfy Smart</a></li>
+              <li><a href="../categorias/cortinas-para-sala.html"><i class="fa-solid fa-couch"></i> Cortinas para Sala & Hogar</a></li>
+              <li><a href="../categorias/cortinas-para-oficina.html"><i class="fa-solid fa-briefcase"></i> Cortinas para Oficina & B2B</a></li>
+              <li><a href="../categorias/pergolas-exteriores.html"><i class="fa-solid fa-umbrella"></i> Pérgolas Bioclimáticas & Exteriores</a></li>
+              <li><a href="../categorias/muebles-de-cocina.html"><i class="fa-solid fa-kitchen-set"></i> Muebles de Cocina a Medida</a></li>
+              <li><a href="../categorias/mobiliario-a-medida.html"><i class="fa-solid fa-door-closed"></i> Walk-in Closets & Mobiliario</a></li>
+              <li><a href="../categorias/soluciones-hospitalarias-corporativas.html"><i class="fa-solid fa-hospital"></i> Soluciones Hospitalarias & Clínicas</a></li>
+              <li><a href="../categorias/decoracion-interiorismo.html"><i class="fa-solid fa-palette"></i> Decoración e Interiorismo</a></li>
             </ul>
           </li>
           <li><a href="../proyectos/index.html">Proyectos</a></li>
+          <li><a href="../empresa/index.html">Empresa</a></li>
           <li><a href="../blog/index.html">Blog</a></li>
           <li><a href="../cotizar.html">Contacto</a></li>
         </ul>
@@ -145,50 +150,95 @@
   <!-- Products Section -->
   <section>
     <div class="container">
+      
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: var(--font-display); font-size: 2rem; color: var(--primary-dark); margin-bottom: 12px;">Catálogo Completo de Pérgolas, Toldos & Soluciones Exteriores</h2>
+        <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto 24px;">Fabricación 100% a la medida para terrazas, restaurantes, piscinas y balcón en Tegucigalpa, San Pedro Sula y Roatán.</p>
+        
+        <!-- Categorías de Filtrado Visual -->
+        <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+          <span style="background:var(--primary); color:#fff; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Todas las Soluciones</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Techo Eléctrico Louver (Bioclimáticas)</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Toldos Retráctiles & Motorizados</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Cortinas de Exterior & Zip</span>
+          <span style="background:#e2e8f0; color:#333; padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600;">Tensoformas & Velas</span>
+        </div>
+      </div>
+
       <div class="products-grid">
 
-        <!-- Producto 1 -->
+        <!-- Producto 1: Techo Eléctrico Tipo Louver & Pérgola Bioclimática -->
         <div class="product-card">
           <div class="product-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_IMG_8933.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Pérgola Bioclimática Automatizada con Motor Somfy</h2>
-            <p class="product-desc">Lamas de aluminio orientables de 0° a 135° con sensor automático de lluvia y viento. Perfecta para residencias de lujo y zonas de piscina.</p>
+            <h2 class="product-title">Techo Eléctrico Tipo Louver (Bioclimática)</h2>
+            <p class="product-desc">Lamas de aluminio orientables motorizadas de 0° a 135° con sensor automático de lluvia/viento. Protección total contra lluvia tropical y sol intenso.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Sistema de desague integrado imperceptible</li>
-              <li><i class="fa-solid fa-check-circle"></i> Iluminación LED perimetral cálida incorporada</li>
-              <li><i class="fa-solid fa-check-circle"></i> Resistencia a vientos de hasta 120 km/h</li>
+              <li><i class="fa-solid fa-check-circle"></i> Canales de desagüe ocultos impermeables</li>
+              <li><i class="fa-solid fa-check-circle"></i> Iluminación LED dimmable integrada</li>
+              <li><i class="fa-solid fa-check-circle"></i> Motorización Somfy integrable a automatización Smart Home</li>
             </ul>
-            <a href="../cotizar.html?producto=Pergola%20Bioclimatica" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=techo_louver_bioclimatica" class="btn-quote">Solicitar Cotización</a>
           </div>
         </div>
 
-        <!-- Producto 2 -->
+        <!-- Producto 2: Toldos Retráctiles & Motorizados a Medida -->
         <div class="product-card">
-          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_IMG_3443.jpg');"></div>
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/GEGRAQ_IMG_0916.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Pérgola Estructural de Aluminio & Policarbonato Alveolar</h2>
-            <p class="product-desc">Cubierta ligera de alta transmisión de luz natural con filtración UV del 99%. Ideal para terrazas comerciales, cafés y restaurantes en San Pedro Sula.</p>
+            <h2 class="product-title">Toldos Retráctiles & Motorizados a Medida</h2>
+            <p class="product-desc">Sistemas de brazo articulado e invisible en lona acrílica europea Dickson/Soltis de alta durabilidad. Opción manual o accionamiento motorizado.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Policarbonato Bayer con tratamiento filtro UV</li>
-              <li><i class="fa-solid fa-check-circle"></i> Estructura en aluminio anodizado no maleable</li>
-              <li><i class="fa-solid fa-check-circle"></i> Instalación limpia y modular rápida</li>
+              <li><i class="fa-solid fa-check-circle"></i> Lona impermeable con filtro UV 98%</li>
+              <li><i class="fa-solid fa-check-circle"></i> Estructura de aluminio termolacado anti-salinidad</li>
+              <li><i class="fa-solid fa-check-circle"></i> Cofre protector hermético cuando está recogido</li>
             </ul>
-            <a href="../cotizar.html?producto=Pergola%20Policarbonato" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=toldos_retractiles_motorizados" class="btn-quote">Solicitar Cotización</a>
           </div>
         </div>
 
-        <!-- Producto 3 -->
+        <!-- Producto 3: Cortinas para Exterior (Zip Track & Cortaviento) -->
         <div class="product-card">
           <div class="product-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_732f07f9-0999-482e-8131-f4382b75688c.jpg');"></div>
           <div class="product-body">
-            <h2 class="product-title">Cerramientos de Cristal Plegable para Pérgolas</h2>
-            <p class="product-desc">Paneles correderos-plegables de cristal templado transparente para cerrar tu terraza contra el viento y la lluvia sin perder las vistas al jardín o a las montañas.</p>
+            <h2 class="product-title">Cortinas para Exterior & Protección Cortaviento</h2>
+            <p class="product-desc">Cortinas enrollables verticales con cremallera Zip Track lateral para cerrar terrazas y balcón contra lluvia lateral y ráfagas de viento.</p>
             <ul class="spec-list">
-              <li><i class="fa-solid fa-check-circle"></i> Cristal templado de 10mm de alta durabilidad</li>
-              <li><i class="fa-solid fa-check-circle"></i> Sin perfiles verticales intermedios (vista panorámica)</li>
-              <li><i class="fa-solid fa-check-circle"></i> Sistema de rodamientos de acero inoxidable</li>
+              <li><i class="fa-solid fa-check-circle"></i> Sistema Zip anti-desprendimiento por ráfagas</li>
+              <li><i class="fa-solid fa-check-circle"></i> Cristales PVC flexibles traslúcidos o mallas microperforadas</li>
+              <li><i class="fa-solid fa-check-circle"></i> Manivela manual o motorización silenciosa</li>
             </ul>
-            <a href="../cotizar.html?producto=Cerramiento%20Plegable%20Pergola" class="btn-quote">Solicitar Cotización</a>
+            <a href="../cotizar.html?producto=cortinas_exterior_zip" class="btn-quote">Solicitar Cotización</a>
+          </div>
+        </div>
+
+        <!-- Producto 4: Tensoformas & Velas de Sombra Arquitectónicas -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_IMG_3443.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Tensoformas & Velas de Sombra Arquitectónicas</h2>
+            <p class="product-desc">Estructuras tensadas en membrana textil de alta resistencia para sombreado de amplios jardines, terrazas comerciales y áreas deportivas.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Geometrías hiperbólicas y diseños tridimensionales</li>
+              <li><i class="fa-solid fa-check-circle"></i> Herrajes y cables de tensión en acero inoxidable 316</li>
+              <li><i class="fa-solid fa-check-circle"></i> Tejido microporoso o membrana PVC impermeable</li>
+            </ul>
+            <a href="../cotizar.html?producto=tensoformas_velas_sombra" class="btn-quote">Solicitar Cotización</a>
+          </div>
+        </div>
+
+        <!-- Producto 5: Pérgolas de Aluminio & Policarbonato Alveolar -->
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('../assets/fotos/2026/09/MWTHQR_IMG_3443.jpg');"></div>
+          <div class="product-body">
+            <h2 class="product-title">Pérgolas de Aluminio & Policarbonato Alveolar</h2>
+            <p class="product-desc">Estructuras fijas de aluminio con cubierta en policarbonato alveolar o monolítico de alta transmisión de luz natural con filtración UV.</p>
+            <ul class="spec-list">
+              <li><i class="fa-solid fa-check-circle"></i> Policarbonato Bayer con tratamiento de protección UV</li>
+              <li><i class="fa-solid fa-check-circle"></i> Perfilería de aluminio resistente a la salinidad de Roatán</li>
+              <li><i class="fa-solid fa-check-circle"></i> Diseños modernos adaptables a cualquier fachada</li>
+            </ul>
+            <a href="../cotizar.html?producto=pergolas_policarbonato_aluminio" class="btn-quote">Solicitar Cotización</a>
           </div>
         </div>
 
@@ -234,5 +284,6 @@
     </div>
   </footer>
 
+  <script src="../assets/js/minimal-nav.js" defer></script>
 </body>
 </html>
