@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Proyectos & Obras Ejecutadas | Design Solutions By Ventanales Honduras</title>
-  <meta name="description" content="Explora nuestro portafolio de proyectos de arquitectura en vidrio, ventanales de PVC y fachadas comerciales en Tegucigalpa, San Pedro Sula y Roatán.">
+  <meta name="description" content="Explora nuestro portafolio de obras reales: ventanales de PVC termoacústicos, fachadas muro cortina de vidrio y ventanería marina en Tegucigalpa, San Pedro Sula y Roatán.">
   
   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../assets/img/favicon.png">
 
+  <!-- Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,52 +17,125 @@
 
   <style>
     :root {
-      --primary: #383b3d; --primary-dark: #2a2a2a; --dark-bg: #212529; --bg-light: #f8fafc;
-      --surface: #ffffff; --text-dark: #2a2a2a; --text-muted: #777777; --border-color: #e2e8f0;
-      --border-radius: 4px; --border-radius-lg: 8px; --font-display: 'Overpass', sans-serif; --font-body: 'Poppins', sans-serif;
+      --primary: #383b3d;
+      --primary-dark: #2a2a2a;
+      --dark-bg: #212529;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-dark: #2a2a2a;
+      --text-muted: #666666;
+      --border-color: #e2e8f0;
+      --border-radius: 4px;
+      --border-radius-lg: 8px;
+      --whatsapp: #25d366;
+      --font-display: 'Overpass', sans-serif;
+      --font-body: 'Poppins', sans-serif;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
     .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
     
-    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 85px; }
-    .logo-brand img { height: 48px; width: auto; object-fit: contain; }
-    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
-    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.92rem; text-transform: uppercase; }
-    nav a.active { color: var(--primary); font-weight: 700; }
-    .btn-header { background: var(--primary); color: #ffffff; padding: 12px 24px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.88rem; text-transform: uppercase; }
-
-    .page-hero { background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%); color: #ffffff; padding: 60px 0 80px; text-align: center; }
-    .page-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 800; margin-bottom: 12px; }
-    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 16px; }
-    .breadcrumb a { color: #ffffff; text-decoration: underline; }
-
-    section { padding: 80px 0; }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 30px; }
-    .project-card {
-      position: relative; border-radius: var(--border-radius-lg); overflow: hidden; height: 380px;
-      background: var(--dark-bg); text-decoration: none; color: #ffffff; display: block;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12); transition: transform 0.3s;
+    /* Header con control estricto del logo */
+    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo-brand { display: flex; align-items: center; text-decoration: none; max-width: 260px; }
+    .logo-brand img {
+      height: 46px !important;
+      max-height: 46px !important;
+      width: auto !important;
+      max-width: 240px !important;
+      object-fit: contain !important;
+      display: block;
     }
-    .project-card:hover { transform: translateY(-6px); }
+
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
+    
+    .btn-header { background: var(--primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+    .btn-header:hover { background: var(--primary-dark); }
+
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, rgba(33, 37, 41, 0.94) 0%, rgba(42, 42, 42, 0.9) 100%), url('../assets/fotos/2026/09/BADB11_IMG_5603.jpg') center/cover no-repeat;
+      color: #ffffff; padding: 75px 0 85px; text-align: center;
+    }
+    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 16px; }
+    .breadcrumb a { color: #ffffff; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .page-title { font-family: var(--font-display); font-size: clamp(2.3rem, 4vw, 3.4rem); font-weight: 800; margin-bottom: 14px; letter-spacing: -0.02em; }
+    .page-subtitle { max-width: 720px; margin: 0 auto; font-size: 1.05rem; color: rgba(255, 255, 255, 0.88); line-height: 1.6; }
+
+    /* Filter Stats Bar */
+    .stats-bar { background: var(--surface); border-bottom: 1px solid var(--border-color); padding: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
+    .stat-number { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Projects Grid Section */
+    section.projects-section { padding: 70px 0 90px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px; }
+    
+    .project-card {
+      position: relative; border-radius: var(--border-radius-lg); overflow: hidden; height: 440px;
+      background-size: cover; background-position: center; text-decoration: none; color: #ffffff; display: flex;
+      flex-direction: column; justify-content: flex-end; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .project-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.25); }
+    
     .project-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(33, 37, 41, 0.95) 0%, rgba(33, 37, 41, 0.25) 70%);
-      padding: 28px; display: flex; flex-direction: column; justify-content: flex-end;
+      background: linear-gradient(to top, rgba(21, 24, 27, 0.96) 0%, rgba(21, 24, 27, 0.6) 55%, rgba(21, 24, 27, 0.15) 100%);
+      padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; transition: background 0.3s;
     }
-    .project-tag { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-    .project-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
-    .project-desc { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 16px; }
-    .btn-view-project { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #ffffff; display: inline-flex; align-items: center; gap: 8px; }
+    .project-card:hover .project-overlay {
+      background: linear-gradient(to top, rgba(21, 24, 27, 0.98) 0%, rgba(21, 24, 27, 0.7) 65%, rgba(21, 24, 27, 0.25) 100%);
+    }
 
-    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; margin-top: 60px; }
+    .project-badge { display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; width: fit-content; border: 1px solid rgba(255,255,255,0.25); }
+    .project-location { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .project-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; line-height: 1.25; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+    .project-desc { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 18px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .btn-view-project { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #ffffff; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+    .project-card:hover .btn-view-project { gap: 12px; color: #ffffff; }
+
+    /* Technical Value Prop Banner */
+    .value-banner { background: var(--dark-bg); color: #ffffff; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .value-item { text-align: left; padding: 20px; background: rgba(255,255,255,0.03); border-radius: var(--border-radius-lg); border: 1px solid rgba(255,255,255,0.06); }
+    .value-icon { font-size: 2rem; color: #ffffff; margin-bottom: 14px; }
+    .value-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+    .value-text { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+    /* CTA Section */
+    .cta-section { padding: 75px 0; background: var(--surface); text-align: center; border-top: 1px solid var(--border-color); }
+    .cta-box { max-width: 800px; margin: 0 auto; background: var(--bg-light); border: 1px solid var(--border-color); padding: 45px 30px; border-radius: var(--border-radius-lg); }
+    .cta-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 14px; color: var(--primary-dark); }
+    .cta-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-cta-primary { background: var(--primary); color: #ffffff; padding: 14px 32px; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 10px; transition: background 0.2s; }
+    .btn-cta-primary:hover { background: var(--primary-dark); }
+    .btn-cta-wsp { background: var(--whatsapp); color: #ffffff; padding: 14px 32px; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 10px; transition: opacity 0.2s; }
+    .btn-cta-wsp:hover { opacity: 0.92; }
+
+    /* Footer */
+    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
-    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; }
     .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 10px; }
-    .footer-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: 0.88rem; }
-    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 768px) {
+      .header-inner { height: 70px; }
+      nav { display: none; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card { height: 380px; }
+    }
   </style>
 </head>
 <body>
@@ -93,48 +167,112 @@
   <div class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href="../index.html">Inicio</a> / Portafolio de Proyectos</div>
-      <h1 class="page-title">Proyectos con Nombre Propio</h1>
-      <p style="max-width:650px; margin:0 auto; font-size:1.05rem; color:rgba(255,255,255,0.85);">
-        Conoce los casos de éxito residenciales y corporativos donde hemos instalado ventanales, fachadas de vidrio y cortinas motorizadas en Honduras.
+      <h1 class="page-title">Proyectos de Obras Ejecutadas</h1>
+      <p class="page-subtitle">
+        Casos reales de éxito residencial, corporativo y hotelero. Descubre cómo nuestras ventanas de PVC, muros cortina de vidrio y ventanería marina elevan la arquitectura en Honduras.
       </p>
     </div>
   </div>
 
-  <!-- Projects Listing -->
-  <section>
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">+15 Años</div>
+          <div class="stat-label">Líderes en Honduras</div>
+        </div>
+        <div>
+          <div class="stat-number">+500 Obras</div>
+          <div class="stat-label">Instalaciones Exitosas</div>
+        </div>
+        <div>
+          <div class="stat-number">3 Zonas</div>
+          <div class="stat-label">Tegucigalpa · SPS · Roatán</div>
+        </div>
+        <div>
+          <div class="stat-number">100% Garantía</div>
+          <div class="stat-label">Soporte Técnico Directo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <section class="projects-section">
     <div class="container">
       <div class="projects-grid">
 
-        <!-- Proyecto 1 -->
-        <a href="residencia-villa-solana-hatillo.html" class="project-card">
+        <!-- Proyecto 1: Residencia Villa Solana -->
+        <a href="residencia-villa-solana-hatillo.html" class="project-card" style="background-image: url('../assets/fotos/2026/09/PVOSY2_IMG_7756.jpg');">
           <div class="project-overlay">
-            <div class="project-tag">Residencial de Lujo · Tegucigalpa</div>
-            <h2 class="project-title">Residencia Villa Solana (El Hatillo)</h2>
-            <p class="project-desc">Sistema integral de ventanales termoacústicos en PVC Kömmerling de doble cristal e insonorización total.</p>
-            <span class="btn-view-project">Ver Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+            <span class="project-badge">Residencial de Lujo</span>
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> El Hatillo, Tegucigalpa</div>
+            <h2 class="project-title">Residencia Villa Solana</h2>
+            <p class="project-desc">Sistema integral de ventanas termoacústicas en PVC Kömmerling de 5 cámaras y cortinas motorizadas somfy.</p>
+            <span class="btn-view-project">Ver Ficha y Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
-        <!-- Proyecto 2 -->
-        <a href="torre-corporativa-alianza-sps.html" class="project-card">
+        <!-- Proyecto 2: Torre Corporativa Alianza -->
+        <a href="torre-corporativa-alianza-sps.html" class="project-card" style="background-image: url('../assets/fotos/2026/09/BADB11_IMG_5603.jpg');">
           <div class="project-overlay">
-            <div class="project-tag">Comercial & Corporativo · San Pedro Sula</div>
+            <span class="project-badge">Corporativo & Comercial</span>
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> San Pedro Sula, Cortés</div>
             <h2 class="project-title">Torre Corporativa Alianza</h2>
-            <p class="project-desc">Muro cortina estructural de 2,400 m² en vidrio solar reflectivo con aislamiento térmico para alta temperatura.</p>
-            <span class="btn-view-project">Ver Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+            <p class="project-desc">Fachada estructural tipo Muro Cortina de 2,400 m² con cristal doble Solar Control Low-E de alto rendimiento térmico.</p>
+            <span class="btn-view-project">Ver Ficha y Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
-        <!-- Proyecto 3 -->
-        <a href="villas-oceanfront-resort-roatan.html" class="project-card">
+        <!-- Proyecto 3: Villas Oceanfront Resort -->
+        <a href="villas-oceanfront-resort-roatan.html" class="project-card" style="background-image: url('../assets/fotos/2026/09/FK5NV7_IMG_7552-EDIT.jpg');">
           <div class="project-overlay">
-            <div class="project-tag">Resort & Hotelería · Roatán</div>
-            <h2 class="project-title">Villas Oceanfront Resort (Bay Islands)</h2>
-            <p class="project-desc">Ventanería de aluminio marino anodizado resistente a la brisa salina y vientos tropicales de playa.</p>
-            <span class="btn-view-project">Ver Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
+            <span class="project-badge">Hotelería & Resort</span>
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> West Bay, Roatán</div>
+            <h2 class="project-title">Villas Oceanfront Resort</h2>
+            <p class="project-desc">Ventanería de aluminio marino anodizado resistente a la brisa salina y vidrios laminados anti-huracán.</p>
+            <span class="btn-view-project">Ver Ficha y Caso de Estudio <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </a>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Value Prop -->
+  <div class="value-banner">
+    <div class="container">
+      <div class="value-grid">
+        <div class="value-item">
+          <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="value-title">Ingeniería Certificada</h3>
+          <p class="value-text">Perfiles y herrajes importados cumpliendo las normativas térmicas y de resistencia a vientos más exigentes.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+          <h3 class="value-title">Eficiencia Energética</h3>
+          <p class="value-text">Sistemas con ruptura de puente térmico y vidrios cámara DVH que reducen el gasto en aire acondicionado hasta un 40%.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3 class="value-title">Cobertura Nacional</h3>
+          <p class="value-text">Equipos técnicos capacitados para instalación y mantenimiento en Tegucigalpa, San Pedro Sula, Roatán y todo el país.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">¿Tienes un Proyecto Residencial o Comercial en Mente?</h2>
+        <p class="cta-subtitle">Nuestros especialistas en arquitectura en vidrio y perfilería te asesoran desde la fase de planos hasta la instalación final.</p>
+        <div class="cta-buttons">
+          <a href="../cotizar.html" class="btn-cta-primary"><i class="fa-solid fa-file-signature"></i> Solicitar Presupuesto</a>
+          <a href="https://wa.me/50499999999?text=Hola,%20me%20interesa%20asesor%C3%ADa%20para%20un%20proyecto%20de%20ventanales" target="_blank" class="btn-cta-wsp"><i class="fa-brands fa-whatsapp"></i> Hablar con un Asesor</a>
+        </div>
       </div>
     </div>
   </section>
@@ -145,9 +283,9 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="logo-brand" style="margin-bottom:16px;">
-            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#fff; padding:4px 8px; border-radius:4px;">
+            <img src="../assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#ffffff; padding:4px 8px; border-radius:4px;">
           </div>
-          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Honduras.</p>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Especialistas en arquitectura en vidrio, ventanas termoacústicas y cortinas motorizadas en Honduras.</p>
         </div>
         <div class="footer-col">
           <h4>Navegación</h4>
@@ -155,18 +293,25 @@
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="../categorias/index.html">Categorías</a></li>
             <li><a href="index.html">Proyectos</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../cotizar.html">Contacto</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Contacto Directo</h4>
-          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">ventas@ventanaleshn.com<br>+504 9999-9999</p>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); line-height:1.8;">
+            <i class="fa-solid fa-envelope" style="margin-right:6px;"></i> ventas@ventanaleshn.com<br>
+            <i class="fa-solid fa-phone" style="margin-right:6px;"></i> +504 9999-9999<br>
+            <i class="fa-solid fa-location-dot" style="margin-right:6px;"></i> Tegucigalpa & San Pedro Sula
+          </p>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>&copy; 2026 Design Solutions By Ventanales.</div>
+        <div>&copy; 2026 Design Solutions By Ventanales. Todos los derechos reservados.</div>
         <div>Desarrollado por <b>grovi studio</b></div>
       </div>
     </div>
   </footer>
+
 </body>
 </html>

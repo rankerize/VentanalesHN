@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cotizador & Contacto | Design Solutions By Ventanales Honduras</title>
-  <meta name="description" content="Solicita una cotización rápida para tus ventanas de PVC, aluminio, fachadas de vidrio y cortinas en Tegucigalpa, San Pedro Sula y Roatán.">
+  <title>Cotizador & Contacto Directo | Design Solutions By Ventanales - Honduras</title>
+  <meta name="description" content="Solicita una cotización rápida y personalizada para ventanas de PVC termoacústico, aluminio Eurovent, fachadas de vidrio y cortinas motorizadas en Tegucigalpa, San Pedro Sula, Roatán y La Ceiba.">
   
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
 
+  <!-- Web Fonts oficiales de la marca -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --primary: #383b3d;       /* Gris Antracita */
-      --primary-dark: #2a2a2a;  /* Negro Mate */
-      --dark-bg: #212529;
+      --primary: #383b3d;       /* Gris Antracita Oficial */
+      --primary-dark: #2a2a2a;  /* Negro Mate Oficial */
+      --dark-bg: #212529;       /* Fondo Oscuro Oficial */
       --bg-light: #f8fafc;
       --surface: #ffffff;
       --text-dark: #2a2a2a;
@@ -27,77 +29,201 @@
       --border-radius: 4px;
       --border-radius-lg: 8px;
       --whatsapp: #25d366;
+      --whatsapp-hover: #20ba5a;
+      
       --font-display: 'Overpass', sans-serif;
       --font-body: 'Poppins', sans-serif;
+      --font-serif: 'PT Serif', serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-    
-    header { position: sticky; top: 0; z-index: 1000; background: #ffffff; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 85px; }
-    .logo-brand img { height: 48px; width: auto; object-fit: contain; }
+    html { scroll-behavior: smooth; width: 100%; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header con logo estrictamente controlado */
+    header {
+      width: 100%;
+      position: sticky; top: 0; z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      height: 100%;
+      max-width: 260px;
+      overflow: hidden;
+    }
+    .logo-brand img {
+      height: 46px !important;
+      max-height: 46px !important;
+      width: auto !important;
+      max-width: 240px !important;
+      object-fit: contain !important;
+      display: block;
+    }
 
     nav ul { display: flex; align-items: center; gap: 28px; list-style: none; }
-    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    nav a.active { color: var(--primary); font-weight: 700; }
-    .btn-header { background: var(--primary); color: #ffffff; padding: 12px 24px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; font-size: 0.88rem; text-transform: uppercase; }
+    nav a { text-decoration: none; color: #000000; font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
 
-    .page-hero { background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%); color: #ffffff; padding: 60px 0 80px; text-align: center; }
-    .page-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 800; margin-bottom: 12px; }
-    .breadcrumb { font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 16px; }
-    .breadcrumb a { color: #ffffff; text-decoration: underline; }
+    .btn-header {
+      background: var(--primary);
+      color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius);
+      text-decoration: none; font-weight: 600; font-size: 0.82rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-header:hover { background: var(--primary-dark); transform: translateY(-1px); }
 
-    section { padding: 80px 0; }
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      cursor: pointer;
+      padding: 6px;
+    }
 
-    .form-wrapper {
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, rgba(33, 37, 41, 0.94) 0%, rgba(42, 42, 42, 0.9) 100%), url('assets/fotos/2026/09/0SABUD_IMG_0192.jpg') center/cover no-repeat;
+      color: #ffffff;
+      padding: 60px 0 70px;
+      text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .breadcrumb a { color: #ffffff; text-decoration: none; font-weight: 600; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+    .page-subtitle {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 300;
+    }
+
+    /* Section & Form Layout */
+    section { padding: 70px 0; width: 100%; }
+
+    .cotizador-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .form-card {
       background: var(--surface);
       border-radius: var(--border-radius-lg);
       border: 1px solid var(--border-color);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-      padding: 48px;
-      max-width: 900px;
-      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      padding: 40px;
     }
+
+    .form-section-header {
+      border-bottom: 2px solid var(--bg-light);
+      padding-bottom: 16px;
+      margin-bottom: 28px;
+    }
+    .form-section-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-section-title i { color: var(--primary); }
+
     .form-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
     .form-group.full-width {
       grid-column: 1 / -1;
     }
     .form-group label {
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 0.82rem;
+      font-weight: 700;
       color: var(--primary-dark);
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .form-group input, .form-group select, .form-group textarea {
-      padding: 14px 16px;
+      padding: 13px 16px;
       border-radius: var(--border-radius);
       border: 1px solid var(--border-color);
       font-family: var(--font-body);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      background-color: #ffffff;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(56, 59, 61, 0.12);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
     }
 
-    .btn-submit {
+    .btn-submit-wpp {
       background: var(--whatsapp);
       color: #ffffff;
       border: none;
-      padding: 18px 36px;
+      padding: 18px 30px;
       border-radius: var(--border-radius);
       font-family: var(--font-body);
       font-size: 1rem;
@@ -108,30 +234,196 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       width: 100%;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin-top: 10px;
     }
-    .btn-submit:hover { transform: translateY(-2px); }
+    .btn-submit-wpp:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+    }
 
-    footer { background: var(--dark-bg); color: #ffffff; padding: 60px 0 30px; margin-top: 60px; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
-    .footer-col h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; }
+    /* Live Summary Card */
+    .summary-card {
+      background: var(--dark-bg);
+      color: #ffffff;
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      position: sticky;
+      top: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+    }
+    .summary-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    .summary-header i { font-size: 1.5rem; color: var(--whatsapp); }
+    .summary-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
+    
+    .summary-item {
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px 16px;
+      border-radius: var(--border-radius);
+      border-left: 3px solid var(--primary);
+    }
+    .summary-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .summary-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .summary-guarantee {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .summary-guarantee i { font-size: 1.3rem; color: #ffd700; }
+
+    /* Cities Coverage Grid */
+    .coverage-section {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .coverage-card {
+      background: var(--bg-light);
+      padding: 24px;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s;
+    }
+    .coverage-card:hover { transform: translateY(-3px); }
+    .coverage-city-icon {
+      width: 44px; height: 44px;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+    .coverage-city-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .coverage-city-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* FAQ Section */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 24px;
+    }
+    .faq-card {
+      background: var(--surface);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 28px;
+    }
+    .faq-question {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .faq-question i { color: var(--primary); margin-top: 3px; }
+    .faq-answer {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding-left: 26px;
+    }
+
+    /* Footer */
+    footer { width: 100%; background: var(--dark-bg); color: #ffffff; padding: 70px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 50px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 20px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; }
     .footer-links { list-style: none; }
     .footer-links li { margin-bottom: 10px; }
-    .footer-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: 0.88rem; }
-    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); display: flex; justify-content: space-between; }
+    .footer-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); flex-wrap: wrap; gap: 16px; }
+
+    .wpp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; background: var(--whatsapp); color: #ffffff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); text-decoration: none; transition: transform 0.2s; }
+    .wpp-float:hover { transform: scale(1.08); }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .cotizador-layout { grid-template-columns: 1fr; }
+      .summary-card { position: static; }
+      .mobile-menu-toggle { display: block; }
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 24px;
+        display: none;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .btn-header { display: none; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 24px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header con logo estrictamente controlado (46px !important) -->
   <header>
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="index.html" class="logo-brand">
         <img src="assets/img/logo.png" alt="Design Solutions By Ventanales">
       </a>
+
+      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Abrir menú de navegación">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
       <nav>
         <ul>
@@ -152,84 +444,272 @@
   <!-- Page Hero -->
   <div class="page-hero">
     <div class="container">
-      <div class="breadcrumb"><a href="index.html">Inicio</a> / Solicitud de Cotización</div>
-      <h1 class="page-title">Formulario de Cotización Directa</h1>
-      <p style="max-width:650px; margin:0 auto; font-size:1.05rem; color:rgba(255,255,255,0.85);">
-        Completa el formulario a continuación y un asesor técnico en Honduras se comunicará contigo con un presupuesto detallado.
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a> / Cotizador & Contacto Directo
+      </div>
+      <h1 class="page-title">Solicita tu Cotización Personalizada</h1>
+      <p class="page-subtitle">
+        Asesoría técnica especializada, mediciones en sitio y presupuesto detallado para tu proyecto en Tegucigalpa, San Pedro Sula, Roatán, La Ceiba y todo el territorio de Honduras.
       </p>
     </div>
   </div>
 
-  <!-- Form Section -->
+  <!-- Main Section: Form & Live Summary -->
   <section>
     <div class="container">
-      <div class="form-wrapper">
-        <form onsubmit="sendFormWhatsApp(event)">
-          <div class="form-grid">
+      <div class="cotizador-layout">
+        
+        <!-- Left: Form Card -->
+        <div class="form-card">
+          <form id="cotizadorForm" onsubmit="sendFormWhatsApp(event)">
             
-            <div class="form-group">
-              <label>Nombre Completo / Empresa *</label>
-              <input type="text" id="contactName" placeholder="Ej: Arq. Carlos Mendoza" required>
+            <div class="form-section-header">
+              <h2 class="form-section-title">
+                <i class="fa-solid fa-user-check"></i> 1. Información de Contacto
+              </h2>
             </div>
 
-            <div class="form-group">
-              <label>Teléfono / WhatsApp *</label>
-              <input type="tel" id="contactPhone" placeholder="+504 9999-9999" required>
+            <div class="form-grid" style="margin-bottom: 32px;">
+              <div class="form-group">
+                <label for="contactName">Nombre Completo / Empresa *</label>
+                <input type="text" id="contactName" placeholder="Ej: Arq. Carlos Mendoza" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactPhone">Teléfono / WhatsApp *</label>
+                <input type="tel" id="contactPhone" placeholder="+504 9999-9999" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail">Correo Electrónico *</label>
+                <input type="email" id="contactEmail" placeholder="correo@ejemplo.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactCity">Ubicación en Honduras *</label>
+                <select id="contactCity" onchange="updateLiveSummary()" required>
+                  <option value="Tegucigalpa / Francisco Morazán" selected>Tegucigalpa / Francisco Morazán</option>
+                  <option value="San Pedro Sula / Cortés">San Pedro Sula / Cortés</option>
+                  <option value="Roatán / Islas de la Bahía">Roatán / Islas de la Bahía</option>
+                  <option value="La Ceiba / Atlántida">La Ceiba / Atlántida</option>
+                  <option value="Comayagua">Comayagua</option>
+                  <option value="Choluteca / Zona Sur">Choluteca / Zona Sur</option>
+                  <option value="La Esperanza / Intibucá">La Esperanza / Intibucá</option>
+                  <option value="Otra Ciudad de Honduras">Otra Ciudad de Honduras</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label>Correo Electrónico *</label>
-              <input type="email" id="contactEmail" placeholder="correo@ejemplo.com" required>
+            <div class="form-section-header">
+              <h2 class="form-section-title">
+                <i class="fa-solid fa-sliders"></i> 2. Detalles del Proyecto
+              </h2>
             </div>
 
-            <div class="form-group">
-              <label>Ubicación del Proyecto en Honduras *</label>
-              <select id="contactCity" required>
-                <option value="Tegucigalpa / Francisco Morazán">Tegucigalpa / Francisco Morazán</option>
-                <option value="San Pedro Sula / Cortés">San Pedro Sula / Cortés</option>
-                <option value="Roatán / Islas de la Bahía">Roatán / Islas de la Bahía</option>
-                <option value="La Ceiba / Atlántida">La Ceiba / Atlántida</option>
-                <option value="Comayagua">Comayagua</option>
-                <option value="Otra Ciudad de Honduras">Otra Ciudad de Honduras</option>
-              </select>
+            <div class="form-grid" style="margin-bottom: 32px;">
+              <div class="form-group">
+                <label for="contactCategory">Categoría Requerida *</label>
+                <select id="contactCategory" onchange="updateLiveSummary()" required>
+                  <option value="Ventanas de PVC Termoacústico Kömmerling" selected>Ventanas de PVC Termoacústico Kömmerling</option>
+                  <option value="Ventanas de Aluminio Eurovent & Comercial">Ventanas de Aluminio Eurovent & Comercial</option>
+                  <option value="Fachada de Vidrio Flotante / Muro Cortina">Fachada de Vidrio Flotante / Muro Cortina</option>
+                  <option value="Cortinas & Persianas Motorizadas Somfy">Cortinas & Persianas Motorizadas Somfy</option>
+                  <option value="Pérgolas Bioclimáticas / Terrazas">Pérgolas Bioclimáticas / Terrazas</option>
+                  <option value="Divisiones de Baño en Vidrio Templado">Divisiones de Baño en Vidrio Templado</option>
+                  <option value="Soluciones Hospitalarias / Rieles Sanitarios">Soluciones Hospitalarias / Rieles Sanitarios</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactProperty">Tipo de Propiedad / Uso *</label>
+                <select id="contactProperty" onchange="updateLiveSummary()" required>
+                  <option value="Residencial / Vivienda Unifamiliar" selected>Residencial / Vivienda Unifamiliar</option>
+                  <option value="Edificio Residencial / Apartamentos">Edificio Residencial / Apartamentos</option>
+                  <option value="Comercial / Plaza / Oficinas">Comercial / Plaza / Oficinas</option>
+                  <option value="Hospitalario / Clínicas / Laboratorios">Hospitalario / Clínicas / Laboratorios</option>
+                  <option value="Hotelería & Resort">Hotelería & Resort</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactStage">Etapa del Proyecto *</label>
+                <select id="contactStage" required>
+                  <option value="En Planos / Diseño de Arquitectura" selected>En Planos / Diseño de Arquitectura</option>
+                  <option value="En Construcción (Obra Gris)">En Construcción (Obra Gris)</option>
+                  <option value="En Etapa de Acabados">En Etapa de Acabados</option>
+                  <option value="Remodelación / Sustitución Inmediata">Remodelación / Sustitución Inmediata</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactQuantity">Volumen Estimado *</label>
+                <select id="contactQuantity" onchange="updateLiveSummary()" required>
+                  <option value="1 a 5 piezas / ventanas">1 a 5 piezas / ventanas</option>
+                  <option value="6 a 15 piezas / ventanas" selected>6 a 15 piezas / ventanas</option>
+                  <option value="16 a 30 piezas / ventanas">16 a 30 piezas / ventanas</option>
+                  <option value="Proyecto Grande (+30 piezas / Muro Cortina)">Proyecto Grande (+30 piezas / Muro Cortina)</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="contactNotes">Medidas Estimadas o Notas Adicionales</label>
+                <textarea id="contactNotes" placeholder="Describe brevemente las dimensiones aproximadas, colores de perfilería deseados (Blanco, Antracita, Madera), tipo de vidrio (Insulado, Templado, Solar) o si posees planos técnicos..."></textarea>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label>Categoría de Producto Requerida *</label>
-              <select id="contactCategory" required>
-                <option value="Ventanas de PVC Termoacústico Kömmerling">Ventanas de PVC Termoacústico Kömmerling</option>
-                <option value="Ventanas de Aluminio Eurovent">Ventanas de Aluminio Eurovent</option>
-                <option value="Fachada de Vidrio Flotante / Muro Cortina">Fachada de Vidrio Flotante / Muro Cortina</option>
-                <option value="Cortinas & Persianas Motorizadas Somfy">Cortinas & Persianas Motorizadas Somfy</option>
-                <option value="Pérgolas Bioclimáticas / Terrazas">Pérgolas Bioclimáticas / Terrazas</option>
-                <option value="Divisiones de Baño en Vidrio Templado">Divisiones de Baño en Vidrio Templado</option>
-                <option value="Soluciones Hospitalarias / Rieles Sanitarios">Soluciones Hospitalarias / Rieles Sanitarios</option>
-              </select>
+            <div>
+              <button type="submit" class="btn-submit-wpp">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Enviar Cotización por WhatsApp
+              </button>
             </div>
 
-            <div class="form-group">
-              <label>Etapa del Proyecto *</label>
-              <select id="contactStage" required>
-                <option value="En Planos / Diseño Architect">En Planos / Diseño Architect</option>
-                <option value="En Construcción Obra Gris">En Construcción Obra Gris</option>
-                <option value="En Etapa de Acabados">En Etapa de Acabados</option>
-                <option value="Remodelación Inmediata">Remodelación Inmediata</option>
-              </select>
+          </form>
+        </div>
+
+        <!-- Right: Live Summary Sticky Card -->
+        <div>
+          <div class="summary-card">
+            <div class="summary-header">
+              <i class="fa-solid fa-calculator"></i>
+              <div>
+                <div class="summary-title">Resumen de Cotización</div>
+                <div style="font-size:0.75rem; color:rgba(255,255,255,0.7);">Actualización en tiempo real</div>
+              </div>
             </div>
 
-            <div class="form-group full-width">
-              <label>Detalles del Proyecto / Medidas Aproximadas</label>
-              <textarea id="contactNotes" rows="5" placeholder="Describe brevemente la cantidad de ventanas, medidas estimadas o especificaciones particulares..."></textarea>
+            <div class="summary-item">
+              <div class="summary-label">Ubicación en Honduras</div>
+              <div class="summary-value" id="summaryCity">Tegucigalpa / Francisco Morazán</div>
             </div>
 
+            <div class="summary-item">
+              <div class="summary-label">Sistema / Producto</div>
+              <div class="summary-value" id="summaryCategory">Ventanas de PVC Termoacústico Kömmerling</div>
+            </div>
+
+            <div class="summary-item">
+              <div class="summary-label">Tipo de Obra</div>
+              <div class="summary-value" id="summaryProperty">Residencial / Vivienda Unifamiliar</div>
+            </div>
+
+            <div class="summary-item">
+              <div class="summary-label">Volumen Estimado</div>
+              <div class="summary-value" id="summaryQuantity">6 a 15 piezas / ventanas</div>
+            </div>
+
+            <div class="summary-item" style="border-left-color: var(--whatsapp);">
+              <div class="summary-label">Tiempo Estimado de Respuesta</div>
+              <div class="summary-value" style="color: var(--whatsapp);"><i class="fa-regular fa-clock"></i> ~24 Horas Hábiles</div>
+            </div>
+
+            <div class="summary-guarantee">
+              <i class="fa-solid fa-award"></i>
+              <div>
+                <strong>Respaldo de Marca:</strong><br>
+                Perfilerías con certificación alemana, vidrio de alta eficiencia energética y soporte técnico en Honduras.
+              </div>
+            </div>
           </div>
+        </div>
 
-          <div style="margin-top:32px;">
-            <button type="submit" class="btn-submit">
-              <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i> Enviar Cotización por WhatsApp
-            </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cobertura Nacional Section -->
+  <section class="coverage-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center; max-width: 720px; margin: 0 auto 46px;">
+        <span class="section-badge" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--primary); background:rgba(56,59,61,0.08); padding:4px 14px; border-radius:100px; display:inline-block; margin-bottom:12px;">Presencia Nacional</span>
+        <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem, 3vw, 2.3rem); font-weight:800; color:var(--primary-dark); margin-bottom:12px;">Cobertura Directa en Honduras</h2>
+        <p style="font-size:0.95rem; color:var(--text-muted);">
+          Atendemos proyectos residenciales, comerciales e industriales en las principales zonas de desarrollo del país.
+        </p>
+      </div>
+
+      <div class="coverage-grid">
+        <div class="coverage-card">
+          <div class="coverage-city-icon"><i class="fa-solid fa-building-user"></i></div>
+          <h3 class="coverage-city-title">Tegucigalpa</h3>
+          <p class="coverage-city-desc">
+            Atención personalizada para residencia de lujo, torres corporativas y desarrollos en Francisco Morazán y Zona Central.
+          </p>
+        </div>
+
+        <div class="coverage-card">
+          <div class="coverage-city-icon"><i class="fa-solid fa-industry"></i></div>
+          <h3 class="coverage-city-title">San Pedro Sula</h3>
+          <p class="coverage-city-desc">
+            Suministro e instalación para obras comerciales, parques industriales y proyectos residenciales en el Valle de Sula.
+          </p>
+        </div>
+
+        <div class="coverage-card">
+          <div class="coverage-city-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+          <h3 class="coverage-city-title">Roatán</h3>
+          <p class="coverage-city-desc">
+            Sistemas anticorrosivos de aluminio marino y cristal insulado de control solar para villas y resorts costeros en Islas de la Bahía.
+          </p>
+        </div>
+
+        <div class="coverage-card">
+          <div class="coverage-city-icon"><i class="fa-solid fa-water"></i></div>
+          <h3 class="coverage-city-title">La Ceiba</h3>
+          <p class="coverage-city-desc">
+            Soluciones de alta hermeticidad y aislamiento termoacústico resistentes a climas tropicales en la Costa Atlántica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section style="background: var(--bg-light);">
+    <div class="container">
+      <div class="section-header" style="text-align: center; max-width: 720px; margin: 0 auto 46px;">
+        <span class="section-badge" style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--primary); background:rgba(56,59,61,0.08); padding:4px 14px; border-radius:100px; display:inline-block; margin-bottom:12px;">Preguntas Frecuentes</span>
+        <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem, 3vw, 2.3rem); font-weight:800; color:var(--primary-dark); margin-bottom:12px;">Dudas Comunes sobre Cotizaciones</h2>
+        <p style="font-size:0.95rem; color:var(--text-muted);">
+          Respuestas rápidas para agilizar el proceso de diseño y presupuesto de tus ventanas y fachadas.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-circle-question"></i> ¿En cuánto tiempo recibo mi cotización?
           </div>
-        </form>
+          <div class="faq-answer">
+            Al enviar tu formulario a través de WhatsApp o correo electrónico, nuestro equipo técnico analiza tus requerimientos y envía un presupuesto formal en un plazo promedio de 24 horas hábiles.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-ruler-combined"></i> ¿Realizan visitas de medición en sitio?
+          </div>
+          <div class="faq-answer">
+            Sí. Disponemos de asesores técnicos en Tegucigalpa, San Pedro Sula, Roatán y La Ceiba para rectificar medidas exactas en obra antes de la fabricación formal.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-shield-halved"></i> ¿Qué garantías ofrecen los sistemas?
+          </div>
+          <div class="faq-answer">
+            Nuestros perfiles de PVC Kömmerling cuentan con garantía europea contra amarillamiento y decoloración, y nuestras perfilerías de aluminio y sellos herméticos ofrecen alta resistencia UV y climática.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <i class="fa-solid fa-file-pdf"></i> ¿Puedo adjuntar mi plano arquitectónico?
+          </div>
+          <div class="faq-answer">
+            ¡Por supuesto! Al contactarnos vía WhatsApp puedes adjuntar tus archivos en PDF, AutoCAD o especificaciones de catálogo para una estimación precisa.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -242,51 +722,113 @@
           <div class="logo-brand" style="margin-bottom:16px;">
             <img src="assets/img/logo.png" alt="Design Solutions By Ventanales" style="height:40px; background:#fff; padding:4px 8px; border-radius:4px;">
           </div>
-          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">Design Solutions By Ventanales · Honduras.</p>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">
+            Líderes en Honduras en soluciones de arquitectura en vidrio, ventanas termoacústicas, fachadas comerciales y cortinas motorizadas.
+          </p>
         </div>
+
         <div class="footer-col">
           <h4>Navegación</h4>
           <ul class="footer-links">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="categorias/index.html">Categorías</a></li>
-            <li><a href="proyectos/index.html">Proyectos</a></li>
+            <li><a href="categorias/index.html">Todas las Categorías</a></li>
+            <li><a href="proyectos/index.html">Portafolio de Proyectos</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="cotizar.html">Contacto & Cotización</a></li>
           </ul>
         </div>
+
+        <div class="footer-col">
+          <h4>Cobertura Nacional</h4>
+          <ul class="footer-links">
+            <li><a href="cotizar.html">Tegucigalpa & Zona Central</a></li>
+            <li><a href="cotizar.html">San Pedro Sula & Zona Norte</a></li>
+            <li><a href="cotizar.html">Roatán & Islas de la Bahía</a></li>
+            <li><a href="cotizar.html">La Ceiba & Costa Atlántica</a></li>
+          </ul>
+        </div>
+
         <div class="footer-col">
           <h4>Contacto Directo</h4>
-          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75);">ventas@ventanaleshn.com<br>+504 9999-9999</p>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); margin-bottom:8px;">
+            <i class="fa-solid fa-envelope" style="color:#ffffff;"></i> ventas@ventanaleshn.com
+          </p>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.75); margin-bottom:8px;">
+            <i class="fa-solid fa-phone" style="color:#ffffff;"></i> +504 9999-9999
+          </p>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <div>&copy; 2026 Design Solutions By Ventanales.</div>
-        <div>Desarrollado por <b>grovi studio</b></div>
+        <div>&copy; 2026 Design Solutions By Ventanales. Todos los derechos reservados.</div>
+        <div>Desarrollo & Estrategia SEO por <b>grovi studio</b></div>
       </div>
     </div>
   </footer>
 
+  <a href="https://wa.me/50499999999?text=Hola,%20deseo%20solicitar%20una%20cotización" target="_blank" class="wpp-float" title="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Interactive JavaScript Logic -->
   <script>
+    function updateLiveSummary() {
+      const city = document.getElementById('contactCity')?.value || '-';
+      const category = document.getElementById('contactCategory')?.value || '-';
+      const property = document.getElementById('contactProperty')?.value || '-';
+      const quantity = document.getElementById('contactQuantity')?.value || '-';
+
+      if (document.getElementById('summaryCity')) document.getElementById('summaryCity').textContent = city;
+      if (document.getElementById('summaryCategory')) document.getElementById('summaryCategory').textContent = category;
+      if (document.getElementById('summaryProperty')) document.getElementById('summaryProperty').textContent = property;
+      if (document.getElementById('summaryQuantity')) document.getElementById('summaryQuantity').textContent = quantity;
+    }
+
     function sendFormWhatsApp(e) {
       e.preventDefault();
-      const name = document.getElementById('contactName').value;
-      const phone = document.getElementById('contactPhone').value;
-      const email = document.getElementById('contactEmail').value;
+      const name = document.getElementById('contactName').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
       const city = document.getElementById('contactCity').value;
       const category = document.getElementById('contactCategory').value;
+      const property = document.getElementById('contactProperty').value;
       const stage = document.getElementById('contactStage').value;
-      const notes = document.getElementById('contactNotes').value;
+      const quantity = document.getElementById('contactQuantity').value;
+      const notes = document.getElementById('contactNotes').value.trim();
 
-      const message = `Hola Design Solutions By Ventanales! 👋%0A` +
-                      `Deseo solicitar una cotización formal:%0A` +
-                      `• *Nombre:* ${name}%0A` +
-                      `• *Teléfono:* ${phone}%0A` +
-                      `• *Email:* ${email}%0A` +
-                      `• *Ubicación:* ${city}%0A` +
-                      `• *Categoría:* ${category}%0A` +
-                      `• *Etapa:* ${stage}%0A` +
-                      `• *Notas:* ${notes}`;
+      let message = `Hola Design Solutions By Ventanales! 👋\n` +
+                    `Solicito una cotización formal para mi proyecto:\n\n` +
+                    `👤 *Nombre / Empresa:* ${name}\n` +
+                    `📱 *Teléfono:* ${phone}\n` +
+                    `📧 *Email:* ${email}\n` +
+                    `📍 *Ubicación:* ${city}\n` +
+                    `🪟 *Categoría:* ${category}\n` +
+                    `🏢 *Tipo de Obra:* ${property}\n` +
+                    `🏗️ *Etapa:* ${stage}\n` +
+                    `📊 *Volumen:* ${quantity}\n`;
+                    
+      if (notes) {
+        message += `📝 *Detalles / Medidas:* ${notes}\n`;
+      }
 
-      window.open(`https://wa.me/50499999999?text=${message}`, '_blank');
+      message += `\nQuedo atento a su asesoría técnica y propuesta.`;
+
+      const encodedUrl = `https://wa.me/50499999999?text=${encodeURIComponent(message)}`;
+      window.open(encodedUrl, '_blank');
     }
+
+    // Mobile Menu Toggle logic
+    document.addEventListener('DOMContentLoaded', function() {
+      updateLiveSummary();
+
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const nav = document.querySelector('header nav');
+      if (mobileMenuBtn && nav) {
+        mobileMenuBtn.addEventListener('click', function() {
+          nav.classList.toggle('open');
+        });
+      }
+    });
   </script>
 </body>
 </html>
